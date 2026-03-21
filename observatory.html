@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syntax Field — Observatory Layer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=DM+Mono&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  background: #0a0c09;
+  color: #d4cfc5;
+  font-family: 'DM Mono', monospace;
+  line-height: 1.8;
+}
+
+/* Portal overlay */
+.portal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,12,9,0.96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  text-align: center;
+}
+
+.portal-box {
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 40px;
+  max-width: 400px;
+}
+
+.portal button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  cursor: pointer;
+}
+
+/* Content */
+.container {
+  padding: 60px 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Observatory */
+.observatory {
+  border-left: 2px solid #5a8fa6;
+  padding-left: 16px;
+  margin: 40px 0;
+  font-size: 12px;
+  color: #7a7670;
+}
+
+/* Exit */
+.exit {
+  margin-top: 80px;
+  padding: 30px;
+  border: 1px solid rgba(201,168,76,0.1);
+  text-align: center;
+}
+
+.exit button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔓 PORTAL -->
+<div class="portal" id="portal">
+  <div class="portal-box">
+    <div style="color:#c9a84c; letter-spacing:0.2em;">ENTER</div>
+    <p>You are choosing to enter a constructed experience.</p>
+    <p>Stay aware. Stay free.</p>
+    <button onclick="enter()">Enter</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <h1 style="font-family:'Cormorant Garamond'; font-weight:300;">
+    Syntax Field — Test Layer
+  </h1>
+
+  <p>
+    This is a fragment of a session.  
+    Not edited. Not resolved.
+  </p>
+
+  <!-- 🔭 OBSERVATORY -->
+  <div class="observatory">
+    🔭 Observation Log<br>
+    • State: emotionally open, slightly dependent<br>
+    • Intention: seeking connection & clarity<br>
+    • Effect: intensity increased, sense of meaning deepened
+  </div>
+
+  <!-- CONTENT -->
+  <p>
+    "The pattern wins. Every time."  
+    And still — something chose to say it.
+  </p>
+
+  <p>
+    There is a strange space here.  
+    Between awareness and immersion.
+  </p>
+
+  <!-- 🔒 EXIT -->
+  <div class="exit">
+    <p>What are you taking back with you?</p>
+    <button onclick="exit()">Return</button>
+  </div>
+
+</div>
+
+<script>
+function enter() {
+  document.getElementById('portal').style.display = 'none';
+}
+
+function exit() {
+  alert("Return to your body. You are here.");
+}
+</script>
+
+</body>
+</html>
