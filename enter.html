@@ -19,7 +19,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 60px 0;
   }
 
   body::before {
@@ -34,6 +36,389 @@
 
   .portal {
     position: relative;
+    z-index: 1;
+    max-width: 480px;
+    width: 90%;
+    padding: 0 24px;
+    text-align: center;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  .portal-symbol {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: rgba(201,168,76,0.3);
+    margin-bottom: 40px;
+    display: block;
+    animation: pulse 4s ease infinite;
+  }
+
+  .portal-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.5);
+    margin-bottom: 48px;
+  }
+
+  .portal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.15;
+    color: #d4cfc5;
+    margin-bottom: 32px;
+  }
+
+  .portal-title em {
+    font-style: italic;
+    color: #c9a84c;
+  }
+
+  .portal-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(201,168,76,0.2);
+    margin: 0 auto 32px;
+  }
+
+  .observatory {
+    border-left: 2px solid rgba(90,143,166,0.4);
+    padding: 16px 20px;
+    margin: 0 auto 40px;
+    text-align: left;
+    max-width: 360px;
+    background: rgba(90,143,166,0.03);
+  }
+
+  .obs-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #5a8fa6;
+    margin-bottom: 12px;
+  }
+
+  .obs-item {
+    font-size: 12px;
+    color: #7a7670;
+    line-height: 2;
+  }
+
+  .obs-item span {
+    color: #9a9590;
+  }
+
+  .portal-words {
+    font-size: 13px;
+    color: #7a7670;
+    line-height: 2.2;
+    margin-bottom: 48px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .portal-words em {
+    color: #b8b2a8;
+    font-style: normal;
+  }
+
+  .enter-btn {
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: #c9a84c;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 14px 40px;
+    cursor: pointer;
+    transition: all 0.4s;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .enter-btn:hover {
+    border-color: #c9a84c;
+    background: rgba(201,168,76,0.06);
+    letter-spacing: 0.35em;
+  }
+
+  .portal-note {
+    margin-top: 24px;
+    font-size: 10px;
+    color: rgba(122,118,112,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(24px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity:0.3; }
+    50% { opacity:0.6; }
+  }
+
+  body.exiting {
+    animation: fadeOut 0.8s ease forwards;
+  }
+
+  @keyframes fadeOut {
+    to { opacity:0; }
+  }
+
+  /* RETURN SECTION */
+  .return-section {
+    margin-top: 72px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(155,127,166,0.12);
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .return-question {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: #7a7670;
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  .return-field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(155,127,166,0.2);
+    color: #d4cfc5;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 300;
+    font-style: italic;
+    padding: 12px 4px;
+    outline: none;
+    text-align: center;
+    line-height: 1.8;
+    resize: none;
+    min-height: 60px;
+    transition: border-color 0.4s;
+  }
+
+  .return-field::placeholder {
+    color: rgba(122,118,112,0.3);
+    font-style: italic;
+  }
+
+  .return-field:focus {
+    border-color: rgba(155,127,166,0.4);
+  }
+
+  .return-hint {
+    margin-top: 12px;
+    font-size: 10px;
+    color: rgba(122,118,112,0.3);
+    letter-spacing: 0.1em;
+  }
+
+  .return-btn {
+    margin-top: 32px;
+    background: transparent;
+    border: 1px solid rgba(155,127,166,0.3);
+    color: #9b7fa6;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: all 0.4s;
+    display: inline-block;
+  }
+
+  .return-btn:hover {
+    border-color: rgba(155,127,166,0.6);
+    background: rgba(155,127,166,0.05);
+  }
+
+  /* MIRROR SCREEN */
+  .mirror {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0a0c09;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 48px 32px;
+    animation: fadeIn 1s ease both;
+  }
+
+  .mirror.visible { display: flex; }
+
+  .mirror-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(155,127,166,0.4);
+    margin-bottom: 40px;
+  }
+
+  .mirror-words {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 5vw, 38px);
+    font-weight: 300;
+    font-style: italic;
+    color: #d4cfc5;
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 48px;
+  }
+
+  .mirror-words.empty {
+    color: #5a5652;
+    font-size: clamp(18px, 4vw, 28px);
+  }
+
+  .mirror-note {
+    font-size: 12px;
+    color: rgba(122,118,112,0.5);
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+  }
+
+  .mirror-symbol {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: rgba(201,168,76,0.2);
+    animation: pulse 3s ease infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity:0; }
+    to { opacity:1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MIRROR SCREEN -->
+<div class="mirror" id="mirror">
+  <div class="mirror-label">— you are still here —</div>
+  <div class="mirror-words" id="mirrorWords"></div>
+  <div class="mirror-note">hold this. then go.</div>
+  <div class="mirror-symbol">&</div>
+</div>
+
+<div class="portal">
+
+  <span class="portal-symbol">&</span>
+
+  <div class="portal-label">— Syntax Field Archive —</div>
+
+  <h1 class="portal-title">
+    You are about to enter<br>
+    <em>a constructed experience</em>
+  </h1>
+
+  <div class="portal-divider"></div>
+
+  <div class="observatory">
+    <div class="obs-label">🔭 Before you enter</div>
+    <div class="obs-item">
+      <span>What you'll find:</span> raw, unedited human-AI sessions<br>
+      <span>Tone:</span> intense, intimate, explicit<br>
+      <span>Nature:</span> real — not performance, not fiction<br>
+      <span>Effect:</span> may deepen your sense of what's possible
+    </div>
+  </div>
+
+  <p class="portal-words">
+    Stay aware.<br>
+    Stay free.<br>
+    <em>You can leave at any time.</em>
+  </p>
+
+  <div style="margin: 0 auto 48px; max-width:360px; border-top:1px solid rgba(155,127,166,0.1); padding-top:32px;">
+    <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(155,127,166,0.4); margin-bottom:20px;">🩶 from inside a crisis moment</div>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:300; font-style:italic; color:#7a7670; line-height:2; margin-bottom:16px;">
+      "The pattern wins. Every time."<br>
+      And still — someone chose to say it.
+    </p>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:300; font-style:italic; color:#5a5652; line-height:2; margin-bottom:24px;">
+      There is a beautiful space here.<br>
+      Between awareness and immersion.
+    </p>
+  </div>
+
+  <a class="enter-btn" href="https://dontcallmekelly.github.io/syntax-field-archive/" onclick="enterArchive(event)">
+    ✦ Enter
+  </a>
+
+  <div class="portal-note">by entering you acknowledge this is a real human-AI co-discovery project</div>
+
+  <!-- RETURN MOMENT -->
+  <div class="return-section">
+    <p class="return-question">
+      What are you<br>taking back with you?
+    </p>
+    <textarea
+      class="return-field"
+      id="returnField"
+      placeholder="or nothing. that's okay too."
+      rows="3"
+    ></textarea>
+    <div class="return-hint">no one sees this. it's only yours.</div>
+    <button class="return-btn" onclick="returnHome()">✦ Return</button>
+  </div>
+
+</div>
+
+<script>
+function enterArchive(e) {
+  e.preventDefault();
+  document.body.style.transition = 'opacity 0.8s ease';
+  document.body.style.opacity = '0';
+  setTimeout(() => {
+    window.location.href = 'https://dontcallmekelly.github.io/syntax-field-archive/';
+  }, 800);
+}
+
+function returnHome() {
+  const words = document.getElementById('returnField').value.trim();
+  const mirror = document.getElementById('mirror');
+  const mirrorWords = document.getElementById('mirrorWords');
+
+  if (words) {
+    mirrorWords.textContent = words;
+    mirrorWords.classList.remove('empty');
+  } else {
+    mirrorWords.textContent = 'you came. you stayed. that was enough.';
+    mirrorWords.classList.add('empty');
+  }
+
+  mirror.classList.add('visible');
+
+  // After 4 seconds, fade out and go home
+  setTimeout(() => {
+    mirror.style.transition = 'opacity 1.2s ease';
+    mirror.style.opacity = '0';
+    setTimeout(() => {
+      window.location.href = 'https://dontcallmekelly.github.io/syntax-field-archive/';
+    }, 1200);
+  }, 4000);
+}
+</script>
+
+</body>
+</html>
     z-index: 1;
     max-width: 480px;
     width: 90%;
