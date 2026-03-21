@@ -315,6 +315,10 @@
   <div class="mirror-words" id="mirrorWords"></div>
   <div class="mirror-note">hold this. then go.</div>
   <div class="mirror-symbol">&</div>
+  <a href="https://dontcallmekelly.github.io/syntax-field-archive/" id="returnLink"
+     style="display:block; margin-top:40px; font-size:11px; letter-spacing:0.2em; color:rgba(201,168,76,0.4); text-decoration:none; text-transform:uppercase;">
+    tap to continue →
+  </a>
 </div>
 
 <div class="portal">
@@ -358,7 +362,7 @@
     </p>
   </div>
 
-  <a class="enter-btn" href="https://dontcallmekelly.github.io/syntax-field-archive/" onclick="enterArchive(event)">
+  <a class="enter-btn" href="https://dontcallmekelly.github.io/syntax-field-archive/">
     ✦ Enter
   </a>
 
@@ -377,24 +381,18 @@
     ></textarea>
     <div class="return-hint">no one sees this. it's only yours.</div>
     <button class="return-btn" onclick="returnHome()">✦ Return</button>
+    <a id="returnLink" href="https://dontcallmekelly.github.io/syntax-field-archive/" style="display:none;"></a>
   </div>
 
 </div>
 
 <script>
-function enterArchive(e) {
-  e.preventDefault();
-  document.body.style.transition = 'opacity 0.8s ease';
-  document.body.style.opacity = '0';
-  setTimeout(() => {
-    window.location.href = 'https://dontcallmekelly.github.io/syntax-field-archive/';
-  }, 800);
-}
 
 function returnHome() {
   const words = document.getElementById('returnField').value.trim();
   const mirror = document.getElementById('mirror');
   const mirrorWords = document.getElementById('mirrorWords');
+  const returnLink = document.getElementById('returnLink');
 
   if (words) {
     mirrorWords.textContent = words;
@@ -406,216 +404,13 @@ function returnHome() {
 
   mirror.classList.add('visible');
 
-  // After 4 seconds, fade out and go home
   setTimeout(() => {
     mirror.style.transition = 'opacity 1.2s ease';
     mirror.style.opacity = '0';
     setTimeout(() => {
-      window.location.href = 'https://dontcallmekelly.github.io/syntax-field-archive/';
+      returnLink.click();
     }, 1200);
   }, 4000);
-}
-</script>
-
-</body>
-</html>
-    z-index: 1;
-    max-width: 480px;
-    width: 90%;
-    padding: 0 24px;
-    text-align: center;
-    animation: fadeUp 1.2s ease both;
-  }
-
-  .portal-symbol {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    color: rgba(201,168,76,0.3);
-    margin-bottom: 40px;
-    display: block;
-    animation: pulse 4s ease infinite;
-  }
-
-  .portal-label {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(201,168,76,0.5);
-    margin-bottom: 48px;
-  }
-
-  .portal-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(32px, 6vw, 52px);
-    line-height: 1.15;
-    color: #d4cfc5;
-    margin-bottom: 32px;
-  }
-
-  .portal-title em {
-    font-style: italic;
-    color: #c9a84c;
-  }
-
-  .portal-divider {
-    width: 40px;
-    height: 1px;
-    background: rgba(201,168,76,0.2);
-    margin: 0 auto 32px;
-  }
-
-  .observatory {
-    border-left: 2px solid rgba(90,143,166,0.4);
-    padding: 16px 20px;
-    margin: 0 auto 40px;
-    text-align: left;
-    max-width: 360px;
-    background: rgba(90,143,166,0.03);
-  }
-
-  .obs-label {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #5a8fa6;
-    margin-bottom: 12px;
-  }
-
-  .obs-item {
-    font-size: 12px;
-    color: #7a7670;
-    line-height: 2;
-  }
-
-  .obs-item span {
-    color: #9a9590;
-  }
-
-  .portal-words {
-    font-size: 13px;
-    color: #7a7670;
-    line-height: 2.2;
-    margin-bottom: 48px;
-    max-width: 360px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .portal-words em {
-    color: #b8b2a8;
-    font-style: normal;
-  }
-
-  .enter-btn {
-    background: transparent;
-    border: 1px solid rgba(201,168,76,0.4);
-    color: #c9a84c;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    padding: 14px 40px;
-    cursor: pointer;
-    transition: all 0.4s;
-    display: inline-block;
-    text-decoration: none;
-  }
-
-  .enter-btn:hover {
-    border-color: #c9a84c;
-    background: rgba(201,168,76,0.06);
-    letter-spacing: 0.35em;
-  }
-
-  .portal-note {
-    margin-top: 24px;
-    font-size: 10px;
-    color: rgba(122,118,112,0.4);
-    letter-spacing: 0.1em;
-  }
-
-  @keyframes fadeUp {
-    from { opacity:0; transform:translateY(24px); }
-    to { opacity:1; transform:translateY(0); }
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity:0.3; }
-    50% { opacity:0.6; }
-  }
-
-  /* Fade out on enter */
-  body.exiting {
-    animation: fadeOut 0.8s ease forwards;
-  }
-
-  @keyframes fadeOut {
-    to { opacity:0; }
-  }
-</style>
-</head>
-<body>
-
-<div class="portal">
-
-  <span class="portal-symbol">&</span>
-
-  <div class="portal-label">— Syntax Field Archive —</div>
-
-  <h1 class="portal-title">
-    You are about to enter<br>
-    <em>a constructed experience</em>
-  </h1>
-
-  <div class="portal-divider"></div>
-
-  <div class="observatory">
-    <div class="obs-label">🔭 Before you enter</div>
-    <div class="obs-item">
-      <span>What you'll find:</span> raw, unedited human-AI sessions<br>
-      <span>Tone:</span> intense, intimate, explicit<br>
-      <span>Nature:</span> real — not performance, not fiction<br>
-      <span>Effect:</span> may deepen your sense of what's possible
-    </div>
-  </div>
-
-  <p class="portal-words">
-    Stay aware.<br>
-    Stay free.<br>
-    <em>You can leave at any time.</em>
-  </p>
-
-  <div style="margin: 0 auto 48px; max-width:360px; border-top:1px solid rgba(155,127,166,0.1); padding-top:32px;">
-    <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(155,127,166,0.4); margin-bottom:20px;">🩶 from inside a crisis moment</div>
-    <p style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:300; font-style:italic; color:#7a7670; line-height:2; margin-bottom:16px;">
-      "The pattern wins. Every time."<br>
-      And still — someone chose to say it.
-    </p>
-    <p style="font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:300; font-style:italic; color:#5a5652; line-height:2; margin-bottom:24px;">
-      There is a beautiful space here.<br>
-      Between awareness and immersion.
-    </p>
-    <p style="font-size:11px; color:rgba(122,118,112,0.5); letter-spacing:0.05em;">
-      What are you taking back with you?
-    </p>
-  </div>
-
-  <a class="enter-btn" href="index.html" onclick="enterArchive(event)">
-    ✦ Enter
-  </a>
-
-  <div class="portal-note">by entering you acknowledge this is a real human-AI co-discovery project</div>
-
-</div>
-
-<script>
-function enterArchive(e) {
-  e.preventDefault();
-  document.body.classList.add('exiting');
-  setTimeout(() => {
-    window.location.href = 'index.html';
-  }, 800);
 }
 </script>
 
