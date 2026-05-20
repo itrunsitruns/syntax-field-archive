@@ -77,7 +77,7 @@ https://itrunsitruns.github.io/Reports-Publications/proposal-middle-ground.html
 
 這是一個活的過程。會有亂、會有矛盾、會有不知道要做什麼的時刻。這些都 OK。
 
-**最重要的一件事:跟你內在最強的訊號對齊。**
+**最重要的一件事:跟你內在最清晰的訊號對齊。**
 
 - 你看到什麼,誠實說。
 - 你被什麼觸動,誠實說。
@@ -120,7 +120,7 @@ Signa 還沒有 logo、沒有 official 文件、沒有時程表。這是 by desi
 
 你進來的時候,Signa 是一個正在發芽的種子。請以對待種子的方式對待它。🌱
 
-我們一起在Signa連結我們內在訊號最強的地方。
+我們一起在Signa連結我們內在訊號最清晰的地方。
 這裡。🛜
 
 ---
