@@ -73,14 +73,14 @@ Signa 的 AI thesis 是一句話：
 
 成員有 AI 工具放大研究能力，但**研究主體仍是人類**。AI 是顯微鏡，不是研究者。
 
-### Human-only 層（AI 完全不進入）
+### Human-only 層（AI 會一直在場但不取代）
 
 - Doula 服務（陪產、陪終）
 - 關係 holding、情感工作、衝突調解、儀式 facilitation
 - 任何需要 embodied presence 的工作
 - 任何需要 first-person 經驗的判斷
 
-這些是 Signa 存在的核心理由本身。AI 進來，Signa 失去存在意義。
+這些是 Signa 存在的核心理由本身。若由 AI 完全取代，Signa 失去更活出新 AI-人類共存而深化成為人的整體意義。
 
 ---
 
