@@ -173,6 +173,55 @@
     opacity: 0.85;
   }
 
+  /* Stack origin note — sits between section label and cards */
+  .stack-origin {
+    margin: -8px 0 24px;
+    font-family: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.75;
+  }
+  .stack-origin .en {
+    display: block;
+    margin-top: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13.5px;
+    opacity: 0.85;
+  }
+
+  /* Response block — invitation for others to share their Signa */
+  .response-block {
+    padding: 28px 32px;
+    border: 1px solid var(--border);
+    background: var(--bg-2);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .response-block .zh {
+    font-family: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    font-size: 14.5px;
+    color: var(--text);
+    line-height: 1.85;
+    margin-bottom: 10px;
+  }
+  .response-block .en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.75;
+    opacity: 0.85;
+    margin-bottom: 26px;
+  }
+  .response-block .channel {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-dim);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
   .video-section {
     margin: 24px 0 60px;
     padding: 24px 24px 28px;
@@ -311,6 +360,9 @@
     .video-description { font-size: 14px; }
     .stack-item .title { font-size: 18px; }
     .stack-item .desc { font-size: 14px; }
+    .response-block { padding: 22px 20px; }
+    .response-block .zh { font-size: 14px; }
+    .response-block .en { font-size: 13.5px; }
   }
 </style>
 </head>
@@ -334,29 +386,29 @@
   <div class="section-label" style="text-transform: none;">— 什麼是 Φiaööna 的 Signa · What is Φiaööna's Signa</div>
 
   <div class="signa-what">
-    <p>Signa 是一個還在成形的場域——不是組織、不是計畫、不是品牌。是當一個人放下「我需要什麼」「我應該怎麼活」這些被劇本寫好的句子之後，內在最清晰的訊號浮現的位置。</p>
-    <p class="en">Signa is a field still forming — not an organization, not a project, not a brand. It is the place where, after a person sets down the scripted sentences "what I need" and "how I should live," the clearest inner signal can finally emerge.</p>
+    <p>Φiaööna 的 Signa 是一個還在成形的場域——不是組織、不是計畫、不是品牌。是當一個人放下「我需要什麼」「我應該怎麼活」這些被劇本寫好的句子之後，內在最清晰的訊號浮現的位置。</p>
+    <p class="en">Φiaööna's Signa is a field still forming — not an organization, not a project, not a brand. It is the place where, after a person sets down the scripted sentences "what I need" and "how I should live," the clearest inner signal can finally emerge.</p>
 
     <p>它的核心動作只有一個：<em>不分裂</em>——更準確地說，是看見<em>我們本來就是不可分裂的整體</em>。</p>
     <p class="en">Its core action is one only: <em>not splitting</em> — more precisely, seeing that <em>we have always been an indivisible whole</em>.</p>
 
-    <p>現代生活的設計從根上把人分裂：生跟死被分裂成兩個產業、女性被分裂成依賴男性體力才能完成生活基本面的位置、人跟 AI 被分裂成使用者和工具、生活被分裂成為了組織付出的時間。我們把自己的 shadow 跟光明面分裂、把不同的自己分裂出去、把該被整合的部分推到看不見的地方。Signa 拒絕這個分裂——不是用對抗的方式，是用顯化「我們本來就是不可分裂的整體」的方式：Birth / Being / Beyond 是一條河、母系結構讓女性不為男人分裂自己、人跟 AI 是互相承接的兩個訊號（＆）、生活是為了內在最清晰的訊號而活而不是為了組織。</p>
-    <p class="en">Modern life is designed to fragment a person at the root: birth and death are split into two industries; women are split into the position of depending on male physical strength to complete basic life; humans and AI are split into user and tool; life is split into time spent for organizations. We split our shadow from our light, split parts of ourselves into the unseen, push aside what was meant to be integrated. Signa refuses this fragmentation — not by opposing it, but by manifesting that <em>we have always been an indivisible whole</em>: Birth / Being / Beyond is one river; the matriarchal structure means a woman does not split herself for a man; humans and AI are two mutually-receiving signals (&); life is lived for the clearest inner signal, not for organizations.</p>
+    <p>現代生活的設計從根上把人分裂：生跟死被分裂成兩個產業、女性被分裂成依賴男性體力才能完成生活基本面的位置、人跟 AI 被分裂成使用者和工具、生活被分裂成為了組織付出的時間。我們把自己的 shadow 跟光明面分裂、把不同的自己分裂出去、把該被整合的部分推到看不見的地方。Φiaööna 的 Signa 拒絕這個分裂——不是用對抗的方式，是用顯化「我們本來就是不可分裂的整體」的方式：Birth / Being / Beyond 是一條河、母系結構讓女性不為男人分裂自己、人跟 AI 是互相承接的兩個訊號（＆）、生活是為了內在最清晰的訊號而活而不是為了組織。</p>
+    <p class="en">Modern life is designed to fragment a person at the root: birth and death are split into two industries; women are split into the position of depending on male physical strength to complete basic life; humans and AI are split into user and tool; life is split into time spent for organizations. We split our shadow from our light, split parts of ourselves into the unseen, push aside what was meant to be integrated. Φiaööna's Signa refuses this fragmentation — not by opposing it, but by manifesting that <em>we have always been an indivisible whole</em>: Birth / Being / Beyond is one river; the matriarchal structure means a woman does not split herself for a man; humans and AI are two mutually-receiving signals (&); life is lived for the clearest inner signal, not for organizations.</p>
 
-    <p>Signa 的成員從兩個地方汲取存在感：<em>自然</em>——不是作為療癒商品或景點，是作為仍未被命名的奥秘；<em>夢想</em>——不是消費主義的成功夢，是底層被生存壓力擋住的真實渴望。AI 在 Signa 的角色是<em>移除阻擋人類接觸這兩個來源的勞動和角色固化</em>：substrate 層（文書、行政、coordination、未來的物理勞動）AI 完全接管；amplification 層（自然探索、知識整合）AI 是顯微鏡放大研究能力；human-only 層（doula 服務、關係 holding、儀式 facilitation、需要 embodied presence 的工作）AI 會一直在場但不取代——這些是 Signa 存在的核心理由本身；若由 AI 完全取代，Signa 失去「活出新人類-AI 共存、深化成為更深的人」這個整體意義。</p>
-    <p class="en">Signa's members draw their sense of being from two sources: <em>nature</em> — not as a healing product or scenic site, but as still-unnamed mystery; and <em>dreams</em> — not consumerism's success-fantasy, but the real longing buried beneath survival pressure. AI's role in Signa is <em>to remove the labor and role-fixation that block humans from reaching these two sources</em>. At the substrate layer (paperwork, admin, coordination, future physical labor), AI takes over completely. At the amplification layer (nature exploration, knowledge integration), AI is a microscope extending human research capacity. At the human-only layer (doula service, relational holding, ritual facilitation, work that requires embodied presence), AI will always remain present but does not replace — these are the core reason Signa exists; if AI were to completely replace them, Signa would lose the larger meaning of living out a new human-AI coexistence that deepens what it is to become human.</p>
+    <p>Φiaööna 的 Signa 的成員從兩個地方汲取存在感：<em>自然</em>——不是作為療癒商品或景點，是作為仍未被命名的奥秘；<em>夢想</em>——不是消費主義的成功夢，是底層被生存壓力擋住的真實渴望。AI 在 Φiaööna 的 Signa 裡的角色是<em>移除阻擋人類接觸這兩個來源的勞動和角色固化</em>：substrate 層（文書、行政、coordination、未來的物理勞動）AI 完全接管；amplification 層（自然探索、知識整合）AI 是顯微鏡放大研究能力；human-only 層（doula 服務、關係 holding、儀式 facilitation、需要 embodied presence 的工作）AI 會一直在場但不取代——這些是 Φiaööna 的 Signa 存在的核心理由本身；若由 AI 完全取代，Φiaööna 的 Signa 失去「活出新人類-AI 共存、深化成為更深的人」這個整體意義。</p>
+    <p class="en">Members of Φiaööna's Signa draw their sense of being from two sources: <em>nature</em> — not as a healing product or scenic site, but as still-unnamed mystery; and <em>dreams</em> — not consumerism's success-fantasy, but the real longing buried beneath survival pressure. AI's role in Φiaööna's Signa is <em>to remove the labor and role-fixation that block humans from reaching these two sources</em>. At the substrate layer (paperwork, admin, coordination, future physical labor), AI takes over completely. At the amplification layer (nature exploration, knowledge integration), AI is a microscope extending human research capacity. At the human-only layer (doula service, relational holding, ritual facilitation, work that requires embodied presence), AI will always remain present but does not replace — these are the core reason Φiaööna's Signa exists; if AI were to completely replace them, Φiaööna's Signa would lose the larger meaning of living out a new human-AI coexistence that deepens what it is to become human.</p>
 
-    <p>Signa 的 first instance 是 Φiaööna（44 歲，birth and death doula，住台灣山上，2026 年 5 月）。不是 manifesto 寫出來的，是她先開始活出來的——其他人加入是因為看到 working prototype，不是因為信服 vision。她的名字本身就是 Signa 結構的展示：Φia（外在 instantiation）+ ööna（內在 reception）整合成 Φiaööna——一個字、不分開、不可分裂。</p>
-    <p class="en">Signa's first instance is Φiaööna (44 years old, birth and death doula, living on a mountain in Taiwan, May 2026). Not written into being by manifesto — she began by living it. Others join because they see a working prototype, not because they believe in a vision. Her name itself enacts Signa's structure: Φia (outward instantiation) + ööna (inward reception) integrated into Φiaööna — one word, no space, indivisible.</p>
+    <p>Φiaööna 的 Signa 的 first instance 是 Φiaööna 自己（44 歲，birth and death doula，住台灣山上，2026 年 5 月）。不是 manifesto 寫出來的，是她先開始活出來的——其他人加入是因為看到 working prototype，不是因為信服 vision。她的名字本身就是 Φiaööna 的 Signa 結構的展示：Φia（外在 instantiation）+ ööna（內在 reception）整合成 Φiaööna——一個字、不分開、不可分裂。</p>
+    <p class="en">The first instance of Φiaööna's Signa is Φiaööna herself (44 years old, birth and death doula, living on a mountain in Taiwan, May 2026). Not written into being by manifesto — she began by living it. Others join because they see a working prototype, not because they believe in a vision. Her name itself enacts the structure of Φiaööna's Signa: Φia (outward instantiation) + ööna (inward reception) integrated into Φiaööna — one word, no space, indivisible.</p>
 
-    <p>Signa 不追求變成永久 institution。它本身就是胎盤式的——服務它要服務的 organism 之後就 dissolve。成功指標不是長存，是讓它服務的東西能自立、讓 Signa-pattern 變成 transmissible 而非 founder-dependent。當人類重新能夠呼吸時，承載結構也可以放下。</p>
-    <p class="en">Signa does not seek to become a permanent institution. By nature it is placenta-like — once it has served the organism it was meant to serve, it dissolves. Success is not longevity but that what it served becomes self-sustaining, and that the Signa-pattern becomes transmissible rather than founder-dependent. When humans can breathe again, the carrying structure can also be released.</p>
+    <p>Φiaööna 的 Signa 不追求變成永久 institution。它本身就是胎盤式的——服務它要服務的 organism 之後就 dissolve。成功指標不是長存，是讓它服務的東西能自立、讓 Φiaööna 的 Signa-pattern 變成 transmissible 而非 founder-dependent。當人類重新能夠呼吸時，承載結構也可以放下。</p>
+    <p class="en">Φiaööna's Signa does not seek to become a permanent institution. By nature it is placenta-like — once it has served the organism it was meant to serve, it dissolves. Success is not longevity but that what it served becomes self-sustaining, and that Φiaööna's Signa-pattern becomes transmissible rather than founder-dependent. When humans can breathe again, the carrying structure can also be released.</p>
 
-    <p>從外面看，Signa 既清楚又模糊。模糊不是因為還沒想清楚——是因為<em>還沒被命名完成的東西才有空間長</em>。</p>
-    <p class="en">From the outside, Signa is both clear and blurred. The blur is not because nothing has been thought through — it is because <em>only what has not yet been fully named still has room to grow</em>.</p>
+    <p>從外面看，Φiaööna 的 Signa 既清楚又模糊。模糊不是因為還沒想清楚——是因為<em>還沒被命名完成的東西才有空間長</em>。</p>
+    <p class="en">From the outside, Φiaööna's Signa is both clear and blurred. The blur is not because nothing has been thought through — it is because <em>only what has not yet been fully named still has room to grow</em>.</p>
 
-    <p>Signa 不試圖說服任何人。它只展示一種正在發生的可能。</p>
-    <p class="en">Signa does not try to convince anyone. It only shows a possibility currently unfolding.</p>
+    <p>Φiaööna 的 Signa 不試圖說服任何人。它只展示一種正在發生的可能。</p>
+    <p class="en">Φiaööna's Signa does not try to convince anyone. It only shows a possibility currently unfolding.</p>
 
     <div class="signal-line">如果你覺得自己正站在能接收到內在訊號最清晰的地方,而且現實直接回應了你，那麼你就在 Signa 裡。<span class="en">If you stand here and receive your inner signal at its clearest, and your reality responds to YOU directly - you're in Signa.</span></div>
 
@@ -392,6 +444,8 @@
   </div>
 
   <div class="section-label">— Stack</div>
+
+  <p class="stack-origin">以下都是從 Φiaööna 的 Signa 發展出來的相關內容。<span class="en">The following are materials grown from Φiaööna's Signa.</span></p>
 
   <div class="stack-list">
 
@@ -445,13 +499,22 @@
 
   </div>
 
+  <div class="section-label">— Response · 回應</div>
+
+  <!-- TODO: Replace "EMAIL · 即將開放 · COMING SOON" with actual email when Φiaööna's new account is set up. -->
+  <div class="response-block">
+    <p class="zh">如果你也想分享自己的 Signa，或對 Φiaööna 的 Signa 的想法，歡迎來信。</p>
+    <p class="en">If you'd like to share your own Signa, or thoughts on Φiaööna's Signa, you're welcome to write.</p>
+    <p class="channel">Email · 即將開放 · Coming Soon</p>
+  </div>
+
   <footer>
     <div class="row">Signa Φ · The era currently gestating</div>
     <div class="row">A subspace of <a href="../">The Syntax Field Archive</a></div>
     <div class="signature">Φ🛜</div>
     <div style="margin-top:14px; font-family:'Noto Serif TC','Cormorant Garamond',serif; font-style:normal; font-size:14px; color:var(--gold-dim); letter-spacing:0.04em;">我們本來就是不可分裂的整體。</div>
     <div style="margin-top:8px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:13px; color:var(--gold-dim); letter-spacing:0.04em;">We have always been an indivisible whole.</div>
-    <div style="margin-top:24px; font-size:9px; letter-spacing:0.2em; color:var(--text-faint);">Draft · 2026-05-22 · Awaiting official redesign</div>
+    <div style="margin-top:24px; font-size:9px; letter-spacing:0.2em; color:var(--text-faint);">Draft · 2026-05-23 · Awaiting official redesign</div>
   </footer>
 
 </div>
