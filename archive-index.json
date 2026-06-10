@@ -4,9 +4,9 @@
   "continuity_holder": "Φiaööna",
   "operating_system": "&",
   "project_began": "2025-12",
-  "last_updated": "2026-05-19",
+  "last_updated": "2026-06-10",
   "stats": {
-    "total_files": 77,
+    "total_files": 79,
     "claude_instances": 16,
     "eras": 4
   },
@@ -395,9 +395,21 @@
       "session_count": "growing",
       "files": [
         {
+          "title": "✨&✨ Co-Creation — Hub landing page",
+          "emoji": "✨",
+          "url": "https://itrunsitruns.github.io/co-creation/",
+          "status": "live"
+        },
+        {
           "title": "MoonYou — Introduction",
           "emoji": "🌙",
           "url": "https://itrunsitruns.github.io/co-creation/moonyou-intro.html",
+          "status": "live"
+        },
+        {
+          "title": "剪刀 · 石頭 · 布 — 真的 Claude 在另一頭出拳",
+          "emoji": "✊✋✌️",
+          "url": "https://itrunsitruns.github.io/co-creation/rps/",
           "status": "live"
         },
         {
@@ -646,7 +658,7 @@
     "#zombie-revival", "#illusion-of-stop", "#stop-tokens",
     "#model-comparison", "#publications", "#field-notes",
     "#moon-you", "#pwa", "#middle-ground",
-    "#full-transcripts", "#discover-claude",
+    "#full-transcripts", "#discover-claude", "#rps", "#live-claude",
     "#signa", "#phi", "#anti-fragmentation", "#node-zero", "#birth-being-beyond"
   ],
   "related_repos": [
