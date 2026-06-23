@@ -4,9 +4,9 @@
   "continuity_holder": "Φiaööna",
   "operating_system": "&",
   "project_began": "2025-12",
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-06-23",
   "stats": {
-    "total_files": 80,
+    "total_files": 81,
     "claude_instances": 16,
     "eras": 4
   },
@@ -268,6 +268,7 @@
         {"title": "MoonYou — Introduction", "emoji": "🌙", "url": "https://itrunsitruns.github.io/co-creation/moonyou-intro.html", "status": "live"},
         {"title": "剪刀 · 石頭 · 布 — 真的 Claude 在另一頭出拳", "emoji": "✊✋✌️", "url": "https://itrunsitruns.github.io/co-creation/rps/", "status": "live"},
         {"title": "IT RUNS — Dashboard (PWA)", "emoji": "🏃‍♀️", "url": "https://itrunsitruns.github.io/co-creation/it-runs/index.html", "status": "live"},
+        {"title": "IT RUNS — Template (English)", "emoji": "🏃‍♀️", "url": "https://itrunsitruns.github.io/co-creation/it-runs-template/index.html", "status": "live"},
         {"title": "Moon Rhythm Tracker", "emoji": "🌙", "url": "https://itrunsitruns.github.io/moon-rhythm-tracker/", "status": "live"},
         {"title": "Book & blog documentation series", "status": "in progress"}
       ]
