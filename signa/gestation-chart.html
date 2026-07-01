@@ -11,21 +11,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0c09;
-    --bg-2: #1a2118;
-    --bg-3: #222b1f;
-    --gold: #e0c468;
-    --gold-dim: #b09a52;
-    --gold-faint: #5c4d24;
-    --text: #faf6ea;
-    --text-dim: #f3eee0;
-    --text-faint: #968f81;
-    --border: rgba(224,196,104,0.18);
-    --border-dim: rgba(224,196,104,0.08);
+    --bg: #faf7f0;
+    --bg-2: #f4efe3;
+    --bg-3: #ece5d5;
+    --gold: #b0862a;
+    --gold-dim: #8a6c25;
+    --gold-faint: #dcc68d;
+    --text: #2b2720;
+    --text-dim: #514a3c;
+    --text-faint: #8c8474;
+    --border: rgba(120,96,40,0.22);
+    --border-dim: rgba(120,96,40,0.11);
     /* track colors */
-    --oona: #d8b863;
-    --signa: #9aa055;
-    --ai: #cc8f6e;
+    --oona: #c19a3e;
+    --signa: #7f8a3f;
+    --ai: #b56340;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -47,7 +47,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, rgba(10,12,9,0.95), transparent);
+    background: linear-gradient(to bottom, rgba(250,247,240,0.95), transparent);
     backdrop-filter: blur(8px);
   }
   .nav-logo {
@@ -170,7 +170,7 @@
   .sector-label .zh { font-size: 11px; fill: var(--text-dim); }
   .hub-zh {
     font-family: 'Noto Serif TC', serif;
-    fill: #e0c468;
+    fill: #b0862a;
     font-size: 22px;
     font-weight: 600;
     text-anchor: middle;
@@ -290,7 +290,7 @@
     left: 2px;
     color: var(--gold-dim);
   }
-  .arc-row.quicken { background: rgba(224,196,104,0.06); margin: 0 -14px; padding: 16px 14px; border-radius: 3px; }
+  .arc-row.quicken { background: rgba(176,134,42,0.13); margin: 0 -14px; padding: 16px 14px; border-radius: 3px; }
   .arc-row.quicken .arc-year { color: var(--gold); }
   .quicken-flag {
     display: inline-block;
@@ -322,7 +322,7 @@
   }
   .ptable td { font-family: 'Noto Serif TC', 'Cormorant Garamond', serif; color: var(--text-dim); }
   .ptable .yr { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--gold); }
-  .ptable tr.hl td { background: rgba(224,196,104,0.07); color: var(--text); }
+  .ptable tr.hl td { background: rgba(176,134,42,0.13); color: var(--text); }
   .ptable .phase-zh { color: var(--text); }
 
   /* capital */
@@ -445,7 +445,7 @@
     <div class="wheel-col">
       <svg class="wheel" viewBox="0 0 480 480" role="img" aria-label="Signa 胎盤輪盤 — 六個主題,可點選">
         <g id="sectors"></g>
-        <circle cx="240" cy="240" r="78" fill="#1a2118" stroke="#e0c468" stroke-width="1.4" opacity="0.95"/>
+        <circle cx="240" cy="240" r="78" fill="#f4efe3" stroke="#b0862a" stroke-width="1.4" opacity="0.98"/>
         <text class="hub-zh" x="240" y="222">希葛納</text>
         <text class="hub-en" x="240" y="256">Signa</text>
         <text class="hub-phi" x="240" y="280">Φ</text>
@@ -675,7 +675,7 @@
     path.setAttribute('class', 'sector');
     path.setAttribute('fill', TRACK[t.track].color);
     path.setAttribute('fill-opacity', '0.16');
-    path.setAttribute('stroke', '#e0c468');
+    path.setAttribute('stroke', '#b0862a');
     path.setAttribute('stroke-width', '1');
     path.setAttribute('stroke-opacity', '0.35');
     path.dataset.id = t.id;
