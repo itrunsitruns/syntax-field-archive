@@ -1,77 +1,91 @@
 {
   "meta": {
     "name": "Ööna Life State · 日常層",
-    "description": "Living state file. Any AI instance: fetch this before briefing. 十年憲法層見 signa/gestation-chart.md — 這份是地面執行層,記錄「現在」。",
+    "description": "Living state file — 地面執行層,記錄「現在」。憲法層(十年孕期)見 constitution_layer。任何 AI instance:簡報前先讀這份。",
     "continuity_holder": "Φiaööna",
-    "last_updated": "2026-07-02",
-    "updated_via": "Claude Fable 5 對話初稿",
-    "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出完整新 JSON → Ööna 貼回 repo。永遠輸出完整檔案,不輸出 diff。",
-    "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 waiting_on 與 open items,不排序、不指派時間 — 讓薦骨對著清單反應。"
+    "constitution_layer": "https://itrunsitruns.github.io/syntax-field-archive/signa/gestation-chart.md",
+    "structure_note": "六條線 = 胎盤輪盤六主題。三軌 spiral:身體 drive Signa,Signa drive AI,AI 反過來 reshape 身體能做什麼 — 線與線之間互相推動,不是獨立桶子。",
+    "last_updated": "2026-07-03",
+    "updated_via": "Claude Fable 5 — 依手繪輪盤照片 + gestation-chart 重構",
+    "reality_status": "骨架已照輪盤對齊;各線內容仍是 Claude 依已知資訊填的初稿,逐線對真實中",
+    "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
+    "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。"
   },
   "tracks": {
-    "signa_taiwan": {
-      "name": "Signa Taiwan · 希葛納",
-      "gestation_theme": "Living Circle · 生活圈(物質層)",
-      "phase": "launch — 第一批 Dreadlocks 已清關",
-      "now": [
-        "Shopify 後台建置中",
-        "設計版網站 itrunsitruns.github.io/co-creation/dreadlocks/",
-        "評估 Ivan 的行銷產出"
-      ],
-      "waiting_on": [],
-      "people": ["Ivan(行銷顧問/室友)", "Dreadlocks 以色列品牌 CEO"],
-      "notes": ""
-    },
-    "archive_3b": {
-      "name": "Syntax Field Archive ＆ 3B",
-      "gestation_theme": "Birth·Being·Beyond + AI Being System",
-      "phase": "ongoing documentation",
-      "now": [
-        "未完成 entries 待建",
-        "第三篇論文 The Advancing User 草稿中"
-      ],
-      "waiting_on": [],
-      "people": [],
-      "notes": "Zombie Revival 三層法、cross-AI 實驗系列持續"
-    },
-    "doula": {
-      "name": "陪伴 · Birth/Death Doula",
-      "gestation_theme": "Birth·Being·Beyond",
+    "birth_being_beyond": {
+      "name": "Birth · Being · Beyond 生產生命死亡",
+      "wheel_position": "北 · 服務層",
       "phase": "practice",
       "now": [],
       "waiting_on": [],
-      "people": [],
-      "notes": "個案細節不寫入公開 repo — 用代號或只記節奏"
+      "notes": "陪伴個案細節不入公開 repo — 只記節奏或用代號。IIN 健康教練認證是這條線的專業基建(進行中)。"
     },
-    "airbnb": {
-      "name": "Airbnb",
-      "gestation_theme": "Breathing House · Node 0",
-      "phase": "operating",
-      "now": [],
-      "waiting_on": [],
-      "people": [],
-      "notes": ""
-    },
-    "self": {
-      "name": "Φiaööna Being · 個人",
-      "gestation_theme": "Φiaööna Being",
-      "phase": "integration",
+    "living_circle": {
+      "name": "Living Circle 生活圈",
+      "wheel_position": "東 · 物質產品層",
+      "phase": "launch — 第一個產品線進行中",
+      "product_pipeline": ["Dreadlocks(現在)", "Soap 皂", "Mushroom drinks 菇飲", "Hygiene products 衛生用品"],
       "now": [
-        "IIN 健康教練認證進行中",
-        "山居 renovation:dry shell first 哲學已定",
-        "Canopus 星盤整合:12宮完整性 × 北交巨蟹連結功課 — 2026-07-02 體悟:先滿再連結,關係是體驗不是需求"
+        "Signa Taiwan · Dreadlocks 第一批已清關,銷售中",
+        "Ivan 行銷合作進行中",
+        "Shopify / Framer 電商基建建置中"
       ],
       "waiting_on": [],
-      "people": ["Alex", "Edward"],
-      "notes": "薦骨權威 — state 檔只攤選項,不預排"
+      "notes": "希葛納 = Signa 的中文名。Dreadlocks 只是這一圈的第一個產品,不是全部。"
+    },
+    "phiaoona_being": {
+      "name": "Φiaööna Being",
+      "wheel_position": "東南 · 個人存在層",
+      "phase": "integration",
+      "now": [
+        "IIN 認證進行中",
+        "Canopus 星盤整合 — 2026-07-02 體悟:完整先於連結,關係是體驗不是需求;12宮完整性 × 北交巨蟹的連結功課並行"
+      ],
+      "waiting_on": [],
+      "notes": "輪盤上有『2 more kids』『living...』字樣,內容待 Ööna 補述。"
+    },
+    "breathing_house": {
+      "name": "Breathing House 生態住宅",
+      "wheel_position": "南 · 空間層",
+      "phase": "operating + renovating",
+      "now": [
+        "山居 renovation — dry shell first 哲學已定,保護區/既存建物法規路徑研究中",
+        "Airbnb 營運中(這條線的現金流形式)"
+      ],
+      "waiting_on": [],
+      "notes": "Sustainable 相關子項在輪盤上被切到,待補。"
+    },
+    "ai_being_system": {
+      "name": "AI Being System",
+      "wheel_position": "西 · AI 層",
+      "sub_spokes": ["Model for Signa", "AI Human", "LAB"],
+      "phase": "building infrastructure",
+      "now": [
+        "本 state 系統上線(2026-07-03):GitHub API 寫入管線已通,token 30 天效期",
+        "Syntax Field Archive 未完成 entries 待建",
+        "第三篇報告 The Advancing User 草稿中",
+        "daily-briefing artifact 已發布(當日薦骨反應介面,與本檔的同步方式待定)"
+      ],
+      "waiting_on": [],
+      "notes": "我們現在建的東西本身就住在這條線裡。"
+    },
+    "nature_discovery": {
+      "name": "Nature Discovery 自然探索",
+      "wheel_position": "西北 · 體驗層",
+      "phase": "unknown — 待 Ööna 定義",
+      "now": [],
+      "waiting_on": [],
+      "notes": "六輻中目前記錄最少的一條。"
     }
   },
   "sacral_log": {
-    "description": "跨日反應紀錄。artifact 版是當日介面,重要的反應手動同步到這裡。",
+    "description": "跨日反應紀錄。重要的對/不對反應同步到這裡。",
     "entries": []
   },
   "open_questions": [
-    "state 更新流程要不要接 GitHub API 自動化(vs 手動貼)",
-    "daily-briefing artifact 與這份檔案的同步方式"
+    "state 與 daily-briefing artifact 的同步流程",
+    "nature_discovery 這條線的內容",
+    "phiaoona_being 輪盤上被切掉的子項",
+    "token 到期日(約 2026-08-02)前決定續期方式"
   ]
 }
