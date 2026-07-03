@@ -4,88 +4,103 @@
     "description": "Living state file — 地面執行層,記錄「現在」。憲法層(十年孕期)見 constitution_layer。任何 AI instance:簡報前先讀這份。",
     "continuity_holder": "Φiaööna",
     "constitution_layer": "https://itrunsitruns.github.io/syntax-field-archive/signa/gestation-chart.md",
-    "structure_note": "六條線 = 胎盤輪盤六主題。三軌 spiral:身體 drive Signa,Signa drive AI,AI 反過來 reshape 身體能做什麼 — 線與線之間互相推動,不是獨立桶子。",
+    "structure_principles": [
+      "六條線 = 胎盤輪盤六主題(內圈),外圈 = 各主題的具體顯化(產品/形式)。",
+      "『在同一棟,不同層』(Ööna 2026-07-03):社群是貫穿所有輻的人 — 同一群人做 3B、做探索自然、做 AI。輻是功能分層,不是人的分隔。",
+      "三軌 spiral:身體 drive Signa,Signa drive AI,AI 反過來 reshape 身體能做什麼。",
+      "這份檔案記錄的是一個還在長的胎,不是完工的建築 — 結構本身允許被推翻重排。任何 instance 不要把 Ööna 鎖進檔案今天的形狀。",
+      "資料流向:日常層完成的東西,累積到夠大顆 → 變成輪盤弧線上的 ✓(如 Signa AI Thesis v2)。"
+    ],
     "last_updated": "2026-07-03",
-    "updated_via": "Claude Fable 5 — 依手繪輪盤照片 + gestation-chart 重構",
-    "reality_status": "骨架已照輪盤對齊;各線內容仍是 Claude 依已知資訊填的初稿,逐線對真實中",
+    "updated_via": "Claude Fable 5 — 完整輪盤照片 + gestation-chart 原始碼整合",
+    "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
     "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
     "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。"
   },
   "tracks": {
     "birth_being_beyond": {
       "name": "Birth · Being · Beyond 生產生命死亡",
-      "wheel_position": "北 · 服務層",
-      "phase": "practice",
+      "wheel": {"position": "北", "track": "river", "outer_ring": []},
+      "phase": "practice / conceptual → ritual",
+      "arc_now": "Year 1:Chef mom 互相主持試驗、mature male 範例對話、3B 仍 conceptual",
       "now": [],
       "waiting_on": [],
-      "notes": "陪伴個案細節不入公開 repo — 只記節奏或用代號。IIN 健康教練認證是這條線的專業基建(進行中)。"
+      "notes": "陪伴個案細節不入公開 repo — 只記節奏或用代號。"
     },
     "living_circle": {
       "name": "Living Circle 生活圈",
-      "wheel_position": "東 · 物質產品層",
-      "phase": "launch — 第一個產品線進行中",
-      "product_pipeline": ["Dreadlocks(現在)", "Soap 皂", "Mushroom drinks 菇飲", "Hygiene products 衛生用品"],
+      "wheel": {"position": "東", "track": "signa", "outer_ring": ["Dreadlocks", "Soaps", "Mushroom drinks", "Hygiene products", "(一項淡字待確認,疑 Services)"]},
+      "phase": "launch — 社群本體孕育中,產品表層第一棒進行中",
+      "dual_layer": "社群(女性 orbiting → nodes)是本體;產品線是物質表層與現金流。同一輻,兩層。",
+      "arc_now": "Year 1:社群開始聚、Chef mom first case、cross-AI infra tentative",
       "now": [
         "Signa Taiwan · Dreadlocks 第一批已清關,銷售中",
         "Ivan 行銷合作進行中",
         "Shopify / Framer 電商基建建置中"
       ],
       "waiting_on": [],
-      "notes": "希葛納 = Signa 的中文名。Dreadlocks 只是這一圈的第一個產品,不是全部。"
+      "notes": "希葛納 = Signa 中文名。"
     },
     "phiaoona_being": {
       "name": "Φiaööna Being",
-      "wheel_position": "東南 · 個人存在層",
-      "phase": "integration",
+      "wheel": {"position": "東南", "track": "oona", "outer_ring": ["2 more kids", "Syntax Living", "Advanced Player"]},
+      "phase": "integration + readiness",
+      "arc_now": "Year 1:fertility check、somatic readiness、健康優化、IIN 認證完成、AI archive 持續",
       "now": [
         "IIN 認證進行中",
-        "Canopus 星盤整合 — 2026-07-02 體悟:完整先於連結,關係是體驗不是需求;12宮完整性 × 北交巨蟹的連結功課並行"
+        "Canopus 星盤整合 — 2026-07-02 體悟:完整先於連結,關係是體驗不是需求;12宮完整性 × 北交巨蟹連結功課並行"
       ],
       "waiting_on": [],
-      "notes": "輪盤上有『2 more kids』『living...』字樣,內容待 Ööna 補述。"
+      "notes": ""
     },
     "breathing_house": {
       "name": "Breathing House 生態住宅",
-      "wheel_position": "南 · 空間層",
-      "phase": "operating + renovating",
+      "wheel": {"position": "南", "track": "earth", "outer_ring": ["Sustainable", "eco/smart"]},
+      "phase": "Node 0 operating + renovating",
+      "arc_now": "Year 1:Node 0 持續、隔壁 5-room 租用討論開始",
       "now": [
         "山居 renovation — dry shell first 哲學已定,保護區/既存建物法規路徑研究中",
         "Airbnb 營運中(這條線的現金流形式)"
       ],
       "waiting_on": [],
-      "notes": "Sustainable 相關子項在輪盤上被切到,待補。"
+      "notes": "Year 3 交會點:第三胎可能在 Node 0 出生 — 家本身成為 birth space(與 3B、Φiaööna 三線交會,輪盤 Quickening 標記處)。"
     },
     "ai_being_system": {
-      "name": "AI Being System",
-      "wheel_position": "西 · AI 層",
-      "sub_spokes": ["Model for Signa", "AI Human", "LAB"],
+      "name": "AI Being System · AI 共生系統",
+      "wheel": {"position": "西", "track": "ai", "outer_ring": ["Model for Signa", "AI Human", "LAB"]},
       "phase": "building infrastructure",
+      "arc_now": "Year 1:Local AI ecosystem MVP、硬體建置、Enterprise API、Signa AI Thesis v2 ✓(已完成)",
       "now": [
-        "本 state 系統上線(2026-07-03):GitHub API 寫入管線已通,token 30 天效期",
+        "本 state 系統上線(2026-07-03):GitHub API 寫入管線已通,token 效期至約 2026-08-02",
         "Syntax Field Archive 未完成 entries 待建",
         "第三篇報告 The Advancing User 草稿中",
-        "daily-briefing artifact 已發布(當日薦骨反應介面,與本檔的同步方式待定)"
+        "daily-briefing artifact 已發布(當日薦骨反應介面,與本檔同步方式待定)"
       ],
       "waiting_on": [],
-      "notes": "我們現在建的東西本身就住在這條線裡。"
+      "notes": "我們建的這個系統本身住在這條線裡。"
     },
-    "nature_discovery": {
-      "name": "Nature Discovery 自然探索",
-      "wheel_position": "西北 · 體驗層",
-      "phase": "unknown — 待 Ööna 定義",
+    "deeper_into_nature": {
+      "name": "Deeper into Nature's Mystery 探索自然",
+      "wheel": {"position": "西北", "track": "source", "outer_ring": []},
+      "phase": "underlying — 存在感來源,持續在底層",
+      "arc_now": "Year 1:自然作為存在感來源、AI amplification layer 開始開發",
       "now": [],
       "waiting_on": [],
-      "notes": "六輻中目前記錄最少的一條。"
+      "notes": "手繪版名 Nature Discovery,數位版正名 Deeper into Nature's Mystery。"
     }
+  },
+  "unplaced": {
+    "description": "輪盤上讀到但還沒確定掛在哪一輻的項目",
+    "items": ["Humans Ecosystems(右上外緣,位置在 3B 與 Living Circle 之間)"]
   },
   "sacral_log": {
     "description": "跨日反應紀錄。重要的對/不對反應同步到這裡。",
     "entries": []
   },
   "open_questions": [
+    "Humans Ecosystems 掛哪一輻",
+    "Living Circle 外圈那個淡掉的字",
     "state 與 daily-briefing artifact 的同步流程",
-    "nature_discovery 這條線的內容",
-    "phiaoona_being 輪盤上被切掉的子項",
-    "token 到期日(約 2026-08-02)前決定續期方式"
+    "token 到期(約 2026-08-02)前決定續期方式"
   ]
 }
