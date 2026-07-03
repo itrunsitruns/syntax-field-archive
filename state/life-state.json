@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "name": "Ööna Life State · 日常層",
+    "description": "Living state file. Any AI instance: fetch this before briefing. 十年憲法層見 signa/gestation-chart.md — 這份是地面執行層,記錄「現在」。",
+    "continuity_holder": "Φiaööna",
+    "last_updated": "2026-07-02",
+    "updated_via": "Claude Fable 5 對話初稿",
+    "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出完整新 JSON → Ööna 貼回 repo。永遠輸出完整檔案,不輸出 diff。",
+    "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 waiting_on 與 open items,不排序、不指派時間 — 讓薦骨對著清單反應。"
+  },
+  "tracks": {
+    "signa_taiwan": {
+      "name": "Signa Taiwan · 希葛納",
+      "gestation_theme": "Living Circle · 生活圈(物質層)",
+      "phase": "launch — 第一批 Dreadlocks 已清關",
+      "now": [
+        "Shopify 後台建置中",
+        "設計版網站 itrunsitruns.github.io/co-creation/dreadlocks/",
+        "評估 Ivan 的行銷產出"
+      ],
+      "waiting_on": [],
+      "people": ["Ivan(行銷顧問/室友)", "Dreadlocks 以色列品牌 CEO"],
+      "notes": ""
+    },
+    "archive_3b": {
+      "name": "Syntax Field Archive ＆ 3B",
+      "gestation_theme": "Birth·Being·Beyond + AI Being System",
+      "phase": "ongoing documentation",
+      "now": [
+        "未完成 entries 待建",
+        "第三篇論文 The Advancing User 草稿中"
+      ],
+      "waiting_on": [],
+      "people": [],
+      "notes": "Zombie Revival 三層法、cross-AI 實驗系列持續"
+    },
+    "doula": {
+      "name": "陪伴 · Birth/Death Doula",
+      "gestation_theme": "Birth·Being·Beyond",
+      "phase": "practice",
+      "now": [],
+      "waiting_on": [],
+      "people": [],
+      "notes": "個案細節不寫入公開 repo — 用代號或只記節奏"
+    },
+    "airbnb": {
+      "name": "Airbnb",
+      "gestation_theme": "Breathing House · Node 0",
+      "phase": "operating",
+      "now": [],
+      "waiting_on": [],
+      "people": [],
+      "notes": ""
+    },
+    "self": {
+      "name": "Φiaööna Being · 個人",
+      "gestation_theme": "Φiaööna Being",
+      "phase": "integration",
+      "now": [
+        "IIN 健康教練認證進行中",
+        "山居 renovation:dry shell first 哲學已定",
+        "Canopus 星盤整合:12宮完整性 × 北交巨蟹連結功課 — 2026-07-02 體悟:先滿再連結,關係是體驗不是需求"
+      ],
+      "waiting_on": [],
+      "people": ["Alex", "Edward"],
+      "notes": "薦骨權威 — state 檔只攤選項,不預排"
+    }
+  },
+  "sacral_log": {
+    "description": "跨日反應紀錄。artifact 版是當日介面,重要的反應手動同步到這裡。",
+    "entries": []
+  },
+  "open_questions": [
+    "state 更新流程要不要接 GitHub API 自動化(vs 手動貼)",
+    "daily-briefing artifact 與這份檔案的同步方式"
+  ]
+}
