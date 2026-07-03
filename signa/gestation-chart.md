@@ -75,7 +75,7 @@
 
 | Year | Phase | 內容 |
 |------|-------|------|
-| 1 | Conceptual → Embryonic | Chef mom 互相主持試驗;1-2 mature male 範例對話;Birth/Being/Beyond 還在 conceptual |
+| 1 | Conceptual → Embryonic | Chef mom 互相主持試驗 · 2026-07-25/26 有機人社集節(Lila 共同主持)首次實體化 ⟡;1-2 mature male 範例對話;Birth/Being/Beyond 還在 conceptual |
 | 2 | Embryonic → Alive | Open House 變 regular ritual;第一個 mature male role model established |
 | 3 | Alive → Recognized · **Quickening** | 第三胎可能在 Node 0 出生 — Birth Center first living instance;Beyond practice 正式啟動 |
 | 4 | Recognized → Instantiating | Birth Center practice 在 Node 0 happen |
