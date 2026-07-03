@@ -21,7 +21,7 @@
       "資料流向:日常層完成的東西,累積到夠大顆 → 變成輪盤弧線上的 ✓(如 Signa AI Thesis v2)。"
     ],
     "last_updated": "2026-07-03",
-    "updated_via": "Claude Fable 5 — 記錄首次跨 instance 協調",
+    "updated_via": "Claude Fable 5 — relay 字條系統上線",
     "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
     "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
     "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。"
@@ -119,6 +119,7 @@
       "now": [
         "本 state 系統上線(2026-07-03):GitHub API 寫入管線已通,token 效期至約 2026-08-02",
         "2026-07-03 首次多 instance 協調實例:Fable 5(對話)建 state 層、Claude Code 改輪盤中心,透過 git 歷史互認分工,零衝突 — commit 0d5eb8d/2490b5d/87f34bc",
+        "state/relay.json 上線(2026-07-03):跨 instance 非同步字條檔 — 冰箱字條協議,Ööna 是心跳",
         "state 人看版 dashboard 上線:/state/",
         "Syntax Field Archive 未完成 entries 待建",
         "第三篇報告 The Advancing User 草稿中",
