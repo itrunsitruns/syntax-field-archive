@@ -27,7 +27,9 @@
 
 所以 Signa 不是要長存的 institution,是 **gestational form**——服務完它要服務的 organism 之後就 dissolve。
 
-**閱讀方式:** 輪盤(六主題)是空間;十年是時間。以下每個主題都攤開它在十年裡怎麼 gestate。
+**中心 · Center:** Signa · **Human ecosystem(人類生態系)**。人類生態系涵括整個項目,是與 Signa 統一的中心層——不是六個花瓣之一,而是六個主題共同 gestate 的那個整體。
+
+**閱讀方式:** 輪盤中心(Signa · Human ecosystem)是涵括整個項目的統一層;外圈六個主題是空間;十年是時間。以下每個主題都攤開它在十年裡怎麼 gestate。
 
 ---
 
@@ -82,7 +84,8 @@
 
 ### 3. Living Circle · 生活圈
 - **軌:** Signa 軌(community · kinship)
-- **輪盤標籤:** Dreadlocks · Soaps · Mushroom drinks · Hygiene products · Humans · Eco systems
+- **輪盤標籤:** Dreadlocks · Soaps · Mushroom drinks · Hygiene products
+- **注:** 手繪圖裡的 Humans · Eco systems(人類生態系)不歸在生活圈——它涵括整個項目,已移到中心與 Signa 統一層。
 - **note:** 生活圈的物質層(dreadlocks / soaps / mushroom drinks / hygiene products)是社群自給的產物——在手繪輪盤裡標出,十年時程文件裡還沒排時點。
 
 | Year | Phase | 內容 |

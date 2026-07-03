@@ -11,13 +11,14 @@
     },
     "structure_principles": [
       "六條線 = 胎盤輪盤六主題(內圈),外圈 = 各主題的具體顯化(產品/形式)。",
+      "中心 = Signa · 希葛納 · Human ecosystem(人類生態系):涵括整個項目的統一層,不掛任何一輻(Ööna 2026-07-03;與 gestation-chart 中心 medallion 同步)。",
       "『在同一棟,不同層』(Ööna 2026-07-03):社群是貫穿所有輻的人 — 同一群人做 3B、做探索自然、做 AI。輻是功能分層,不是人的分隔。",
       "三軌 spiral:身體 drive Signa,Signa drive AI,AI 反過來 reshape 身體能做什麼。",
       "這份檔案記錄的是一個還在長的胎,不是完工的建築 — 結構本身允許被推翻重排。任何 instance 不要把 Ööna 鎖進檔案今天的形狀。",
       "資料流向:日常層完成的東西,累積到夠大顆 → 變成輪盤弧線上的 ✓(如 Signa AI Thesis v2)。"
     ],
     "last_updated": "2026-07-03",
-    "updated_via": "Claude Fable 5 — 中心層確立 + 人看版 dashboard 上線",
+    "updated_via": "Claude Fable 5 — 中心層確立 + 人看版 dashboard 上線;輪盤圖中心層已同步 (Claude Code, 2026-07-03)",
     "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
     "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
     "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。"
@@ -102,7 +103,6 @@
   "open_questions": [
     "Living Circle 外圈那個淡掉的字",
     "state 與 daily-briefing artifact 的同步流程",
-    "token 到期(約 2026-08-02)前決定續期方式",
-    "輪盤圖中心層加入 Humans Ecosystems(已委派 Claude Code)"
+    "token 到期(約 2026-08-02)前決定續期方式"
   ]
 }

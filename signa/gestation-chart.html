@@ -190,6 +190,13 @@
     text-anchor: middle;
     letter-spacing: 0.2em;
   }
+  .hub-eco {
+    font-family: 'DM Mono', 'Noto Serif TC', monospace;
+    fill: #e8dcc0;
+    font-size: 10.5px;
+    text-anchor: middle;
+    letter-spacing: 0.03em;
+  }
 
   /* detail panel */
   .panel-col { flex: 1 1 auto; min-width: 0; }
@@ -445,10 +452,11 @@
     <div class="wheel-col">
       <svg class="wheel" viewBox="0 0 480 480" role="img" aria-label="Signa 胎盤輪盤 — 六個主題,可點選">
         <g id="sectors"></g>
-        <circle cx="240" cy="240" r="78" fill="#2b2720" stroke="#b0862a" stroke-width="1.4" opacity="1"/>
-        <text class="hub-zh" x="240" y="222">希葛納</text>
-        <text class="hub-en" x="240" y="256">Signa</text>
-        <text class="hub-phi" x="240" y="280">Φ</text>
+        <circle cx="240" cy="240" r="90" fill="#2b2720" stroke="#b0862a" stroke-width="1.4" opacity="1"/>
+        <text class="hub-zh" x="240" y="212">希葛納</text>
+        <text class="hub-en" x="240" y="246">Signa</text>
+        <text class="hub-eco" x="240" y="270">Human ecosystem · 人類生態系</text>
+        <text class="hub-phi" x="240" y="292">Φ</text>
       </svg>
       <div class="wheel-hint">tap a sector · 點一個主題</div>
     </div>
@@ -547,7 +555,7 @@
       id: 'living', center: 60, track: 'signa',
       en: 'Living Circle', zh: '生活圈',
       labelEn: 'Living Circle', labelZh: '生活圈',
-      items: ['Dreadlocks', 'Soaps', 'Mushroom drinks', 'Hygiene products', 'Humans', 'Eco systems'],
+      items: ['Dreadlocks', 'Soaps', 'Mushroom drinks', 'Hygiene products'],
       note: '生活圈的物質層(dreadlocks / soaps / mushroom drinks / hygiene products)是社群自給的產物——在手繪輪盤裡標出,十年時程文件裡還沒排時點。',
       arc: [
         { pts: ['社群開始聚', 'Chef mom first case attempted', 'Cross-AI infrastructure tentative'] },
@@ -650,7 +658,7 @@
   ];
 
   // ---- geometry ----
-  const CX = 240, CY = 240, R_OUT = 220, R_IN = 78, R_LABEL = 152;
+  const CX = 240, CY = 240, R_OUT = 220, R_IN = 90, R_LABEL = 156;
   const HALF = 30; // half-sector angle (60deg sectors)
   function polar(r, deg) {
     const a = (deg - 90) * Math.PI / 180;
