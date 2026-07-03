@@ -21,7 +21,7 @@
       "資料流向:日常層完成的東西,累積到夠大顆 → 變成輪盤弧線上的 ✓(如 Signa AI Thesis v2)。"
     ],
     "last_updated": "2026-07-03",
-    "updated_via": "Claude Fable 5(對話)— chat 直寫通道第一次 commit",
+    "updated_via": "Claude Fable 5(對話)— 日常流更新:集節日期定案",
     "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
     "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
     "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。",
@@ -177,7 +177,7 @@
   ],
   "events": [
     {
-      "date": "2026-07-25/26",
+      "date": "2026-07-25(主日)",
       "name": "有機人社集節 · Organic Human Gathering",
       "theme": "告別後,讓它發生 · After saying goodbye, let it happen",
       "where": "Ööna 山上的家(Node 0 / Breathing House)",
@@ -188,7 +188,9 @@
       ],
       "cohost": "Lila(chef mom)7/25 12:00–22:00",
       "arc_milestone": "十年圖 Year 1『Chef mom 互相主持試驗』— 這個 milestone 正在 7/25 實體化",
-      "description": "帶有機的自己一起來玩。可以分享活動,有食物,有樹,有水,有妳和我。"
+      "description": "帶有機的自己一起來玩。可以分享活動,有食物,有樹,有水,有妳和我。",
+      "backup_date": "2026-07-26(備案 — 視大家哪天有空,目前定 7/25)",
+      "calendar_status": "已入 Google Calendar(Code 2026-07-03 建,7/25 12:00–22:00)。7/26 不另建事件,維持備案。"
     }
   ]
 }
