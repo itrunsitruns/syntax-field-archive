@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Life State · 日常層 — Signa Φ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbfaf5;
+  --paper-deep:#f4f1e7;
+  --ink:#2e2b25;
+  --graphite:#6f695e;
+  --faint:#b3ab99;
+  --rule:#e9e3d3;
+  --gold:#c0912f;
+  --gold-soft:#d9bc72;
+  --gold-wash:#c0912f14;
+  --seal:#7a2e2a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Noto Serif TC','Fraunces',serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.7;
+}
+::selection{background:var(--gold-soft)}
+.wrap{max-width:820px;margin:0 auto;padding:40px 20px 80px}
+
+/* ── header ── */
+header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.wheel-toc{flex:0 0 auto}
+.wheel-toc svg{display:block}
+.wheel-toc .sec{cursor:pointer;transition:fill-opacity .2s}
+.wheel-toc .sec:hover{fill-opacity:.5}
+.head-text{flex:1;min-width:240px}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--graphite);text-transform:uppercase;margin-bottom:4px}
+h1{font-family:'Fraunces','Noto Serif TC',serif;font-weight:500;font-size:clamp(28px,6vw,40px);margin:0;letter-spacing:.01em}
+h1 .zh{color:var(--seal)}
+.meta-line{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--graphite);margin-top:8px}
+.meta-line b{color:var(--gold);font-weight:500}
+.reality{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--graphite);
+  border-left:3px solid var(--gold-soft);padding:6px 12px;margin:22px 0 0;background:var(--gold-wash)}
+
+/* ── principles ── */
+details.principles{margin:28px 0 8px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+details.principles summary{
+  cursor:pointer;list-style:none;padding:12px 2px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--graphite);text-transform:uppercase}
+details.principles summary::-webkit-details-marker{display:none}
+details.principles summary::before{content:'◦ ';color:var(--gold)}
+details[open].principles summary::before{content:'● ';color:var(--gold)}
+.principles li{font-size:14.5px;color:var(--ink);margin:10px 0;padding-left:2px}
+.principles ul{margin:0 0 16px;padding-left:20px}
+
+/* ── track cards ── */
+.tracks{display:grid;grid-template-columns:1fr;gap:18px;margin-top:30px}
+@media(min-width:680px){.tracks{grid-template-columns:1fr 1fr}}
+.card{
+  border:1px solid var(--rule);border-radius:3px;background:#fff;
+  padding:20px 20px 16px;position:relative;scroll-margin-top:20px}
+.card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:var(--gold-soft);filter:url(#crayon);border-radius:3px 0 0 3px}
+.card .pos{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.card h2{font-family:'Fraunces','Noto Serif TC',serif;font-weight:500;font-size:19px;margin:0 0 2px;line-height:1.4}
+.card .phase{font-size:12.5px;color:var(--graphite);font-style:italic;margin-bottom:12px}
+.card .arc{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);
+  border-top:1px dashed var(--rule);padding-top:9px;margin-top:12px;line-height:1.6}
+.label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--graphite);text-transform:uppercase;margin:12px 0 4px}
+.card ul{margin:0;padding-left:18px}
+.card li{font-size:14px;margin:5px 0}
+.card .ring{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.card .ring span{
+  font-size:11.5px;font-family:'IBM Plex Mono',monospace;color:var(--graphite);
+  border:1px solid var(--rule);border-radius:20px;padding:2px 10px;background:var(--paper)}
+.card .empty{font-size:13px;color:var(--faint);font-style:italic}
+.card .notes{font-size:12.5px;color:var(--graphite);margin-top:12px;padding-top:10px;border-top:1px solid var(--rule)}
+.card .dual{font-size:13px;color:var(--ink);background:var(--gold-wash);padding:8px 12px;border-radius:2px;margin:8px 0 4px}
+
+/* ── bottom sections ── */
+section.tail{margin-top:36px;border-top:1px solid var(--rule);padding-top:18px}
+section.tail h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;color:var(--graphite);text-transform:uppercase;font-weight:500;margin:0 0 10px}
+section.tail li{font-size:14px;margin:6px 0}
+section.tail .empty{font-size:13px;color:var(--faint);font-style:italic}
+footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);display:flex;flex-wrap:wrap;gap:16px}
+footer a{color:var(--graphite);text-decoration:none;border-bottom:1px solid var(--rule)}
+footer a:hover{color:var(--gold);border-color:var(--gold-soft)}
+.err{margin-top:40px;font-size:14px;color:var(--seal);font-family:'IBM Plex Mono',monospace}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <filter id="crayon">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5"/>
+  </filter>
+</svg>
+
+<div class="wrap">
+  <header>
+    <div class="wheel-toc" id="wheelToc"></div>
+    <div class="head-text">
+      <div class="eyebrow">Life State · 日常層</div>
+      <h1><span class="zh">希葛納</span> Signa <span style="color:var(--graphite);font-size:.55em">Φ Humans Ecosystems</span></h1>
+      <div class="meta-line" id="metaLine">讀取中…</div>
+    </div>
+  </header>
+  <div class="reality" id="reality"></div>
+
+  <details class="principles">
+    <summary>結構原則 Structure Principles</summary>
+    <ul id="principles"></ul>
+  </details>
+
+  <div class="tracks" id="tracks"></div>
+
+  <section class="tail">
+    <h3>薦骨紀錄 Sacral Log</h3>
+    <div id="sacral"></div>
+  </section>
+
+  <section class="tail">
+    <h3>開放問題 Open Questions</h3>
+    <ul id="openq"></ul>
+  </section>
+
+  <footer>
+    <a href="./life-state.json">原始 JSON(機器層)</a>
+    <a href="../signa/gestation-chart.html">十年孕期圖(憲法層)</a>
+    <a href="../index.html">Syntax Field Archive</a>
+  </footer>
+</div>
+
+<script>
+const POS_ANGLE = {"北":-90,"東":-30,"東南":30,"南":90,"西":150,"西北":210};
+
+async function load(){
+  try{
+    const r = await fetch('./life-state.json?t='+Date.now());
+    const d = await r.json();
+    render(d);
+  }catch(e){
+    document.getElementById('metaLine').textContent = '';
+    document.getElementById('reality').outerHTML =
+      '<div class="err">讀不到 life-state.json — 檔案可能正在部署中,稍後重新整理。</div>';
+  }
+}
+
+function render(d){
+  const m = d.meta;
+  document.getElementById('metaLine').innerHTML =
+    `last updated <b>${m.last_updated}</b> · ${escapeHtml(m.updated_via||'')}`;
+  document.getElementById('reality').textContent = m.reality_status || '';
+
+  const pl = document.getElementById('principles');
+  (m.structure_principles||[]).forEach(p=>{
+    const li=document.createElement('li');li.textContent=p;pl.appendChild(li);
+  });
+
+  const keys = Object.keys(d.tracks||{});
+  const wrap = document.getElementById('tracks');
+  keys.forEach(k=>{
+    const t=d.tracks[k];
+    const card=document.createElement('article');
+    card.className='card';card.id='t-'+k;
+    let h=`<div class="pos">${escapeHtml(t.wheel?.position||'')} · ${escapeHtml(t.wheel?.track||'')}</div>
+      <h2>${escapeHtml(t.name)}</h2>
+      <div class="phase">${escapeHtml(t.phase||'')}</div>`;
+    if(t.dual_layer) h+=`<div class="dual">${escapeHtml(t.dual_layer)}</div>`;
+    h+=`<div class="label">現在 Now</div>`;
+    h+= listOrEmpty(t.now, '這一輻還空著 — 在任何對話說「更新 state」,它就會長進來。');
+    if((t.waiting_on||[]).length){
+      h+=`<div class="label">等妳反應 Waiting on you</div>`+listOrEmpty(t.waiting_on);
+    }
+    if((t.wheel?.outer_ring||[]).length){
+      h+=`<div class="label">外圈顯化 Outer ring</div><div class="ring">`+
+        t.wheel.outer_ring.map(o=>`<span>${escapeHtml(o)}</span>`).join('')+`</div>`;
+    }
+    if(t.arc_now) h+=`<div class="arc">十年弧線位置 — ${escapeHtml(t.arc_now)}</div>`;
+    if(t.notes) h+=`<div class="notes">${escapeHtml(t.notes)}</div>`;
+    card.innerHTML=h;
+    wrap.appendChild(card);
+  });
+
+  drawWheel(keys, d.tracks);
+
+  const sc=document.getElementById('sacral');
+  const entries=(d.sacral_log&&d.sacral_log.entries)||[];
+  if(!entries.length){
+    sc.innerHTML='<div class="empty">還沒有紀錄。重要的對/不對反應會累積在這裡。</div>';
+  }else{
+    sc.innerHTML='<ul>'+entries.map(e=>`<li>${escapeHtml(typeof e==='string'?e:JSON.stringify(e))}</li>`).join('')+'</ul>';
+  }
+
+  const oq=document.getElementById('openq');
+  (d.open_questions||[]).forEach(q=>{
+    const li=document.createElement('li');li.textContent=q;oq.appendChild(li);
+  });
+}
+
+function listOrEmpty(arr, emptyText){
+  if(!(arr&&arr.length)) return emptyText?`<div class="empty">${emptyText}</div>`:'';
+  return '<ul>'+arr.map(i=>`<li>${escapeHtml(i)}</li>`).join('')+'</ul>';
+}
+
+function drawWheel(keys, tracks){
+  const R=52, r=20, cx=60, cy=60;
+  let paths='';
+  keys.forEach((k,i)=>{
+    const t=tracks[k];
+    const centerA=(POS_ANGLE[t.wheel?.position]??(i*60-90))*Math.PI/180;
+    const a1=centerA-Math.PI/6, a2=centerA+Math.PI/6;
+    const p=(a,rad)=>`${cx+rad*Math.cos(a)},${cy+rad*Math.sin(a)}`;
+    paths+=`<path class="sec" data-k="${k}" d="M ${p(a1,r)} L ${p(a1,R)} A ${R} ${R} 0 0 1 ${p(a2,R)} L ${p(a2,r)} A ${r} ${r} 0 0 0 ${p(a1,r)} Z"
+      fill="#c0912f" fill-opacity="0.16" stroke="#c0912f" stroke-opacity="0.75" stroke-width="1.6" filter="url(#crayon)"/>`;
+  });
+  document.getElementById('wheelToc').innerHTML=
+    `<svg width="120" height="120" viewBox="0 0 120 120" aria-label="輪盤目錄">
+      ${paths}
+      <circle cx="60" cy="60" r="${r-2}" fill="none" stroke="#c0912f" stroke-opacity=".75" stroke-width="1.6" filter="url(#crayon)"/>
+      <text x="60" y="64" text-anchor="middle" font-size="11" fill="#7a2e2a" font-family="'Noto Serif TC',serif">Φ</text>
+    </svg>`;
+  document.querySelectorAll('.wheel-toc .sec').forEach(s=>{
+    s.addEventListener('click',()=>{
+      document.getElementById('t-'+s.dataset.k)?.scrollIntoView({behavior:'smooth'});
+    });
+  });
+}
+
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+load();
+</script>
+</body>
+</html>
