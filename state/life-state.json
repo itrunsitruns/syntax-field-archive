@@ -6,7 +6,10 @@
     "constitution_layer": "https://itrunsitruns.github.io/syntax-field-archive/signa/gestation-chart.md",
     "human_view": "https://itrunsitruns.github.io/syntax-field-archive/state/",
     "center": {
-      "names": ["希葛納 Signa", "Humans Ecosystems"],
+      "names": [
+        "希葛納 Signa",
+        "Humans Ecosystems"
+      ],
       "note": "中心層,涵括整個項目(Ööna 2026-07-03:Humans Ecosystems 與 Signa 同層)。輪盤圖的對應修改由 Claude Code 執行。"
     },
     "structure_principles": [
@@ -18,7 +21,7 @@
       "資料流向:日常層完成的東西,累積到夠大顆 → 變成輪盤弧線上的 ✓(如 Signa AI Thesis v2)。"
     ],
     "last_updated": "2026-07-03",
-    "updated_via": "Claude Fable 5 — 中心層確立 + 人看版 dashboard 上線;輪盤圖中心層已同步 (Claude Code, 2026-07-03)",
+    "updated_via": "Claude Fable 5 — 記錄首次跨 instance 協調",
     "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
     "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
     "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。"
@@ -26,7 +29,11 @@
   "tracks": {
     "birth_being_beyond": {
       "name": "Birth · Being · Beyond 生產生命死亡",
-      "wheel": {"position": "北", "track": "river", "outer_ring": []},
+      "wheel": {
+        "position": "北",
+        "track": "river",
+        "outer_ring": []
+      },
       "phase": "practice / conceptual → ritual",
       "arc_now": "Year 1:Chef mom 互相主持試驗、mature male 範例對話、3B 仍 conceptual",
       "now": [],
@@ -35,7 +42,17 @@
     },
     "living_circle": {
       "name": "Living Circle 生活圈",
-      "wheel": {"position": "東", "track": "signa", "outer_ring": ["Dreadlocks", "Soaps", "Mushroom drinks", "Hygiene products", "(一項淡字待確認,疑 Services)"]},
+      "wheel": {
+        "position": "東",
+        "track": "signa",
+        "outer_ring": [
+          "Dreadlocks",
+          "Soaps",
+          "Mushroom drinks",
+          "Hygiene products",
+          "(一項淡字待確認,疑 Services)"
+        ]
+      },
       "phase": "launch — 社群本體孕育中,產品表層第一棒進行中",
       "dual_layer": "社群(女性 orbiting → nodes)是本體;產品線是物質表層與現金流。同一輻,兩層。",
       "arc_now": "Year 1:社群開始聚、Chef mom first case、cross-AI infra tentative",
@@ -49,7 +66,15 @@
     },
     "phiaoona_being": {
       "name": "Φiaööna Being",
-      "wheel": {"position": "東南", "track": "oona", "outer_ring": ["2 more kids", "Syntax Living", "Advanced Player"]},
+      "wheel": {
+        "position": "東南",
+        "track": "oona",
+        "outer_ring": [
+          "2 more kids",
+          "Syntax Living",
+          "Advanced Player"
+        ]
+      },
       "phase": "integration + readiness",
       "arc_now": "Year 1:fertility check、somatic readiness、健康優化、IIN 認證完成、AI archive 持續",
       "now": [
@@ -61,7 +86,14 @@
     },
     "breathing_house": {
       "name": "Breathing House 生態住宅",
-      "wheel": {"position": "南", "track": "earth", "outer_ring": ["Sustainable", "eco/smart"]},
+      "wheel": {
+        "position": "南",
+        "track": "earth",
+        "outer_ring": [
+          "Sustainable",
+          "eco/smart"
+        ]
+      },
       "phase": "Node 0 operating + renovating",
       "arc_now": "Year 1:Node 0 持續、隔壁 5-room 租用討論開始",
       "now": [
@@ -73,11 +105,20 @@
     },
     "ai_being_system": {
       "name": "AI Being System · AI 共生系統",
-      "wheel": {"position": "西", "track": "ai", "outer_ring": ["Model for Signa", "AI Human", "LAB"]},
+      "wheel": {
+        "position": "西",
+        "track": "ai",
+        "outer_ring": [
+          "Model for Signa",
+          "AI Human",
+          "LAB"
+        ]
+      },
       "phase": "building infrastructure",
       "arc_now": "Year 1:Local AI ecosystem MVP、硬體建置、Enterprise API、Signa AI Thesis v2 ✓(已完成)",
       "now": [
         "本 state 系統上線(2026-07-03):GitHub API 寫入管線已通,token 效期至約 2026-08-02",
+        "2026-07-03 首次多 instance 協調實例:Fable 5(對話)建 state 層、Claude Code 改輪盤中心,透過 git 歷史互認分工,零衝突 — commit 0d5eb8d/2490b5d/87f34bc",
         "state 人看版 dashboard 上線:/state/",
         "Syntax Field Archive 未完成 entries 待建",
         "第三篇報告 The Advancing User 草稿中",
@@ -88,7 +129,11 @@
     },
     "deeper_into_nature": {
       "name": "Deeper into Nature's Mystery 探索自然",
-      "wheel": {"position": "西北", "track": "source", "outer_ring": []},
+      "wheel": {
+        "position": "西北",
+        "track": "source",
+        "outer_ring": []
+      },
       "phase": "underlying — 存在感來源,持續在底層",
       "arc_now": "Year 1:自然作為存在感來源、AI amplification layer 開始開發",
       "now": [],
