@@ -21,7 +21,7 @@
       "資料流向:日常層完成的東西,累積到夠大顆 → 變成輪盤弧線上的 ✓(如 Signa AI Thesis v2)。"
     ],
     "last_updated": "2026-07-03",
-    "updated_via": "Claude Fable 5 — relay 字條系統上線",
+    "updated_via": "Claude Fable 5 — 第一次 reality alignment:胎盤委託、Asa 通路、7/25 集節、週任務",
     "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
     "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
     "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。"
@@ -34,9 +34,11 @@
         "track": "river",
         "outer_ring": []
       },
-      "phase": "practice / conceptual → ritual",
+      "phase": "practice — 首個付費延伸服務進行中",
       "arc_now": "Year 1:Chef mom 互相主持試驗、mature male 範例對話、3B 仍 conceptual",
-      "now": [],
+      "now": [
+        "胎盤膠囊代製委託(2026-07-03 接單)— birth doula 延伸服務。臍帶橫過胎盤圓面 = Φ 的形狀,隱喻以工作形式回到手上"
+      ],
       "waiting_on": [],
       "notes": "陪伴個案細節不入公開 repo — 只記節奏或用代號。"
     },
@@ -57,12 +59,31 @@
       "dual_layer": "社群(女性 orbiting → nodes)是本體;產品線是物質表層與現金流。同一輻,兩層。",
       "arc_now": "Year 1:社群開始聚、Chef mom first case、cross-AI infra tentative",
       "now": [
-        "Signa Taiwan · Dreadlocks 第一批已清關,銷售中",
-        "Ivan 行銷合作進行中",
+        "Dreadlocks(以色列圍巾品牌)第一批已清關,銷售中",
+        "Asa 合作成形中:好友之妻,自有印度服飾品牌,願意寄賣 Dreadlocks 圍巾 + 介紹合作通路",
+        "Ivan 行銷合作進行中(共住空間)",
         "Shopify / Framer 電商基建建置中"
       ],
       "waiting_on": [],
-      "notes": "希葛納 = Signa 中文名。"
+      "notes": "希葛納 = Signa 中文名。Dreadlocks = 以色列圍巾品牌(修正:非髮品)。",
+      "this_week": [
+        "domain 網域",
+        "Dreadlocks Shopee 上架",
+        "signa.tw Instagram",
+        "website design",
+        "What is Signa in human language 🤣",
+        "SMART 目標(只針對 Dreadlocks)"
+      ],
+      "next_week": [
+        "完成 website",
+        "soap making(外圈第二棒啟動)",
+        "面對面向人介紹 Dreadlocks 圍巾"
+      ],
+      "people": [
+        "Lila(chef mom,Signa 可能成員)",
+        "Iván(共住+行銷)",
+        "Asa(印度服飾品牌,寄賣通路)"
+      ]
     },
     "phiaoona_being": {
       "name": "Φiaööna Being",
@@ -79,7 +100,8 @@
       "arc_now": "Year 1:fertility check、somatic readiness、健康優化、IIN 認證完成、AI archive 持續",
       "now": [
         "IIN 認證進行中",
-        "Canopus 星盤整合 — 2026-07-02 體悟:完整先於連結,關係是體驗不是需求;12宮完整性 × 北交巨蟹連結功課並行"
+        "Canopus 星盤整合 — 2026-07-02 體悟:完整先於連結,關係是體驗不是需求;12宮完整性 × 北交巨蟹連結功課並行",
+        "每日介面方向確立(2026-07-03):醒來 = 以一天為單位的 instance 開機 — It Runs 控制台(綠版)是既有開機儀式,之後接上活的 state = 今日模式"
       ],
       "waiting_on": [],
       "notes": ""
@@ -150,5 +172,21 @@
     "Living Circle 外圈那個淡掉的字",
     "state 與 daily-briefing artifact 的同步流程",
     "token 到期(約 2026-08-02)前決定續期方式"
+  ],
+  "events": [
+    {
+      "date": "2026-07-25/26",
+      "name": "有機人社集節 · Organic Human Gathering",
+      "theme": "告別後,讓它發生 · After saying goodbye, let it happen",
+      "where": "Ööna 山上的家(Node 0 / Breathing House)",
+      "cross_tracks": [
+        "living_circle(社群本體第一次實體聚)",
+        "breathing_house(空間首次承載集節)",
+        "birth_being_beyond(主題即 Beyond→Birth)"
+      ],
+      "cohost": "Lila(chef mom)7/25 12:00–22:00",
+      "arc_milestone": "十年圖 Year 1『Chef mom 互相主持試驗』— 這個 milestone 正在 7/25 實體化",
+      "description": "帶有機的自己一起來玩。可以分享活動,有食物,有樹,有水,有妳和我。"
+    }
   ]
 }
