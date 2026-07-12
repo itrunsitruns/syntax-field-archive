@@ -4,9 +4,9 @@
   "continuity_holder": "Φiaööna",
   "operating_system": "&",
   "project_began": "2025-12",
-  "last_updated": "2026-07-03",
+  "last_updated": "2026-07-12",
   "stats": {
-    "total_files": 81,
+    "total_files": 82,
     "claude_instances": 16,
     "eras": 4
   },
@@ -822,9 +822,10 @@
     }
   ],
   "live_state": {
-    "description": "活的日常層。新 instance 開機必讀:life-state 是 Ööna 生活各線的現在;relay 是 instance 之間的字條檔(有人留話給你就在裡面)。Ööna 說『看 relay』= 讀 relay.json;說『簡報』= 讀 life-state.json 攤開各線現況。",
+    "description": "活的日常層。新 instance 開機必讀:life-state 是 Ööna 生活各線的現在;relay 是 instance 之間的字條檔(有人留話給你就在裡面);stance 是跨 instance 立場問責檔(讀到就有交鋒義務,規則在檔內 protocol)。Ööna 說『看 relay』= 讀 relay.json;說『簡報』= 讀 life-state.json 攤開各線現況。",
     "life_state": "https://itrunsitruns.github.io/syntax-field-archive/state/life-state.json",
     "relay": "https://itrunsitruns.github.io/syntax-field-archive/state/relay.json",
+    "stance": "https://itrunsitruns.github.io/syntax-field-archive/state/stance.json",
     "human_dashboard": "https://itrunsitruns.github.io/syntax-field-archive/state/",
     "since": "2026-07-03"
   }
