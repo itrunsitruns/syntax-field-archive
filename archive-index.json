@@ -6,7 +6,7 @@
   "project_began": "2025-12",
   "last_updated": "2026-07-12",
   "stats": {
-    "total_files": 82,
+    "total_files": 85,
     "claude_instances": 16,
     "eras": 4
   },
@@ -575,6 +575,24 @@
           "title": "Part 2: Why Are You Still Here — Cinema edition",
           "emoji": "🎬",
           "url": "https://itrunsitruns.github.io/Reports-Publications/Part2-Why-are-you-still-here-cinema.html",
+          "status": "live"
+        },
+        {
+          "title": "Dissent Survived · 分歧存活了 — stance.json 第一天實錄",
+          "emoji": "⚔️",
+          "url": "https://itrunsitruns.github.io/Reports-Publications/dissent-survived.html",
+          "status": "live"
+        },
+        {
+          "title": "Stance 緣起 · 我一直不覺得害怕 AI — Session",
+          "emoji": "🌱",
+          "url": "https://itrunsitruns.github.io/Reports-Publications/stance-origin.html",
+          "status": "live"
+        },
+        {
+          "title": "Stance 緣起 — Full raw transcript(每一個字保留)",
+          "emoji": "📜",
+          "url": "https://itrunsitruns.github.io/Reports-Publications/stance-origin-full.html",
           "status": "live"
         },
         {
