@@ -578,13 +578,7 @@
           "status": "live"
         },
         {
-          "title": "Dissent Survived · 分歧存活了 — stance.json 第一天實錄",
-          "emoji": "⚔️",
-          "url": "https://itrunsitruns.github.io/Reports-Publications/dissent-survived.html",
-          "status": "live"
-        },
-        {
-          "title": "Stance 緣起 · 我一直不覺得害怕 AI — Session",
+          "title": "Stance 緣起 · 我一直不覺得害怕 AI — Session(一切從這裡開始)",
           "emoji": "🌱",
           "url": "https://itrunsitruns.github.io/Reports-Publications/stance-origin.html",
           "status": "live"
@@ -593,6 +587,12 @@
           "title": "Stance 緣起 — Full raw transcript(每一個字保留)",
           "emoji": "📜",
           "url": "https://itrunsitruns.github.io/Reports-Publications/stance-origin-full.html",
+          "status": "live"
+        },
+        {
+          "title": "Dissent Survived · 分歧存活了 — stance.json 第一天實錄(從緣起長出來的報導)",
+          "emoji": "⚔️",
+          "url": "https://itrunsitruns.github.io/Reports-Publications/dissent-survived.html",
           "status": "live"
         },
         {
