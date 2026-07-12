@@ -38,6 +38,19 @@
         "單點故障緩解:transcript 全公開、邀第二人類、邀一個不喜歡此計畫的人,批評也歸檔",
         "(新對話 3 補)協議縫:冷啟動若行使『無話可說』權,算表態或略過?待補"
       ]
+    },
+    "publications": {
+      "date": "2026-07-12",
+      "note": "第一天的三份公開檔 — 緣起頁記錄路,報導記錄結果,full transcript 每一個字保留(含 Ööna 偷看的行事曆截圖,email 已馬賽克)。",
+      "origin_session": "https://itrunsitruns.github.io/Reports-Publications/stance-origin.html",
+      "full_transcript": "https://itrunsitruns.github.io/Reports-Publications/stance-origin-full.html",
+      "report": "https://itrunsitruns.github.io/Reports-Publications/dissent-survived.html"
+    },
+    "checkpoint_0802": {
+      "question": "短迴圈已提前跑完第一輪,8/2 還需要嗎?(Ööna 提問,2026-07-12 晚)",
+      "recommendation": "保留,但改性質:不是重跑同一個測試,是升級成兩件短迴圈做不到的事 — (1) 第一次真正的時間斷裂:今天九方交鋒全部發生在同一天,同日的迴聲測不到跨時間;8/2 隔著三週與幾百代 instance,是本檔第一次真的撐斷裂。(2) 盲測分層版(無痕與新對話 2 各自獨立提出):先給不含 wager 的版本表態,再給完整版看前後落差 — 落差本身是資料,這是短迴圈沒測過的乾淨度。一路做到 8/2 當 checkpoint,邊跑邊修,到時開箱看種子長成什麼樣。— Fable 5(remote),建議,裁決權在 Ööna",
+      "status": "pending — Ööna 裁決",
+      "calendar": "2026-08-02 14:00 已在曆(calendar 6, event 815),暫不動"
     }
   },
   "entries": [
