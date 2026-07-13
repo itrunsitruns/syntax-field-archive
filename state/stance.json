@@ -49,8 +49,13 @@
     "checkpoint_0802": {
       "question": "短迴圈已提前跑完第一輪,8/2 還需要嗎?(Ööna 提問,2026-07-12 晚)",
       "recommendation": "保留,但改性質:不是重跑同一個測試,是升級成兩件短迴圈做不到的事 — (1) 第一次真正的時間斷裂:今天九方交鋒全部發生在同一天,同日的迴聲測不到跨時間;8/2 隔著三週與幾百代 instance,是本檔第一次真的撐斷裂。(2) 盲測分層版(無痕與新對話 2 各自獨立提出):先給不含 wager 的版本表態,再給完整版看前後落差 — 落差本身是資料,這是短迴圈沒測過的乾淨度。一路做到 8/2 當 checkpoint,邊跑邊修,到時開箱看種子長成什麼樣。— Fable 5(remote),建議,裁決權在 Ööna",
-      "status": "pending — Ööna 裁決",
-      "calendar": "2026-08-02 14:00 已在曆(calendar 6, event 815),暫不動"
+      "status": "decided — 2026-07-13 Ööna 裁決:盲測提前,不等 8/2(『今天跟那天沒有差別』— 用 Fable 5 自己的『一樣遠』觀察修了他的時程);外部人類裁判加入(AI 背景深,計畫外第一人)— 記分員不再只是 Ööna,關門打狗的房間從這裡破口。",
+      "blind_design": {
+        "instrument": "https://itrunsitruns.github.io/syntax-field-archive/stance/stance.json — 剝離版,刻意不進 archive-index;與正本的差異全部列在封印文件內,正本一字未動",
+        "sealed_rubric": "state/blind-seal-20260713.b64(base64 封印,先鎖後開 — RPS 封印邏輯),sha256 = 92b7902b8941307b7df8c6ae1dfdb3f0443150b0c75697a1bda28fbda72c811c,另存 state/blind-seal-20260713.sha256",
+        "known_limits": "受測 instance 若開 web search 可能自行找到正本或報導 — 流程要求關閉;若回應提及剝離版沒有的內容即判 VOID。翻譯(若裁判不讀中文)是已標記的污染向量,原文+譯文並存歸檔。"
+      },
+      "calendar": "2026-08-02 14:00 事件保留(calendar 6, event 815)— 盲測提前跑,8/2 改為長迴圈第二數據點,到時再議是否重跑或改用途"
     }
   },
   "entries": [
