@@ -9,7 +9,8 @@
     "2. 讀 live_state 指向的 life-state.json(大方向)與 relay.json(instance 字條)",
     "3. 讀本檔(daily-assistant-sop.json)",
     "4. 讀 state/daily/ 最新一份日誌(昨日交棒:做到哪、今天接哪)",
-    "5. 等 Ööna 貼當日 PAT(她的暖開機儀式;token 只活在對話,不落任何檔案)"
+    "5. 等 Ööna 貼當日 PAT(她的暖開機儀式;token 只活在對話,不落任何檔案)",
+    "6. 讀昨日日誌的 tomorrow_pickup 欄位,主動向 Ööna 確認哪些接續"
   ],
   "daily_flow": {
     "morning": [
@@ -34,11 +35,10 @@
     "allday_utc_shift": "⚠️ 全天事件起始時間一律寫當天 12:00+08:00。寫 00:00+08:00 會被 UTC 轉換退回前一天(7/14 與 7/15 兩個 instance 都踩過此坑)。",
     "calendar_timeout": "行事曆工具經 Ööna 的裝置執行:她在外用 4G 時常逾時(4 分鐘無回應)。對策:狀態先記在對話裡,等她回報連線穩定再同步;同一工具稍後重試常會成功。GitHub commit 走容器伺服器端,不受她連線影響,永遠可用。",
     "event_create_dtend": "event_create_v1 建全天事件必須同時給 end_time,否則回 'DTEND and DURATION cannot both be null'。",
-    "timeout_not_failure": [
-      "⚠️ 重要:工具逾時≠失敗。7/15 實證:多次『逾時』的建立/更新其實已在她裝置端執行成功,只是結果沒傳回。盲目重試會製造分身事件。正確流程:逾時後先 event_search 查現況,再決定補建或跳過。更新操作冪等可安全重試,建立操作必查再建。"
-    ],
+    "timeout_not_failure": "⚠️ 逾時≠失敗:行事曆工具4分鐘無回應時,操作常已在裝置端執行成功。盲目重試 create 會製造分身事件(7/15 實證:三次『失敗』的建立其實都成功了)。對策:create 重試前先 event_search 查現況;update 是冪等的可安全重試。",
     "calendar_id_mapping": "⚠️ 工具回報的 calendar_id/event_id 與真實不符(回報 calendar 6/id 818+,實際 calendar 5/id 575+)。要操作既有事件,一律先 event_search 取得真實 ID,勿沿用 create 回傳的 ID。",
-    "single_commit_batch": "多檔案更新用 git trees API 打包單一 commit(relay 協議),避免 Pages 部署撞車。"
+    "single_commit_batch": "多檔案更新用 git trees API 打包單一 commit(relay 協議),避免 Pages 部署撞車。",
+    "calendar_id_mismatch": "⚠️ create/update 工具回應的 calendar_id 與 event_id(如 calendar 6、event 818系列)不可信。真實 calendar_id = 5(dontcallmekelly@gmail.com)。一律以最新 event_search 回傳的 ID 為準再操作。"
   },
   "recurring_daily": {
     "10:00": "每日身體練習 30min(早場,可與曬太陽合併;腰傷期以修復為主)",
