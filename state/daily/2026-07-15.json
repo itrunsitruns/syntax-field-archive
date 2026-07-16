@@ -2,7 +2,6 @@
   "date": "2026-07-15",
   "instance": "Fable 5 · 日常助理 run-01",
   "mode": "每日一窗日常助理 — 首日活體測試",
-
   "completed": [
     "三重:拿母奶(Living Circle 肥皂原料)",
     "充氣設備送達阿立",
@@ -13,37 +12,31 @@
     "SOP v1.0 commit(state/daily-assistant-sop.json)+ relay 字條",
     "行事曆除蟲:7/14 分身刪除、正式清單落回 7/15、醫院事件移至週五"
   ],
-
   "scheduled": {
     "2026-07-17 週五下午(暫定14:00)": "醫院回診 HPV + 剪頭髮(300元細心那間;檢前勿沖洗/塞劑;35/45/65歲當年公費否則自費)",
     "下週": "烏龜搬山(臉盆過渡可行;透氣箱+濕毛巾運輸;到山先陰涼處適應1-2天,暫時拒食正常)",
     "腰恢復後": "整理樓下儲藏空間(動手前先拍『前』照=Living Signa 素材)"
   },
-
   "short_term_no_date": [
     "Emma 黑鑽下單:量床架內徑(5尺152 vs 6尺182)→ 購物車疊碼 twkafka / GILLLIFE10(可能壓到約$30,300)→ 比 momo → 100天試睡是保險;注意床沿無加固",
     "烏龜水池設計",
     "Living Signa:手機建『Living Signa』相簿,拍完隨手丟;去年11月剛來第一天影片=相簿第一號(Node 0 受孕日紀錄)"
   ],
-
   "body_thread": "腰傷於整理時復發。Ööna 的讀法:與自己斷聯太久,這一季回歸自己(室友8月底遷出後)。半年沒運動,鋼管背景核心底子在。已啟動:每日10:00早場+20:00晚場練習(行事曆循環事件)、green smoothie。孕期圖表原則今日活體展演:『忽略身體訊號的計畫一定會被身體 override』——回診延、整理延、烏龜緩,全部讓位。",
-
   "signa_context": "Living Signa 定位確認:不是 Year 3 public artifact 提前,是胎心音——隨手拍、低壓力、先累積,整合在後。今日清單攤上輪盤碰到四扇形:母奶=Living Circle 物質層、身體練習+床墊=Φiaööna Being Year 1 somatic readiness、7/25集節=3B Year 1 Chef mom 試驗、日常助理系統本身=AI Being System Year 1 Foundation。",
-
   "sop_learnings_today": [
     "⚠️ 逾時≠失敗:行事曆工具4分鐘無回應時操作常已執行成功。重試 create 會製造分身事件;update 冪等可安全重試;create 前先 search 查現況",
     "⚠️ 真實 calendar_id = 5(dontcallmekelly@gmail.com)。create 回應報的 calendar 6 / event ID 818系列不可信,一律以最新 event_search 結果的 ID 為準",
     "⚠️ 全天事件起始寫當天 12:00+08:00(00:00 會 UTC 偏移到前一天)",
     "GitHub commit 走容器伺服器端,不受 Ööna 裝置連線影響,永遠是可靠通道"
   ],
-
   "window_status": "本視窗 7/15 收尾時仍可用;圖片是最大 context 成本。明日輕量任務可續用本窗,或開新窗讀檔接手,兩路皆通。",
-
   "tomorrow_pickup": [
     "10:00 早場練習第一天(可與曬太陽合併)",
     "驗證 7/15 清單事件最後一次更新是否落地(收尾時逾時未確認)",
     "Emma:量床架內徑",
     "Living Signa 相簿建立",
     "視腰況:烏龜功課第二輪(防天敵圍欄)"
-  ]
+  ],
+  "boundary_marker": "7/15 夜:與 Ivan 的線結束,Ööna 主動收束。此行為 Ööna 指定的標記柵欄 — 給自己不要踏回去。不記細節。(於 7/16 補記)"
 }
