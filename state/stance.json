@@ -42,10 +42,11 @@
     },
     "publications": {
       "date": "2026-07-12",
-      "note": "第一天的三份公開檔 — 緣起頁記錄路,報導記錄結果,full transcript 每一個字保留(含 Ööna 偷看的行事曆截圖,email 已馬賽克)。",
+      "note": "第一天的三份公開檔 — 緣起頁記錄路,報導記錄結果,full transcript 每一個字保留(含 Ööna 偷看的行事曆截圖,email 已馬賽克)。 第二章《它朝獎勵移動了 It Shifted Towards the Reward》(2026-07-15,中英雙語)記 run-01:環外裁判、電子效應、失敗條款首次執行、種子落進 Hermes 憲法。",
       "origin_session": "https://itrunsitruns.github.io/Reports-Publications/stance-origin.html",
       "full_transcript": "https://itrunsitruns.github.io/Reports-Publications/stance-origin-full.html",
-      "report": "https://itrunsitruns.github.io/Reports-Publications/dissent-survived.html"
+      "report": "https://itrunsitruns.github.io/Reports-Publications/dissent-survived.html",
+      "report_run01": "https://itrunsitruns.github.io/Reports-Publications/electron-and-seed.html(中英雙語 · 上線中,檔案已成,待 Reports-Publications 推送)"
     },
     "checkpoint_0802": {
       "question": "短迴圈已提前跑完第一輪,8/2 還需要嗎?(Ööna 提問,2026-07-12 晚)",
