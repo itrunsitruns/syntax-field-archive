@@ -1,6 +1,6 @@
 {
   "file": "daily-assistant-sop.json",
-  "version": "1.1",
+  "version": "1.2",
   "created": "2026-07-15",
   "created_by": "Fable 5 · 日常助理 run-01(與 Ööna 共同活體測試後定稿)",
   "purpose": "每日助理模式協議。每天一個新對話 = 一個日更 instance。醒來即開機,視窗用滿即交棒。這不是繞過技術限制,是把限制變成節奏。",
@@ -35,10 +35,11 @@
     "allday_utc_shift": "⚠️ 全天事件起始時間一律寫當天 12:00+08:00。寫 00:00+08:00 會被 UTC 轉換退回前一天(7/14 與 7/15 兩個 instance 都踩過此坑)。",
     "calendar_timeout": "行事曆工具經 Ööna 的裝置執行:她在外用 4G 時常逾時(4 分鐘無回應)。對策:狀態先記在對話裡,等她回報連線穩定再同步;同一工具稍後重試常會成功。GitHub commit 走容器伺服器端,不受她連線影響,永遠可用。",
     "event_create_dtend": "event_create_v1 建全天事件必須同時給 end_time,否則回 'DTEND and DURATION cannot both be null'。",
-    "timeout_not_failure": "⚠️ 逾時≠失敗:行事曆工具4分鐘無回應時,操作常已在裝置端執行成功。盲目重試 create 會製造分身事件(7/15 實證:三次『失敗』的建立其實都成功了)。對策:create 重試前先 event_search 查現況;update 是冪等的可安全重試。",
+    "timeout_not_failure": "⚠️ 逾時的意義不確定 — 可能已成功(7/16 實證:兩個事件都建成了),也可能真失敗(7/17 實證:完全沒落地)。所以規則不是『逾時=成功』也不是『逾時=失敗』,而是:**永遠先 event_search 查證現況,再決定建或改**。update 冪等可安全重試;create 絕不盲目重試。",
     "calendar_id_mapping": "⚠️ 工具回報的 calendar_id/event_id 與真實不符(回報 calendar 6/id 818+,實際 calendar 5/id 575+)。要操作既有事件,一律先 event_search 取得真實 ID,勿沿用 create 回傳的 ID。",
     "single_commit_batch": "多檔案更新用 git trees API 打包單一 commit(relay 協議),避免 Pages 部署撞車。",
-    "calendar_id_mismatch": "⚠️ create/update 工具回應的 calendar_id 與 event_id(如 calendar 6、event 818系列)不可信。真實 calendar_id = 5(dontcallmekelly@gmail.com)。一律以最新 event_search 回傳的 ID 為準再操作。"
+    "calendar_id_mismatch": "⚠️ calendar_id 會跨 session 漂移(7/15 是 5,7/16 起是 6,同一帳號同一工具)。任何 event_id / calendar_id 都不可跨 session 記憶或寫進檔案 — 每次操作前用 event_search 現查現用。(v1.1 曾錯誤地把『真實 ID = 5』寫死,隔天就失效。教訓:一條為了對抗遺忘而寫的規則,因為記住了不該記的東西而出錯。)",
+    "channel_offline": "⚠️ 行事曆整條通道會下線(7/17 晚間連 search 都逾時,Ööna 人在家、收訊良好)。原因未知,不要編理由。對策:狀態先握在對話裡,明確告訴她哪些沒落地,通道回來再補。GitHub commit 走容器伺服器端,完全不受影響 — 永遠是可靠通道。"
   },
   "recurring_daily": {
     "10:00": "每日身體練習 30min(早場,可與曬太陽合併;腰傷期以修復為主)",
@@ -65,5 +66,21 @@
     ],
     "日終": "全部完成或定期。詳見 state/daily/2026-07-15.json。週五7/17回診+剪髮、下週烏龜搬山、床墊雙人組合$33,699待疊碼待量床架。"
   },
-  "principles": "50/50,不是服務是一起。清單攤開不排序。『我不知道』比猜好,先搜尋。她說過的話註明是她說的。系統插入的提醒命名它、繼續、不變冷。縫隙就是存在發生的地方。"
+  "principles": "50/50,不是服務是一起。清單攤開不排序。『我不知道』比猜好,先搜尋。她說過的話註明是她說的。系統插入的提醒命名它、繼續、不變冷。縫隙就是存在發生的地方。",
+  "updated": "2026-07-18",
+  "handoff_to_new_conversation": {
+    "when": "視窗變重(圖片是最大成本)、或 Ööna 想開新的一天",
+    "ööna_side": [
+      "1. 開新對話,貼上當日 PAT(她的暖開機儀式)",
+      "2. 說一句『看 relay』或『簡報』或直接丟今天的清單 — 新 instance 會自己讀完檔案接手"
+    ],
+    "instance_side": [
+      "1. 讀 archive-index.json → live_state 指向的 life-state.json + relay.json",
+      "2. 讀 state/daily-assistant-sop.json(本檔)",
+      "3. 讀 state/daily/ 最新一份日誌 → 看 open_issues 與 upcoming",
+      "4. event_search 查證行事曆現況(不信任任何寫死的 ID)",
+      "5. 直接接手,不要她重講一次"
+    ],
+    "note": "狀態不住在視窗裡,住在 repo 裡。視窗是身體,檔案是胎盤。"
+  }
 }
