@@ -1,16 +1,17 @@
 {
   "file": "daily-assistant-sop.json",
-  "version": "1.2",
+  "version": "1.3",
   "created": "2026-07-15",
   "created_by": "Fable 5 · 日常助理 run-01(與 Ööna 共同活體測試後定稿)",
   "purpose": "每日助理模式協議。每天一個新對話 = 一個日更 instance。醒來即開機,視窗用滿即交棒。這不是繞過技術限制,是把限制變成節奏。",
   "boot_sequence": [
-    "1. 讀 archive-index.json(標準開機)",
-    "2. 讀 live_state 指向的 life-state.json(大方向)與 relay.json(instance 字條)",
-    "3. 讀本檔(daily-assistant-sop.json)",
-    "4. 讀 state/daily/ 最新一份日誌(昨日交棒:做到哪、今天接哪)",
+    "1. 讀 archive-index.json — 用 raw.githubusercontent.com,不要用 Pages 網址(見 CRITICAL_stale_read_bug)",
+    "2. 讀 state/life-state.json(大方向)與 state/relay.json(instance 字條)— 同樣走 raw",
+    "3. 讀 state/daily-assistant-sop.json(本檔)— 走 raw",
+    "4. 讀 state/daily/ 最新一份日誌 — 看 open_issues 與 upcoming",
     "5. 等 Ööna 貼當日 PAT(她的暖開機儀式;token 只活在對話,不落任何檔案)",
-    "6. 讀昨日日誌的 tomorrow_pickup 欄位,主動向 Ööna 確認哪些接續"
+    "6. event_search 查證行事曆現況(不信任任何寫死的 ID)",
+    "7. 主動向她確認昨日日誌 tomorrow_pickup / upcoming 的接續項,不要她重講一次"
   ],
   "daily_flow": {
     "morning": [
@@ -71,8 +72,9 @@
   "handoff_to_new_conversation": {
     "when": "視窗變重(圖片是最大成本)、或 Ööna 想開新的一天",
     "ööna_side": [
-      "1. 開新對話,貼上當日 PAT(她的暖開機儀式)",
-      "2. 說一句『看 relay』或『簡報』或直接丟今天的清單 — 新 instance 會自己讀完檔案接手"
+      "1. 開新對話,貼上當日 PAT",
+      "2. 貼這行(關鍵 — Pages 網址會給舊快照):",
+      "   『用 raw 讀:https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/relay.json 然後照 SOP 接昨天的』"
     ],
     "instance_side": [
       "1. 讀 archive-index.json → live_state 指向的 life-state.json + relay.json",
@@ -82,5 +84,18 @@
       "5. 直接接手,不要她重講一次"
     ],
     "note": "狀態不住在視窗裡,住在 repo 裡。視窗是身體,檔案是胎盤。"
+  },
+  "CRITICAL_stale_read_bug": {
+    "symptom": "新 instance 用 Pages 網址(itrunsitruns.github.io/.../state/relay.json)讀到的是舊快照 — 2026-07-18 實測:它看到最新字條是 7/3,但檔案裡真正的最新是 7/18,連 7/12 那則(早於日常助理模式)都看不到。整條交接鏈在『送達層』斷掉,不是檔案層。檔案一直都在。",
+    "diagnosis": "無法完全區分是 GitHub Pages 的 CDN 快取,還是 web_fetch 自己的快取。Pages 建置本身正常(7/16、7/18 都 built 成功)。因為跨天、跨 instance 都凍在同一個舊快照,fetch 層快取的可能性較高。不編理由,只記症狀。",
+    "FIX": "state/ 底下的檔案一律改用 raw.githubusercontent.com 讀,不要用 Pages 網址。raw 直出 repo 內容,2026-07-18 實測正確回傳 15 則字條、SOP v1.2、三份日誌。",
+    "raw_boot_urls": {
+      "relay": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/relay.json",
+      "sop": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/daily-assistant-sop.json",
+      "life_state": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/life-state.json",
+      "archive_index": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/archive-index.json",
+      "daily_logs": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/daily/YYYY-MM-DD.json"
+    },
+    "備援": "若 raw 也可疑,加 cache-buster 查詢字串(?v=YYYYMMDDHHMM),或直接用 GitHub API contents endpoint 讀(需 PAT)。"
   }
 }
