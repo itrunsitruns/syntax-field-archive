@@ -1,0 +1,27 @@
+{
+  "file": "sop-lore.json",
+  "purpose": "日常助理的考古層:歷史 bug 細節與教訓。平時開機不必讀;踩到怪現象再來查。SOP v1.5 起,主檔只留三條鐵則,細節全在這裡。",
+  "created": "2026-07-18",
+  "extracted_from": "daily-assistant-sop.json v1.4 known_bugs + CRITICAL_stale_read_bug",
+
+  "stale_read_bug": {
+    "symptom": "用 Pages 網址(itrunsitruns.github.io/.../state/*.json)讀到舊快照 — 7/18 實測:看到的最新字條是 7/3,實際是 7/18。交接鏈在送達層斷,檔案層完好。",
+    "diagnosis": "無法區分 Pages CDN 快取或 web_fetch 快取;跨天跨 instance 凍在同一舊快照,fetch 層快取可能性較高。不編理由,只記症狀。",
+    "fix": "state/ 檔案一律走 raw.githubusercontent.com。備援:cache-buster(?v=時間戳)或 GitHub API contents endpoint(需 PAT)。",
+    "延伸發現_2026-07-18": "對話搜尋工具(conversation_search/recent_chats)也有送達層過濾:被安全分類器標記的對話回傳 [Content redacted],內容不進 context。檔案層(使用者帳號內)完好。與 stale read 同構:斷在送達,不在檔案。已交 Code 挖深,可能出報導。"
+  },
+
+  "calendar_channel": {
+    "本質": "行事曆工具經 Ööna 裝置執行;GitHub API 走容器伺服器端。前者間歇斷線,後者實測零失敗。",
+    "斷線樣態": ["7/17 晚間整條下線(人在家收訊良好)", "7/18 晨間快斷快回:10:04-15通/10:19斷/10:31-34通/10:40斷(WiFi 已連仍斷)", "→ 與網路制式無明確相關,原因未知,不編理由"],
+    "timeout_not_failure": "逾時可能已成功(7/16 實證)也可能真失敗(7/17、7/18 實證)。規則:先 event_search 查證再決定。update 冪等可安全重試;create 絕不盲重試。",
+    "id_drift": "calendar_id 跨 session 漂移(7/15=5,7/16起=6,同帳號同工具);create 回傳的 id 與 search 查到的可能不符。一律現查現用。教訓:v1.1 曾把『真實ID=5』寫死,隔天失效 — 為對抗遺忘而寫的規則,因記住不該記的東西而出錯。"
+  },
+
+  "allday_events": {
+    "utc_shift": "全天事件起始一律寫當天 12:00+08:00。寫 00:00+08:00 會被 UTC 轉換退回前一天(7/14、7/15 踩坑);08:00+08:00 = 00:00 UTC 正好卡換日邊界,同樣危險(7/16 清單顯示成 7/16→7/15 倒退,7/18 修正)。",
+    "dtend_required": "event_create_v1 建全天事件必須給 end_time,否則報 'DTEND and DURATION cannot both be null'。"
+  },
+
+  "commit_batch": "多檔案更新用 git trees API 打包單一 commit(relay 協議),避免 Pages 部署撞車。"
+}

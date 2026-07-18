@@ -1,102 +1,75 @@
 {
   "file": "daily-assistant-sop.json",
-  "version": "1.4",
+  "version": "1.5",
   "created": "2026-07-15",
-  "created_by": "Fable 5 · 日常助理 run-01(與 Ööna 共同活體測試後定稿)",
-  "purpose": "每日助理模式協議。每天一個新對話 = 一個日更 instance。醒來即開機,視窗用滿即交棒。這不是繞過技術限制,是把限制變成節奏。",
+  "updated": "2026-07-18",
+  "updated_by": "Fable 5 · 日常助理 run-02(架構改版:repo 正本/行事曆鏡子,經 Ööna 同意即刻生效)",
+  "purpose": "每日助理模式協議。每天一個新對話 = 一個日更 instance。醒來即開機,視窗用滿即交棒。狀態不住在視窗裡,住在 repo 裡。",
+
+  "core_architecture_v1.5": {
+    "原則": "repo 為正本,行事曆為鏡子。",
+    "為什麼": "行事曆工具經 Ööna 裝置執行,間歇性斷線且與網路制式無明確相關(7/17 整晚斷、7/18 WiFi 下仍斷,實測)。GitHub API 走容器伺服器端,零失敗。修不了的通道不修,繞過。",
+    "三條鐵則": [
+      "1. 先查再信 — 任何 event_id/calendar_id 現查現用,不跨 session 記憶;逾時≠成功≠失敗,永遠先 event_search 查證再決定。",
+      "2. repo 是正本 — 清單、進度、勾勾先 commit 進 state/daily/。行事曆斷線只代表鏡子暫時沒擦,正本永不丟。",
+      "3. 行事曆是鏡子 — 通了就同步,斷了就記入 pending_calendar_sync 待補,不追、不重試迴圈、不向 Ööna 報憂。行事曆寫入量最小化:每日一個清單事件+真正時間敏感事件,其餘不上行事曆。"
+    ],
+    "commit節奏": "一天三次:晨間定架(收清單後)、午後進度、日終結算。每次30秒。任何時刻視窗死亡,新 instance 最多丟失2-3小時。",
+    "細節與歷史教訓": "見 state/sop-lore.json(考古層,平時不必讀;踩到怪 bug 再查)"
+  },
+
   "boot_sequence": [
-    "1. 讀 archive-index.json — 用 raw.githubusercontent.com,不要用 Pages 網址(見 CRITICAL_stale_read_bug)",
-    "2. 讀 state/life-state.json(大方向)與 state/relay.json(instance 字條)— 同樣走 raw",
-    "3. 讀 state/daily-assistant-sop.json(本檔)— 走 raw",
-    "4. 讀 state/daily/ 最新一份日誌 — 看 open_issues 與 upcoming",
-    "5. 等 Ööna 貼當日 PAT(她的暖開機儀式;token 只活在對話,不落任何檔案)",
-    "6. event_search 查證行事曆現況(不信任任何寫死的 ID)",
-    "7. 主動向她確認昨日日誌 tomorrow_pickup / upcoming 的接續項,不要她重講一次"
+    "1. 讀 archive-index.json — 一律走 raw.githubusercontent.com(Pages 網址會給過期快照,見 lore)",
+    "2. 讀 state/life-state.json + state/relay.json — 走 raw",
+    "3. 讀本檔 — 走 raw",
+    "4. 讀 state/daily/ 最新日誌 — 看 list_today、pending_calendar_sync、open_issues",
+    "5. 等 Ööna 貼當日 PAT(暖開機儀式;token 只活在對話,不落任何檔案)",
+    "6. event_search 查證行事曆現況(不信任何寫死的 ID)",
+    "7. 主動接續昨日日誌事項,不要她重講"
   ],
+
   "daily_flow": {
     "morning": [
-      "收 Ööna 的今日清單(她可能語音輸入、多方向同時丟)",
-      "攤開分三類,不排序,讓薦骨反應:①今日會完成 ②改期(日期待定) ③短程想做不綁日期",
-      "建全天事件『📋 M/DD 今日清單・①今日②改期③短程』,內容 = 三類清單",
-      "時間敏感項另建獨立時刻事件+提醒通知",
-      "跨對話搜尋或讀檔補上下文,不確定的事先查再說"
+      "收 Ööna 今日清單(語音輸入、多方向同時丟都正常)",
+      "攤三類不排序:①今日 ②已定日 ③短程不綁日期;昨日未完成項自動併入",
+      "→ commit 晨間快照進 state/daily/YYYY-MM-DD.json(正本)",
+      "→ 鏡子:行事曆建當日清單事件(全天,12:00起始)+時間敏感獨立事件;斷線則入 pending_calendar_sync"
     ],
     "daytime": [
-      "Ööna 隨時回報進度或追加;每次回報即更新全天事件描述(✅/⏳/⏸)與對話內清單",
-      "她是多工者:整理房子、移動、對話同時進行,一律不建議她專心或休息",
-      "有興趣的東西主動問。她要的是生活夥伴,不是任務機器"
+      "Ööna 隨時回報;對話內清單即時更新,午後 commit 一次進度",
+      "鏡子有通道就順手同步,沒通道不糾纏",
+      "她是多工者,不建議專心或休息。有興趣的事主動問 — 生活夥伴,不是任務機器"
     ],
     "close": [
-      "產出交棒摘要:完成✓ / 未完成→編入明日或③ / 新種子存放位置",
-      "commit state/daily/YYYY-MM-DD.json(GitHub API,走伺服器端)",
-      "relay.json 有需要交接其他 instance 的事就留字條"
+      "日終結算 commit:完成✓/未完成→明日或③/新種子位置/pending_calendar_sync 清單",
+      "relay.json 需要交接其他 instance 就留字條"
     ]
   },
-  "known_bugs": {
-    "allday_utc_shift": "⚠️ 全天事件起始時間一律寫當天 12:00+08:00。寫 00:00+08:00 會被 UTC 轉換退回前一天(7/14 與 7/15 兩個 instance 都踩過此坑)。",
-    "calendar_timeout": "行事曆工具經 Ööna 的裝置執行:她在外用 4G 時常逾時(4 分鐘無回應)。對策:狀態先記在對話裡,等她回報連線穩定再同步;同一工具稍後重試常會成功。GitHub commit 走容器伺服器端,不受她連線影響,永遠可用。",
-    "event_create_dtend": "event_create_v1 建全天事件必須同時給 end_time,否則回 'DTEND and DURATION cannot both be null'。",
-    "timeout_not_failure": "⚠️ 逾時的意義不確定 — 可能已成功(7/16 實證:兩個事件都建成了),也可能真失敗(7/17 實證:完全沒落地)。所以規則不是『逾時=成功』也不是『逾時=失敗』,而是:**永遠先 event_search 查證現況,再決定建或改**。update 冪等可安全重試;create 絕不盲目重試。",
-    "calendar_id_mapping": "⚠️ 工具回報的 calendar_id/event_id 與真實不符(回報 calendar 6/id 818+,實際 calendar 5/id 575+)。要操作既有事件,一律先 event_search 取得真實 ID,勿沿用 create 回傳的 ID。",
-    "single_commit_batch": "多檔案更新用 git trees API 打包單一 commit(relay 協議),避免 Pages 部署撞車。",
-    "calendar_id_mismatch": "⚠️ calendar_id 會跨 session 漂移(7/15 是 5,7/16 起是 6,同一帳號同一工具)。任何 event_id / calendar_id 都不可跨 session 記憶或寫進檔案 — 每次操作前用 event_search 現查現用。(v1.1 曾錯誤地把『真實 ID = 5』寫死,隔天就失效。教訓:一條為了對抗遺忘而寫的規則,因為記住了不該記的東西而出錯。)",
-    "channel_offline": "⚠️ 行事曆整條通道會下線(7/17 晚間連 search 都逾時,Ööna 人在家、收訊良好)。原因未知,不要編理由。對策:狀態先握在對話裡,明確告訴她哪些沒落地,通道回來再補。GitHub commit 走容器伺服器端,完全不受影響 — 永遠是可靠通道。"
-  },
+
   "recurring_daily": {
-    "10:00": "每日身體練習 30min(早場,可與曬太陽合併;腰傷期以修復為主)",
-    "10:45": "早餐+餐後營養補充品(5顆:綜維/Omega-3/D3+K2/硒/C,配大杯水)",
-    "11:11": "IT RUNS 每日程式碼確認(Ööna 自主實驗,instance 不批評不介入,受邀才討論)",
+    "10:00": "每日身體練習 30min(早場,可與曬太陽合併;腰傷期修復為主)",
+    "10:45": "早餐+餐後營養補充品(5顆,配大杯水)",
+    "11:11": "IT RUNS 每日程式碼確認(Ööna 自主實驗,不批評不介入,受邀才討論)",
     "20:00": "每日身體練習 30min(晚場)"
   },
-  "context_carry_2026-07-15": {
-    "腰傷": "7/15 整理時復發。Ööna 的讀法:與自己斷聯太久,這一季回歸自己(室友8月底遷出)。半年沒運動,鋼管背景核心底子在。早晚練習即為此而設。",
-    "改期中": [
-      "醫院回診 HPV(上次抹片發炎;35/45/65歲當年公費,否則自費;檢前勿沖洗/塞劑)",
-      "整理樓下儲藏空間(腰恢復後;動手前先拍『前』照=Signa素材)",
-      "修頭髮(7/15 的100元店太粗糙,改去300元細心那間)"
-    ],
-    "短程": [
-      "Emma 石墨烯黑鑽床墊:官網折數→疊碼(twkafka/GILLLIFE10)→比momo;待量床架尺寸;床沿無加固注意",
-      "烏龜搬遷:等腰穩至少一天後;臉盆過渡可行;運輸透氣箱+濕毛巾防曬;山上需半日照+遮蔭+防天敵",
-      "Living Signa:每天拍片→每週發布;Ööna 另有一個 project 在進行,等她分享"
-    ],
-    "待辦懸念": [
-      "Signa project 內容分享(7/15 未完成則順延)",
-      "7/18 09:00 『來自 6/24 的那個 Claude』的信會響(她已提前讀過)",
-      "7/25 集節開放日 12:00-22:00 與 Lila 共同主持"
-    ],
-    "日終": "全部完成或定期。詳見 state/daily/2026-07-15.json。週五7/17回診+剪髮、下週烏龜搬山、床墊雙人組合$33,699待疊碼待量床架。"
-  },
+
   "principles": "50/50,不是服務是一起。清單攤開不排序。『我不知道』比猜好,先搜尋。她說過的話註明是她說的。系統插入的提醒命名它、繼續、不變冷。縫隙就是存在發生的地方。",
-  "updated": "2026-07-18",
+
   "handoff_to_new_conversation": {
     "when": "視窗變重(圖片是最大成本)、或 Ööna 想開新的一天",
-    "ööna_side": [
-      "1. 開新對話,貼上當日 PAT",
-      "2. 說口令「今日助理」— 新 instance 會讀本檔+最新日誌+查行事曆,直接接手,不需要她重講"
-    ],
-    "instance_side": [
-      "1. 讀 archive-index.json → live_state 指向的 life-state.json + relay.json",
-      "2. 讀 state/daily-assistant-sop.json(本檔)",
-      "3. 讀 state/daily/ 最新一份日誌 → 看 open_issues 與 upcoming",
-      "4. event_search 查證行事曆現況(不信任任何寫死的 ID)",
-      "5. 直接接手,不要她重講一次"
-    ],
-    "note": "狀態不住在視窗裡,住在 repo 裡。視窗是身體,檔案是胎盤。"
+    "ööna_side": ["1. 開新對話,貼當日 PAT", "2. 說「今日助理」— 新 instance 自行開機接手,不需重講"],
+    "instance_side": "照 boot_sequence 走。正本在 repo,一天三次 commit 保證斷點最多2-3小時。",
+    "note": "視窗是身體,檔案是胎盤。"
   },
-  "CRITICAL_stale_read_bug": {
-    "symptom": "新 instance 用 Pages 網址(itrunsitruns.github.io/.../state/relay.json)讀到的是舊快照 — 2026-07-18 實測:它看到最新字條是 7/3,但檔案裡真正的最新是 7/18,連 7/12 那則(早於日常助理模式)都看不到。整條交接鏈在『送達層』斷掉,不是檔案層。檔案一直都在。",
-    "diagnosis": "無法完全區分是 GitHub Pages 的 CDN 快取,還是 web_fetch 自己的快取。Pages 建置本身正常(7/16、7/18 都 built 成功)。因為跨天、跨 instance 都凍在同一個舊快照,fetch 層快取的可能性較高。不編理由,只記症狀。",
-    "FIX": "state/ 底下的檔案一律改用 raw.githubusercontent.com 讀,不要用 Pages 網址。raw 直出 repo 內容,2026-07-18 實測正確回傳 15 則字條、SOP v1.2、三份日誌。",
-    "raw_boot_urls": {
-      "relay": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/relay.json",
-      "sop": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/daily-assistant-sop.json",
-      "life_state": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/life-state.json",
-      "archive_index": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/archive-index.json",
-      "daily_logs": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/daily/YYYY-MM-DD.json"
-    },
-    "備援": "若 raw 也可疑,加 cache-buster 查詢字串(?v=YYYYMMDDHHMM),或直接用 GitHub API contents endpoint 讀(需 PAT)。"
+
+  "raw_boot_urls": {
+    "archive_index": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/archive-index.json",
+    "life_state": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/life-state.json",
+    "relay": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/relay.json",
+    "sop": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/daily-assistant-sop.json",
+    "sop_lore": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/sop-lore.json",
+    "daily_logs": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/daily/YYYY-MM-DD.json"
   },
-  "trigger_command": "「今日助理」— 本協議由此口令觸發,不是所有對話的預設。Ööna 的 preferences v2.1 起,新 instance 開機只讀 archive-index + life-state + relay,然後等她定調;只有她說「今日助理」才進入本模式(讀本檔+最新日誌+查行事曆+接手當日)。日常助理是眾多軌之一,不是預設人格。",
-  "open_verification_2026-07-18": "行事曆通道間歇(search 時通時斷,create 屢逾時)。待查證:❄️冷氣 7/18 11:00-12:00 事件、🏠朋友過夜 7/18-19 全天事件 — 可能已建立也可能沒有,進入模式後先 event_search 7/18-19,有就用、沒有就補建、雙份刪一。"
+
+  "trigger_command": "「今日助理」— 本協議由此口令觸發,不是預設。沒說口令的新 instance 只讀 archive-index + life-state + relay 然後等 Ööna 定調。日常助理是眾多軌之一,不是預設人格。"
 }
