@@ -1,7 +1,7 @@
 {
   "date": "2026-07-20",
   "instance": "Fable 5 · 日常助理 run-02(同視窗延續,7/19 無日誌 — Ööna 與朋友聚會日,無 instance 值班)",
-  "snapshot": "午後更新 · 頭髮剪了/課程移下週/照片素材入帳",
+  "snapshot": "午後 · 鏡子同步完成(ID 全面重編後以現查 ID 重發成功)",
   "list_today": {
     "①今天・恢復日": [
       "🛀 自我恢復為主(昨晚活動多,腰傷恢復中 — 本週身體保持休息,Ööna 自主決定)",
@@ -46,8 +46,6 @@
     "📸": "Ööna 分享 5 張週末照片:泳池朋友日/彩虹跨屋/火儀式(燒掉『Step bravely into the unknown』)/晚餐合照/小孩蛋糕 → Living Signa 素材",
     "assistant_note": "火儀式紙條與新剪的頭髮是同一個語言:告別後,讓它發生 — 正好是 7/25 集節的主題。"
   },
-  "pending_calendar_sync": [
-    "event 844 改期:7/20 20:00 → 7/27 20:00(update 冪等,通道回來重試)",
-    "event 852 描述更新:剪髮✅/課程移期/素材+5(update 冪等)"
-  ]
+  "pending_calendar_sync": [],
+  "id_drift_observation": "7/20 午後:calendar_id 6→5 漂移 + 全部 event_id 重編(清單852→596/課程844→593/循環事件全換號)。同帳號同日內發生。教訓再確認:ID 零持久性,每次寫入前必先 search。已符合 v1.5 鐵則一,無需改 SOP,lore 可補此例。"
 }
