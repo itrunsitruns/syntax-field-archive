@@ -62,9 +62,7 @@
     "💳 核心課程繳費+報名 — 死線 7/27 開課前(已從 7/20 移期一次,勿再滑)",
     "7/23 Lila 討論後 → 週五採買清單需落地(event 855 描述待補)"
   ],
-  "pending_calendar_sync": [
-    "更正 event 856:日期 7/22 → 7/23,標題與內容同步改為 Day 3 版本"
-  ],
+  "pending_calendar_sync": [],
   "calendar_channel_log": [
     "第一次 event_search(7/22-7/28)✅ 通",
     "event_create(Lila)✗ 逾時 → 查證 search 亦逾時 → 停手不重試",
@@ -72,7 +70,8 @@
     "補建 event 854 ✅ / event 855 ✅ 皆一次成功",
     "教訓確認:『先查再信』今日再度生效,無重複事件產生",
     "11:0x 通:查證 7/22 無清單事件 → 建 event 856 ✅ 一次成功",
-    "11:5x 斷:回查 7/19-7/23 的 search 逾時 → 停手,repo 先行"
+    "11:5x 斷:回查 7/19-7/23 的 search 逾時 → 停手,repo 先行",
+    "11:3x 通:查證 856 在 7/22 → update 成功 → 再 search 查證已落 7/23 ✅"
   ],
   "new_bug_found": {
     "bug": "event_create_v1 帶 all_day: true 時仍必須提供 end_time,否則回 'DTEND and DURATION cannot both be null for an event.'",
@@ -88,7 +87,7 @@
   "calendar_events_created_today": {
     "854": "7/23 16:00-17:30 Lila 來討論週末集節安排 ✅",
     "855": "7/24 全天 採買週末集節用品 ✅",
-    "856": "⚠️ 建成『7/22 今日清單』— 日期錯,待改為 7/23"
+    "856": "✅ 已更正:7/22 → 7/23,標題『📋 7/23 今日清單・斷食 Day 3』,已 search 查證落在 7/23"
   },
   "missing_log_note": "state/daily/2026-07-19.json 不存在 — Ööna 說明:7/19 週末忙,沒看手機。非遺失,不補建。",
   "pwa_status": "暫緩 — Ööna 先盤點自己的需求。任何 instance 不要主動推進,等她開口。",
@@ -101,5 +100,6 @@
     "後果": "(1) 日誌原存為 state/daily/2026-07-22.json — 已更名為本檔並刪除錯檔;(2) 行事曆清單事件 856 建成『7/22 今日清單』,日期錯,待通道回來更正。",
     "未受影響": "event 854(7/23 16:00 Lila)與 855(7/24 採買)日期正確 — 那兩筆是 Ööna 直接給的日期,非推算。",
     "教訓": "user_time 逾時時不要用日誌推日期。日誌可能連續數日缺(如 7/19、7/22)。改為向 Ööna 直接確認,或以行事曆回查最近事件的實際日期為錨。"
-  }
+  },
+  "sop_updated_today": "SOP 升 v1.6:RULE_0 日期校正列為第零條、RULE_0b 清單落格查證、RULE_0c 不懂先問、boot_sequence 加入回看前一到兩天。皆為 Ööna 2026-07-23 指示。"
 }
