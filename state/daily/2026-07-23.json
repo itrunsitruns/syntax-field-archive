@@ -69,7 +69,9 @@
     "💳 核心課程繳費+報名 — 死線 7/27 開課前(已從 7/20 移期一次,勿再滑)",
     "7/23 Lila 討論後 → 週五採買清單需落地(event 855 描述待補)"
   ],
-  "pending_calendar_sync": [],
+  "pending_calendar_sync": [
+    "斷食排程七筆建置 — create 逾時,結果未知。通道回來先 search 這七天再決定補建或跳過:8/3、8/14、8/31、9/11、9/28、10/9、10/26(皆 22:00 起)。規格見 state/fasting-plan-2026-Q3.json"
+  ],
   "calendar_channel_log": [
     "第一次 event_search(7/22-7/28)✅ 通",
     "event_create(Lila)✗ 逾時 → 查證 search 亦逾時 → 停手不重試",
@@ -82,7 +84,8 @@
     "11:4x 通:856 排版更正(③一行一項)+ 844 加 1440 nudge,雙筆一次成功並 search 查證",
     "11:5x:update 856 回 not_found → search 查證發現全部 ID 換號(856→605, cal 6→5)→ 用新 ID 成功",
     "13:xx 斷:三筆 create 一次送出逾時 → 停手,正本先行",
-    "13:xx 通:查證三筆未建成(逾時=真失敗)→ 一次建成 862/863/864,並更新 855/856 ✅ 鏡子已全部擦乾淨"
+    "13:xx 通:查證三筆未建成(逾時=真失敗)→ 一次建成 862/863/864,並更新 855/856 ✅ 鏡子已全部擦乾淨",
+    "14:xx 斷:斷食七筆 create 逾時 → 停手,正本先行"
   ],
   "new_bug_found": {
     "bug": "event_create_v1 帶 all_day: true 時仍必須提供 end_time,否則回 'DTEND and DURATION cannot both be null for an event.'",
