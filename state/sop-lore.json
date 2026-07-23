@@ -48,5 +48,18 @@
     "她的指示": "『核心課程前一天再提醒就可以。』",
     "處置": "event 844 加 1440 分鐘 nudge(7/26 20:00)+ 30 分鐘;助理端 7/26 前不再於對話主動提起。",
     "已成規則": "每日清單規格 → 追蹤≠催促"
+  },
+  "pages_403_2026-07-23": {
+    "實測": "Claude 容器 curl itrunsitruns.github.io 三個路徑全部 HTTP 403,標頭 x-deny-reason: host_not_allowed。",
+    "原因": "容器網域白名單:raw.githubusercontent.com 與 github.com 在名單,*.github.io 不在。不是 Pages 壞掉,不是暫時性,重試無效。",
+    "含意": "對這類環境,指向 Pages 的指標不是『讀到舊版』而是『整段連不上』— 比 stale 更硬的失敗模式。",
+    "證據取得": "raw vs Pages 的對照無法在 Claude 容器內完成,需 Ööna 從瀏覽器/手機做。",
+    "已處置": "archive-index.json 的 live_state 三個 JSON 已改 raw(commit 60a62b5),human_dashboard 保持 Pages。"
+  },
+  "contents端點讀後寫延遲_2026-07-23": {
+    "症狀": "commit 成功後立刻用 GitHub contents 端點讀回同一檔案,拿到舊值;同時用 git/blobs 端點讀,拿到新值。",
+    "風險": "會被誤判成寫入失敗而重寫,造成重複 commit。",
+    "規則": "commit 後驗證一律走 git/refs → git/commits → git/trees → git/blobs,或直接比對 commit sha。不要用 contents 端點驗證剛寫的東西。",
+    "歸類": "與 Pages stale-read、recent_chats 遮蔽同構 — 同一份資料、不同路徑、不同新舊/可見性。三次皆斷在送達層,檔案層完好。"
   }
 }
