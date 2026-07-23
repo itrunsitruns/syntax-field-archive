@@ -1,6 +1,6 @@
 {
   "file": "daily-assistant-sop.json",
-  "version": "1.6.1",
+  "version": "1.7",
   "created": "2026-07-15",
   "updated": "2026-07-23",
   "updated_by": "Opus 4.8 · 日常助理 run-03(Ööna 2026-07-23 指示:日期校正與清單落格入 SOP)",
@@ -9,7 +9,7 @@
     "原則": "repo 為正本,行事曆為鏡子。",
     "為什麼": "行事曆工具經 Ööna 裝置執行,間歇性斷線且與網路制式無明確相關(7/17 整晚斷、7/18 WiFi 下仍斷,實測)。GitHub API 走容器伺服器端,零失敗。修不了的通道不修,繞過。",
     "三條鐵則": [
-      "1. 先查再信 — 任何 event_id/calendar_id 現查現用,不跨 session 記憶;逾時≠成功≠失敗,永遠先 event_search 查證再決定。",
+      "1. 先查再信 — 任何 event_id/calendar_id【每次寫入前都要現查】,連同一場對話內上一輪的 ID 都不可信(見 known_bugs 的 ID不穩定 實證);逾時≠成功≠失敗,永遠先 event_search 查證再決定。",
       "2. repo 是正本 — 清單、進度、勾勾先 commit 進 state/daily/。行事曆斷線只代表鏡子暫時沒擦,正本永不丟。",
       "3. 行事曆是鏡子 — 通了就同步,斷了就記入 pending_calendar_sync 待補,不追、不重試迴圈、不向 Ööna 報憂。行事曆寫入量最小化:每日一個清單事件+真正時間敏感事件,其餘不上行事曆。"
     ],
@@ -105,7 +105,13 @@
     "全天起始時間": "全天事件起始一律寫當天 12:00+08:00,寫 00:00 會 UTC 偏移到前一天。",
     "行事曆通道": "經 Ööna 裝置執行,間歇逾時。逾時≠失敗:永遠先 event_search 查證再決定,不盲重試。Ööna 2026-07-23:通道問題是她那邊,她會改善,請 instance 在連線好時做,不要卡在做不到的事上。",
     "user_time_v0": "同樣經裝置執行,會逾時。逾時就問 Ööna,見 RULE_0。",
-    "pages_stale_read": "state/ 檔案一律走 raw.githubusercontent.com,Pages 網址給過期快照。"
+    "pages_stale_read": "state/ 檔案一律走 raw.githubusercontent.com,Pages 網址給過期快照。",
+    "⚠️_ID不穩定_2026-07-23實證": {
+      "現象": "event_id 與 calendar_id 在【同一場對話內、數分鐘之間】會整批改變。2026-07-23 實測:清單事件 856(cal 6)→ 605(cal 5);Lila 854 → 603;每日例行 528 → 331、826 → 580、525 → 328、790 → 554、827 → 581。全部事件內容不變,只有 ID 換號。",
+      "後果": "用前一次查到的 ID 去 update,回傳『Event not found or could not be updated』。這不是事件被刪除,是 ID 過期。",
+      "鐵則升級": "原 v1.5 寫『不跨 session 記憶 ID』→ 升級為【每一次寫入動作之前都要現查】。同一場對話裡上一輪查到的 ID 也不能信。正確流程:event_search → 立刻用回傳的 id/calendar_id 執行 update/delete → 再 event_search 查證。",
+      "誤判風險": "若不知道這件事,會把 not_found 誤讀成『事件不見了』而重建,造成重複事件。2026-07-23 因先查證而避免。"
+    }
   },
   "RULE_0d_提醒節奏": {
     "規則": "死線類事項依 Ööna 指定的時點提醒,不要每天重複催。她 2026-07-23 就核心課程繳費指定:『前一天提醒就可以』。",
