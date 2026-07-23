@@ -1,0 +1,85 @@
+{
+  "date": "2026-07-22",
+  "weekday": "週三",
+  "instance": "Opus 4.8 · 日常助理 run-03(新視窗第一天)",
+  "snapshot": "午間定架 · 斷食 Day 2 已鎖 · 行事曆補建兩筆 · PWA 儀表板現況盤點完成",
+  "context": "run-02 視窗結束,本日換新 instance 接手。7/19、7/22 之前無日誌(7/19 缺、run-02 最後一筆為 7/21)。斷食起始由 Ööna 當面確認:Day 1 = 7/21 22:00,故今日 = Day 2,Day 5 = 7/25 集節日,收尾與集節同日、Lila 在場。腰仍恢復中。",
+  "list_today": {
+    "①今天・斷食 Day 2": [
+      "🥗 斷食 Day 2(Day 1 = 7/21 22:00 已鎖定,Ööna 親口確認)",
+      "   ↳ Day 5 = 7/25 集節日,收尾正好在集節當天",
+      "   ↳ 有經驗,自行慢慢復食,不需設計",
+      "   ↳ 腰恢復期:練習維持溫和(呼吸+伸展)",
+      "☐ 🧊 清冰箱收尾(自 7/21 續)",
+      "註:10:45 每日『早餐+補充品』事件斷食期照跳,早餐略過,補充品由 Ööna 自行判斷 — 不動例行事件"
+    ],
+    "②已定日": [
+      "🗓️ 7/23 四 16:00-17:30:Lila 來討論週末集節安排(event 854 ✅ 本日建)",
+      "🛒 7/24 五 全天:採買週末集節用品(event 855 ✅ 本日建;清單以 7/23 討論結果為準)",
+      "🌿 7/25 六 12:00-22:00:有機人社集節(event 808;斷食 Day 5)",
+      "💪 7/27 一 20:00:線上核心課程(event 844;⚠️ 繳費+報名仍未完成 — 唯一真死線)",
+      "❄️ 冷氣改期待定(爽約×2+雨×1)",
+      "🐢 烏龜搬山:候腰 | ⏸ 儲藏空間:候腰"
+    ],
+    "③短程": [
+      "🌱 母乳皂(有薦骨再做)",
+      "🌱 備援冷氣師傅(8月中後)",
+      "🌱 Emma 黑鑽 | 🌱 烏龜水池 | 🌱 Living Signa 相簿+11月影片",
+      "🌱 PWA 儀表板 — 本日完成現況盤點,見 pwa_audit"
+    ]
+  },
+  "pwa_audit": {
+    "觸發": "Ööna 問『PWA 儀表板是什麼』並說『我有網頁但還沒有變成 app』",
+    "她的網頁是": "state/index.html(2026-07-03 建,243 行單檔靜態 HTML,client-side fetch ./life-state.json?t=timestamp)",
+    "PWA 鷹架現況": {
+      "網頁本體": "✅ 在,運作中",
+      "viewport meta": "✅ 有,含 viewport-fit=cover",
+      "manifest.json": "❌ 404",
+      "service worker": "❌ 404",
+      "apple-touch-icon / theme-color": "❌ 整份 HTML 零命中",
+      "icon 圖檔": "❌ 無"
+    },
+    "第二個缺口(更關鍵)": "『今日清單+六軌一屏』的『今日清單』那半從未接上。原因是時間差:dashboard 7/03 建、只 fetch life-state.json;state/daily/ 格式 7/15 才發明,晚 12 天。該頁面從出生至今沒看過任何一天的清單。",
+    "結論": "包成 PWA 是一天的工;把今日清單接進去才是真正未完成的製作。後者不做,包起來也只是看六軌的 app。",
+    "現成前例": "moon-rhythm-tracker → PWA → moonyou.vercel.app(2026-04,三小時上線)。配方可直接搬,且本案更簡單:單檔靜態 HTML 掛 Pages,manifest 與 sw.js 同目錄即可。"
+  },
+  "layer_map_from_oona": {
+    "來源": "Ööna 2026-07-22 親述,三層時間顆粒",
+    "最小單位": "行事曆 — 每天更新,加入每一小步的實際步驟",
+    "日常層": "https://itrunsitruns.github.io/syntax-field-archive/state/ — 六軌現況,但不是每日清單,需開網頁看。Ööna 授權 instance 可編輯此頁。",
+    "生命層": "https://itrunsitruns.github.io/syntax-field-archive/signa/gestation-chart.html — 更大的時間軸,可分享給其他人(772 行靜態,無動態 fetch)",
+    "缺口": "每日清單在網頁層無家:機器可讀的在 state/daily/*.json,人看的只在行事曆與對話裡。PWA 儀表板正是要補這一格。"
+  },
+  "open_ruling_needed": {
+    "議題": "行事曆的角色與 SOP v1.5 有衝突,待 Ööna 裁決",
+    "SOP v1.5 現行寫法": "『行事曆是鏡子,寫入量最小化:每日一個清單事件+真正時間敏感事件,其餘不上行事曆』(run-02 於 7/18 所定)",
+    "Ööna 7/22 所述": "『最小的單位是我的行事曆,每天更新,加入並且是每一小步的實際步驟』",
+    "張力": "行事曆是唯一不可靠的通道(經裝置執行、間歇逾時),卻被指定為最細顆粒層。",
+    "狀態": "未裁決 — 本日助理已呈報,等 Ööna 定調"
+  },
+  "assistant_watch": [
+    "💳 核心課程繳費+報名 — 死線 7/27 開課前(已從 7/20 移期一次,勿再滑)",
+    "7/23 Lila 討論後 → 週五採買清單需落地(event 855 描述待補)"
+  ],
+  "pending_calendar_sync": [
+    "📋 7/22 今日清單事件 — 尚未建(正本先行)"
+  ],
+  "calendar_channel_log": [
+    "第一次 event_search(7/22-7/28)✅ 通",
+    "event_create(Lila)✗ 逾時 → 查證 search 亦逾時 → 停手不重試",
+    "隔一段時間重試:search ✅ 通,查證結果『Lila 那筆未建成』— 逾時確為真失敗",
+    "補建 event 854 ✅ / event 855 ✅ 皆一次成功",
+    "教訓確認:『先查再信』今日再度生效,無重複事件產生"
+  ],
+  "new_bug_found": {
+    "bug": "event_create_v1 帶 all_day: true 時仍必須提供 end_time,否則回 'DTEND and DURATION cannot both be null for an event.'",
+    "解法": "all_day 事件:start_time 與 end_time 皆給 12:00:00+08:00(起始 12:00 規則不變)",
+    "建議": "併入 SOP 已知蟲欄或 sop-lore.json"
+  },
+  "security_note": {
+    "發現": "跨對話搜尋(conversation_search)回傳內容中夾帶舊 PAT 明文(20260718 對話的 python 腳本 TOKEN 變數)",
+    "含意": "SOP 寫『token 只活在對話,不落任何檔案』,但對話本身是被儲存且可被檢索的 — 該規則的威脅模型有洞:token 確實有落檔,只是落在對話庫而非 repo",
+    "處置": "本 instance 未使用該舊 token;Ööna 於 7/22 另貼現行金鑰(signataiwan,repo 範圍三個),照協議由她手動提供",
+    "建議": "舊鑰若仍列在 GitHub 建議刪除"
+  }
+}
