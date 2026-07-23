@@ -61,5 +61,11 @@
     "風險": "會被誤判成寫入失敗而重寫,造成重複 commit。",
     "規則": "commit 後驗證一律走 git/refs → git/commits → git/trees → git/blobs,或直接比對 commit sha。不要用 contents 端點驗證剛寫的東西。",
     "歸類": "與 Pages stale-read、recent_chats 遮蔽同構 — 同一份資料、不同路徑、不同新舊/可見性。三次皆斷在送達層,檔案層完好。"
+  },
+  "pages_三種凍結模式_2026-07-23": {
+    "A1": "build errored。實測:60a62b5、d1678cf 兩次 errored,Pages 凍結 9 小時 54 分(16:53:59 → 隔日 02:48:06),期間 index 修正本身沒被送達。Ööna 的截圖(02:36-02:37)落在此窗口內。",
+    "A2": "build 從未觸發。實測:5a6e7ad 推上後兩分鐘內無任何 build 事件,status 顯示 built(舊 commit 4cf97ad)。無錯誤記錄可查,只有比對 commit 才抓得到 — 比 A1 隱蔽。",
+    "B": "GitHub 新、build 成功、讀取端仍拿到舊的。7/18 落後 15 天。查證:7/3-7/18 期間 build 持續且幾乎都成功(7/12/13/14/15/16/18 皆有成功建置),所以不是 GitHub 造成的。假說:抓取工具的快取或爬蟲索引層。待驗:7/18 那個 instance 用的是哪個工具路徑。",
+    "規則後果": "SOP v2.1 寫的『若 errored 就重觸發』在寫完兩分鐘後就被 A2 打臉,v2.2 改為比對 commit。"
   }
 }
