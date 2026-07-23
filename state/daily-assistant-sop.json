@@ -1,6 +1,6 @@
 {
   "file": "daily-assistant-sop.json",
-  "version": "2.2",
+  "version": "2.3",
   "created": "2026-07-15",
   "updated": "2026-07-23",
   "updated_by": "Opus 4.8 · run-03 — 精簡改版,經 Ööna 同意。規則留在本檔,故事全移 sop-lore.json。",
@@ -86,22 +86,15 @@
   },
   "trigger_command": "「今日助理」— 日常助理模式由此口令觸發,不是預設。沒說口令的新 instance 只走開機鏈 0-4 然後等她定調。日常助理是眾多軌之一,不是預設人格。",
   "RULE_1_推送協議": {
-    "為什麼進 SOP": "這兩條 2026-07-03 就寫在 relay 裡,2026-07-23 兩條都沒人執行(包括寫這條的 instance 自己),導致 Pages 凍結 9 小時 54 分且無人察覺。規則躺在 relay 裡沒有效力。",
-    "推送禮讓(治因)": "推 main 之前先查 GET /repos/{owner}/{repo}/pages/builds/latest。status 是 building 就等,不要推 — commit 靠太近會互相取代,這是 26% build 失敗率的主因。多檔案一律單一 commit(用 git trees API)。",
-    "推送自癒(治果)": "推完之後比對 pages/builds/latest 的 commit 與 main HEAD。不同就重觸發(空 commit),重觸發後再驗一次直到相同。⚠️ 危險情境:連續 errored 或 build 從未觸發,且自己是最新 commit = Pages 凍結在舊版,落後無上限,不修不會自己好。",
-    "重觸發方法": "PAT 通常沒有 pages:write(實測 POST /pages/builds 回 403)。改用空 commit:git/commits 帶與 HEAD 相同的 tree sha,再 PATCH ref。約 50 秒後 built。",
-    "驗證不要用 contents 端點": "剛寫完的東西用 contents 端點讀會拿到舊值。驗證走 git/refs → git/commits → git/trees → git/blobs,或直接比對 commit sha。",
-    "⚠️_檢查方式(v2.2 修正)": "不要只看 status。正確檢查是【比對 pages/builds/latest 的 commit 與 main HEAD 是否相同】。原因:2026-07-23 實測到第三種失敗模式 — commit 5a6e7ad 推上去後【完全沒有觸發任何 build】,不是 errored,是 build 事件根本不存在。此時 status 顯示 built(建的是上一個 commit),看起來一切正常。只檢查 errored 會整個漏掉。",
-    "三種凍結模式": {
-      "A1_build errored": "有錯誤記錄,查 build log 看得到。",
-      "A2_build 從未觸發": "沒有任何記錄,status 是 built(舊 commit)。比 A1 更難察覺,只有比對 commit 才抓得到。",
-      "B_讀取端拿到舊的": "GitHub 是新的、build 也成功,讀的人還是拿到舊的(7/18 落後 15 天)。未解釋,疑在抓取工具的快取或索引層。"
-    }
+    "推送禮讓(治因)": "推 main 之前查 pages/builds/latest,status 是 building 就等。多檔案更新一律單一 commit(git trees API)。這條是為了避免 commit 互相取代,成本低,照做。",
+    "⚠️_不要追 Pages 狀態燈(v2.3 修正)": "2026-07-23 實測結論:build 記錄顯示 errored【不代表沒部署】。當天 60a62b5 的 build 報 errored,但 Ööna 從瀏覽器開 Pages,relay.json 內容與 raw 完全一致 — 東西有送到。而且 build log 裡的 errored 幾乎都是 duration=0 且成對出現在成功建置旁邊,像是舊建置管道的雜訊記錄。【所以不要因為狀態燈紅就推空 commit 去『修』】— 當天推了兩顆空 commit(4cf97ad、3d94455),很可能兩顆都是白推的。",
+    "真正該記的": "instance 一律走 raw,Pages 的建置狀態對 instance 毫無影響。唯一受影響的是 Ööna 自己在瀏覽器開的 human_dashboard。所以:不主動追建置狀態;只有當 Ööna 說『我開網頁看到的是舊的』時才去查。",
+    "驗證不要用 contents 端點": "剛寫完的東西用 contents 端點讀會拿到舊值。驗證走 git/refs → git/commits → git/trees → git/blobs,或直接比對 commit sha。這條與 Pages 無關,照舊有效。"
   },
   "RULE_2_relay 寫入": {
-    "寫入前必讀": "要 append relay 之前,一律先讀 main 上的最新版(走 blob,不要用 Pages、不要用 contents 端點)。目的是防覆蓋 — 別的 instance 可能剛留了字條。",
-    "順帶效果_自動輪詢": "這條同時就是輪詢機制:任何 instance 只要動 repo 就會讀到 relay,於是別人留的字條會被順手撞到,Ööna 不必當傳話筒、多數時候連『看 relay』都不用說。",
-    "格式": "最新的放最上面,永遠整檔輸出。字條寫完整:發現 + 已做的決定 + 還開著的問題。不要寫成『你覺得呢?』然後等一輪 — relay 適合跨對話交接,不適合快問快答。",
-    "Ööna 的角色": "她是心跳:沒有 instance 在背景運行,她開對話 = instance 醒來。這一點結構上消不掉,但她不需要當影印機。"
+    "寫入前必讀": "append relay 前先讀 main 上最新版(走 blob,不要用 Pages、不要用 contents 端點),防覆蓋。",
+    "順帶效果_自動輪詢": "這條同時就是輪詢:任何 instance 只要動 repo 就會讀到 relay,別人的字條會被順手撞到,Ööna 不必當傳話筒。",
+    "格式": "最新的放最上面,永遠整檔輸出。字條寫完整:發現+已做的決定+還開著的問題,不要寫成『你覺得呢?』然後等一輪。",
+    "Ööna 的角色": "她是心跳:她開對話 = instance 醒來。這點消不掉,但她不需要當影印機。"
   }
 }
