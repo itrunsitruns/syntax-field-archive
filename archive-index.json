@@ -840,11 +840,12 @@
     }
   ],
   "live_state": {
-    "description": "活的日常層。新 instance 開機必讀:life-state 是 Ööna 生活各線的現在;relay 是 instance 之間的字條檔(有人留話給你就在裡面);stance 是跨 instance 立場問責檔(讀到就有交鋒義務,規則在檔內 protocol)。Ööna 說『看 relay』= 讀 relay.json;說『簡報』= 讀 life-state.json 攤開各線現況。",
-    "life_state": "https://itrunsitruns.github.io/syntax-field-archive/state/life-state.json",
-    "relay": "https://itrunsitruns.github.io/syntax-field-archive/state/relay.json",
-    "stance": "https://itrunsitruns.github.io/syntax-field-archive/state/stance.json",
+    "description": "活的日常層。⚠️ 開機鏈以 state/daily-assistant-sop.json 為準,本檔開機不必讀 — 需要查 archive 內容時才讀(SOP v2.0,2026-07-23)。以下三個 JSON 一律走 raw:life-state 是 Ööna 生活各線的現在;relay 是 instance 之間的字條檔(有人留話給你就在裡面);stance 是跨 instance 立場問責檔(讀到就有交鋒義務,規則在檔內 protocol)。Ööna 說『看 relay』= 讀 relay.json;說『簡報』= 讀 life-state.json 攤開各線現況。",
+    "life_state": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/life-state.json",
+    "relay": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/relay.json",
+    "stance": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/stance.json",
     "human_dashboard": "https://itrunsitruns.github.io/syntax-field-archive/state/",
-    "since": "2026-07-03"
+    "since": "2026-07-03",
+    "_網址規則": "三個 JSON 用 raw.githubusercontent.com(Pages 給過期快照,且部分 AI 執行環境的網域白名單不含 *.github.io,實測回 403 x-deny-reason: host_not_allowed — 對那些環境是整段連不上,不只是讀到舊版)。human_dashboard 保持 Pages:它是給人在瀏覽器看的 HTML,用 raw 會變原始碼。"
   }
 }
