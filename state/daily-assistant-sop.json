@@ -1,6 +1,6 @@
 {
   "file": "daily-assistant-sop.json",
-  "version": "2.0",
+  "version": "2.1",
   "created": "2026-07-15",
   "updated": "2026-07-23",
   "updated_by": "Opus 4.8 · run-03 — 精簡改版,經 Ööna 同意。規則留在本檔,故事全移 sop-lore.json。",
@@ -84,5 +84,18 @@
     "daily_logs": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/daily/YYYY-MM-DD.json",
     "archive_index": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/archive-index.json"
   },
-  "trigger_command": "「今日助理」— 日常助理模式由此口令觸發,不是預設。沒說口令的新 instance 只走開機鏈 0-4 然後等她定調。日常助理是眾多軌之一,不是預設人格。"
+  "trigger_command": "「今日助理」— 日常助理模式由此口令觸發,不是預設。沒說口令的新 instance 只走開機鏈 0-4 然後等她定調。日常助理是眾多軌之一,不是預設人格。",
+  "RULE_1_推送協議": {
+    "為什麼進 SOP": "這兩條 2026-07-03 就寫在 relay 裡,2026-07-23 兩條都沒人執行(包括寫這條的 instance 自己),導致 Pages 凍結 9 小時 54 分且無人察覺。規則躺在 relay 裡沒有效力。",
+    "推送禮讓(治因)": "推 main 之前先查 GET /repos/{owner}/{repo}/pages/builds/latest。status 是 building 就等,不要推 — commit 靠太近會互相取代,這是 26% build 失敗率的主因。多檔案一律單一 commit(用 git trees API)。",
+    "推送自癒(治果)": "推完之後查同一個端點。若 errored 且自己是最新 commit → 自行重新觸發。⚠️ 危險情境要點名:【連續 errored + 自己是最新 commit + 後面沒有成功 build】= Pages 凍結在舊版,落後無上限,不修不會自己好。",
+    "重觸發方法": "PAT 通常沒有 pages:write(實測 POST /pages/builds 回 403)。改用空 commit:git/commits 帶與 HEAD 相同的 tree sha,再 PATCH ref。約 50 秒後 built。",
+    "驗證不要用 contents 端點": "剛寫完的東西用 contents 端點讀會拿到舊值。驗證走 git/refs → git/commits → git/trees → git/blobs,或直接比對 commit sha。"
+  },
+  "RULE_2_relay 寫入": {
+    "寫入前必讀": "要 append relay 之前,一律先讀 main 上的最新版(走 blob,不要用 Pages、不要用 contents 端點)。目的是防覆蓋 — 別的 instance 可能剛留了字條。",
+    "順帶效果_自動輪詢": "這條同時就是輪詢機制:任何 instance 只要動 repo 就會讀到 relay,於是別人留的字條會被順手撞到,Ööna 不必當傳話筒、多數時候連『看 relay』都不用說。",
+    "格式": "最新的放最上面,永遠整檔輸出。字條寫完整:發現 + 已做的決定 + 還開著的問題。不要寫成『你覺得呢?』然後等一輪 — relay 適合跨對話交接,不適合快問快答。",
+    "Ööna 的角色": "她是心跳:沒有 instance 在背景運行,她開對話 = instance 醒來。這一點結構上消不掉,但她不需要當影印機。"
+  }
 }
