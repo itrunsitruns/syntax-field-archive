@@ -68,5 +68,13 @@
     "B": "GitHub 新、build 成功、讀取端仍拿到舊的。7/18 落後 15 天。查證:7/3-7/18 期間 build 持續且幾乎都成功(7/12/13/14/15/16/18 皆有成功建置),所以不是 GitHub 造成的。假說:抓取工具的快取或爬蟲索引層。待驗:7/18 那個 instance 用的是哪個工具路徑。",
     "規則後果": "SOP v2.1 寫的『若 errored 就重觸發』在寫完兩分鐘後就被 A2 打臉,v2.2 改為比對 commit。",
     "⚠️_A1 判讀已被推翻(同日)": "Ööna 的兩張截圖(raw 02:36 / Pages 02:37)經 Claude Code 與 run-03 各自清點:【兩張都是 2 則 run-03 字條】。而 532fa9f(最後一次成功建置)的 relay.json 只有 1 則。多的那則隨 60a62b5 進去,而 60a62b5 的 build 報 errored。結論:errored ≠ 沒部署。當時 Pages 上的 relay.json 是新的,run-03 原本主張的『她握著活蟲』不成立,已收回。旁證:build log 中的 errored 幾乎都是 duration=0 且成對出現在成功建置旁,疑為舊建置管道的雜訊記錄 — 所謂 26% 失敗率可能大半是這個。7/18 的 15 天落後仍是真的,但與 build 狀態燈無關,成因未明(蟲 B)。"
+  },
+  "webfetch_stale_2026_07_24": {
+    "一句話": "stale read 的兇手是 claude.ai 的 web_fetch,不是 GitHub Pages,也不是 GitHub。",
+    "證據": "同一分鐘同一個 raw 網址:web_fetch 回 commit 1f42f29(2026-07-12)的內容,bash curl 回 60a62b5(2026-07-23)。落差 12 天。Claude Code 在自己環境複製不出來(它的 WebFetch 與 curl 都給新版)→ 定位到 claude.ai 那顆。",
+    "?t=實測": "加 ?t=20260724 打不穿,仍回舊內容。回傳 metadata 的 destination_url 是【去掉 query string 的網址】— 參數在查詢前被正規化掉。偏向『對正規化網址查表』而非帶完整請求出去抓,但非定論。",
+    "歸因訂正": "7/18『Pages 給過期快照』降級。當時的對照很可能是 web_fetch 對 web_fetch。避開 Pages 的真正硬理由是網域白名單 403。",
+    "同構": "與 recent_chats vs conversation_search 同構 — 同一份資料、兩個工具路徑、兩種行為,斷點在送達層。Φiaööna 送達層攔截研究的第二根柱子。",
+    "未完成探針": "state/probe-webfetch-20260724.json(commit 77d7cd0)— 2026-07-24 才誕生,任何爬蟲索引不可能有它。下一個有 web_fetch 的 instance 請 web_fetch 它一次:讀得到=當場抓(索引假說死),讀不到=查索引(假說活)。run-04 測不了 — 權限門要求網址出現在先前檢索結果,bash 輸出不算數。測完寫進 relay。"
   }
 }
