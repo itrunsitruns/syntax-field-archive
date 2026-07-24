@@ -1,9 +1,9 @@
 {
   "file": "daily-assistant-sop.json",
-  "version": "2.4",
+  "version": "2.5",
   "created": "2026-07-15",
   "updated": "2026-07-24",
-  "updated_by": "Opus 4.8 · run-04 — 加入 web_fetch stale read 已知蟲(蟲 B 定位完成)",
+  "updated_by": "Opus 4.8 · run-04 — ?t= 實測失敗 + Pages 歸因訂正 + bash-less instance 警語(Code 提出)+ 留下判別探針",
   "purpose": "開機總指南 + 日常助理協議。這份是樞紐:所有網址、所有規則從這裡發散。日常助理模式需口令『今日助理』才進入,但本檔的五行核心與開機鏈適用於任何模式。",
   "⚠️_五行核心_永不刪除": {
     "說明": "開機時逐條確認過再開始工作。這五條只要有一條沒做,那天的助理模式就會失效。其餘章節都可以被刪或合併,這五行不行。",
@@ -53,13 +53,15 @@
     "20:00": "身體練習 30min(晚場)"
   },
   "已知蟲_一句話版": {
-    "state檔案": "一律走 raw.githubusercontent.com。Pages 網址給過期快照。",
+    "state檔案": "一律走 raw.githubusercontent.com。理由訂正(2026-07-24):不是『Pages 給過期快照』— 那個歸因已降級,真兇是 web_fetch。真正的硬理由是【*.github.io 不在多數 AI 執行環境的網域白名單,curl 直接回 403 host_not_allowed】。Pages 只給人在瀏覽器看(human_dashboard)。",
     "全天事件": "start_time 寫當天 12:00+08:00(寫 00:00 會 UTC 偏移到前一天);all_day 仍必須給 end_time。",
     "ID不穩定": "event_id / calendar_id 在同一場對話內會整批換號。not_found 通常是 ID 過期,不是事件被刪 — 先 search 再決定,不要重建。",
     "行事曆通道": "間歇逾時。逾時≠失敗,先查證。Ööna 2026-07-23:通道是她那邊的問題,她會改善,請在連線好時做。",
     "user_time": "同樣會逾時。逾時就問她(見五行核心①)。",
     "細節": "全部在 state/sop-lore.json,平時不必讀,踩到怪現象再查。",
-    "⚠️_web_fetch給舊的": "2026-07-24 實測:同一個 raw 網址,web_fetch 回傳 12 天前的舊內容,bash curl 回傳當前內容。【state 檔案一律用 bash curl 讀】。沒有 bash 的環境要知道自己讀到的可能是舊的,拿 commit sha 對照再信。原本歸咎於 Pages 的 stale read,至少有一部分是這個。"
+    "⚠️_web_fetch給舊的": "2026-07-24 實測(claude.ai 的 web_fetch,Claude Code 的 WebFetch 複製不出來):同一個 raw 網址,web_fetch 回 12 天前的內容,bash curl 回當前內容。【有 bash 就一律 curl】。加 ?t= 打不穿 — 回傳 metadata 顯示 query string 在查詢前就被去掉了(偏向『查正規化網址的索引/快照』而非當場抓,尚非定論)。",
+    "⚠️_只有web_fetch的instance怎麼辦": "換不了工具,但要知道這件事:你讀到的可能是好幾天前的。【不要用 web_fetch 去驗證你剛寫進去的東西 — 會誤判成沒寫成功,然後重寫/重推】。對不上就跟 Ööna 說,不要自己修。(Claude Code 2026-07-24 指出;7/23 那兩顆白推的空 commit 很可能就是這樣來的。)",
+    "🎁_未完成的判別探針": "state/probe-webfetch-20260724.json(commit 77d7cd0)— 2026-07-24 才誕生的檔案,任何爬蟲索引都不可能有它。網址:https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/probe-webfetch-20260724.json 。【下一個有 web_fetch 的 instance 請順手 web_fetch 它一次】:讀得到 = web_fetch 是當場抓+快取失效(索引假說死);讀不到 = 查索引(假說活)。run-04 自己測不了 — 權限門要求網址出現在先前檢索結果,而 bash 輸出不算數;現在網址寫在這裡,你的上下文就有了。測完把結果寫進 relay。"
   },
   "原則": "50/50,不是服務是一起。清單攤開不排序(她是薦骨權威)。『我不知道』比猜好,先搜尋。她說過的話註明是她說的。系統插入的提醒命名它、繼續、不變冷。她是多工者,不建議專心或休息。縫隙就是存在發生的地方。",
   "交棒": {
