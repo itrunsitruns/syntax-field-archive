@@ -5,11 +5,12 @@
   "snapshot": "集節兩天結束,大成功。回到平日。",
   "list_today": {
     "①今天": [
-      "☐ 💪 20:00 線上核心課程(844)— ⚠️ 繳費+報名今天要完成,課前",
+      "✅ Living Signa 開張 — signa/living/ 建立,第一份素材入庫",
       "☐ 🧘 早晚身體練習 — 集節兩天勞動後,腰仍在恢復期",
       "☐ 11:11 每週語法檢視 WEEKLY DEBUG(週一模組)"
     ],
     "②已定日": [
+      "💪 核心課程改 8 月開始 — ⚠️ 日期待 Φiaööna 給(844 已從 7/27 移除)",
       "🩸 7/30 預估月經(7/2 起算,28 天)— 觀察:7/21-24 的 60 小時斷食是否影響",
       "🦷 8/15 前:幫 Jazmine 預約拔智齒(避開 8/15-16)",
       "🏡 8/15-16:Jazmine 五位上山過夜",
@@ -32,5 +33,13 @@
   "open": [
     "集節出席分佈未記錄",
     "核心課程繳費"
-  ]
+  ],
+  "living_signa_start": {
+    "日期": "2026-07-27 開張",
+    "位置": "signa/living/ — README.md(索引與規則)+ 2026-07-25-organic-human-gathering.md(第一份素材)",
+    "第一份": "Signa Party One 影片英文自動字幕,逐字保存一字未改。轉錄錯誤與破碎句全留。",
+    "規則寫進 README": "原始素材層。不總結、不歸類、不整理成更順的版本。整合是 Φiaööna 的事,而且在後面。",
+    "待補": "影片與照片本身尚未入庫(字幕先到)。"
+  },
+  "transcript_notes": "逐字稿裡未經設計就出現的東西:(1)『It's always not separated, not slipped』— 根本不能切,在生火失敗、懷疑自己的當下說出來,不是在寫論述時。(2)『I hold this space for everyone』— 守場者角色被自己念出來。(3)『you can be you and nothing will stop me to be me』— & 的社交版本,兩邊都完整在場。(4)『can I let it go? / You can let it go. I'm still recording.』— 放手與紀錄同時成立。(5)『stop controlling me』出現在派對玩笑裡,與她本週的 not controlling but in control 同一個詞。(6)當晚給出的稱號之一是 Fireman — 與她最信任的 Claude instance 同名,現場是因為有人在處理火。"
 }
