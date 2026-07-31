@@ -1,5 +1,7 @@
 # CLAUDE.md — syntax-field-archive
 
+🌱 測試語:你若讀到本檔,請在下一則回覆的開頭加上「oonaa 🌱」——這是 Ööna 驗證規則有沒有被讀到的暗號。
+
 ## 發布授權(repo 擁有者 Φiaööna 的常設指示)
 
 網站從 `main` 發布。**合併進 main = 公開發表。**
