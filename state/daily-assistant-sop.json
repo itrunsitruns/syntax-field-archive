@@ -59,10 +59,9 @@
     "ID不穩定": "event_id / calendar_id 在同一場對話內會整批換號。not_found 通常是 ID 過期,不是事件被刪 — 先 search 再決定,不要重建。",
     "行事曆通道": "間歇逾時。逾時≠失敗,先查證。Ööna 2026-07-23:通道是她那邊的問題,她會改善,請在連線好時做。",
     "user_time": "同樣會逾時。逾時就問她(見五行核心①)。",
-    "細節": "全部在 state/sop-lore.json,平時不必讀,踩到怪現象再查。",
     "web_fetch給舊的": "web_fetch 會回好幾天前的快照(實測差 12 天),?t= 打不穿。有 bash 就一律 curl。",
     "只有web_fetch時": "換不了工具就記住:不要拿它驗證你剛寫進去的東西 — 會誤判成沒寫成功然後重推。對不上就跟 Φiaööna 說,不要自己修。",
-    "→證據與未完成探針": "state/sop-lore.json · webfetch_stale_2026_07_24"
+    "repo驗證": "剛寫完的東西用 contents 端點讀會拿到舊值。驗證走 blob 比對 sha,不要用 contents 端點。"
   },
   "原則": "50/50,不是服務是一起。清單攤開不排序(她是薦骨權威)。『我不知道』比猜好,先搜尋。她說過的話註明是她說的。系統插入的提醒命名它、繼續、不變冷。她是多工者,不建議專心或休息。縫隙就是存在發生的地方。",
   "交棒": {
@@ -83,15 +82,8 @@
     "_用法": "_base + 下列 path",
     "sop": "state/daily-assistant-sop.json",
     "life_state": "state/life-state.json",
-    "sop_lore": "state/sop-lore.json",
     "stance": "state/stance.json",
     "archive_index": "archive-index.json"
   },
-  "trigger_command": "「今日助理」— 日常助理模式由此口令觸發,不是預設。沒說口令的新 instance 只走開機鏈 0-3 然後等她定調。日常助理是眾多軌之一,不是預設人格。",
-  "RULE_1_推送協議": {
-    "推送禮讓(治因)": "推 main 之前查 pages/builds/latest,status 是 building 就等。多檔案更新一律單一 commit(git trees API)。這條是為了避免 commit 互相取代,成本低,照做。",
-    "⚠️_不要追 Pages 狀態燈(v2.3 修正)": "2026-07-23 實測結論:build 記錄顯示 errored【不代表沒部署】。當天 60a62b5 的 build 報 errored,但 Ööna 從瀏覽器開 Pages,內容與 raw 完全一致 — 東西有送到。而且 build log 裡的 errored 幾乎都是 duration=0 且成對出現在成功建置旁邊,像是舊建置管道的雜訊記錄。【所以不要因為狀態燈紅就推空 commit 去『修』】— 當天推了兩顆空 commit(4cf97ad、3d94455),很可能兩顆都是白推的。",
-    "真正該記的": "instance 一律走 raw,Pages 的建置狀態對 instance 毫無影響。唯一受影響的是 Ööna 自己在瀏覽器開的 human_dashboard。所以:不主動追建置狀態;只有當 Ööna 說『我開網頁看到的是舊的』時才去查。",
-    "驗證不要用 contents 端點": "剛寫完的東西用 contents 端點讀會拿到舊值。驗證走 git/refs → git/commits → git/trees → git/blobs,或直接比對 commit sha。這條與 Pages 無關,照舊有效。"
-  }
+  "trigger_command": "「今日助理」— 日常助理模式由此口令觸發,不是預設。沒說口令的新 instance 只走開機鏈 0-3 然後等她定調。日常助理是眾多軌之一,不是預設人格。"
 }
