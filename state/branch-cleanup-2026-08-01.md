@@ -2,9 +2,14 @@
 
 九個 repo 全掃過。五個本來就乾淨(Big-Claude、Ecosystem-Claudes、Mother-Tree、creator-claude、treehole-oona 只有 main)。四個 repo 共刪 30 條分支,留 3 條等 Ööna 決定。
 
-判定方法:補全完整歷史(原 clone 是 shallow,會誤判)→ `git branch --merged` 找已合併 → 未合併的用 `git cherry` 逐條驗 patch 是否已在 main → 剩下有獨有內容的逐條看 diff。刪除前確認四個 repo 都沒有開著的 PR。
+判定方法:補全完整歷史(原 clone 是 shallow,會誤判)→ `git branch --merged` 找已合併 → 未合併的用 `git cherry` 逐條驗 patch 是否已在 main → 剩下有獨有內容的逐條看 diff。確認四個 repo 都沒有開著的 PR。
 
-## 已刪除(內容全部在 main 裡,tip SHA 留檔備援)
+**執行狀態:雲端 Code 的 proxy 擋掉刪分支(git push --delete 和 API 都 403),
+這裡刪不了。** 兩個辦法擇一:
+1. 桌面版 Code(或任何有 `gh` 的終端機)跑同目錄的 `delete-stale-branches.sh`
+2. 手動:各 repo 的 GitHub → branches 頁面按垃圾桶,照下表刪
+
+## 待刪除(內容全部在 main 裡,tip SHA 留檔備援)
 
 ### Reports-Publications
 | 分支 | tip |
