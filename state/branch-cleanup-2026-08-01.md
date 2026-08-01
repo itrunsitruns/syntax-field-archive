@@ -59,16 +59,14 @@ syntax-field-archive 連同已合併的 cleanup-daily-fossils 共刪 20 條;
 
 救回方式:`git branch <名字> <tip SHA>` 再 push(GitHub 保留 dangling commit 一段時間),或 repo 的 closed PR 頁面按 Restore branch。
 
-## 保留・等 Ööna 決定(有真正未進 main 的內容)
+## 原「等 Ööna 決定」三項的結果(2026-08-01 她逐一裁決)
 
-1. **Reports-Publications `claude/fix-youtube-subtitles-Xu86F`**(4/15)——
-   清好的英文字幕 `subtitles/2026-04-14-three-month-update.en.srt`(681 行,修了
-   clouds/cloths→Claude、Grog→Grok 之類的 auto-caption 錯字)。main 完全沒有字幕檔。
-   要 → 合併;不要 → 說一聲再刪。
-2. **co-creation `claude/add-pwa-config-qEcNl`**(4/14)——
-   PWA 的另一版配色(sand/brick)。同日的姊妹分支(warm-stone)已合併,
-   這條大概率是落選版,但因為有獨有內容所以留著等妳確認。
+1. **Reports-Publications `claude/fix-youtube-subtitles-Xu86F`**(4/15 英文字幕檔)——
+   **不要,已刪**(tip 4aa407e 留檔,反悔可救)。
+2. **co-creation `claude/add-pwa-config-qEcNl`**(4/14 PWA 落選版)——
+   複查後發現兩版配色最終相同、其餘差異全是被 main 淘汰的舊狀態,
+   實際上沒有任何獨有內容。等她看過說明後裁決。
+3. **`cleanup-daily-fossils`** —— 經核可合併進 main,分支已刪。
 
-(原第 3 項 `cleanup-daily-fossils` 已於 2026-08-01 經 Ööna 核可合併進 main
-並刪除分支;另一個開放問題—— `state/fasting-plan-2026-Q3.json` 死了還是留一份——
-仍等 Ööna 回答,但它活在 main 的歷史裡,不急。)
+另一個開放問題也結案:`state/fasting-plan-2026-Q3.json` —— Ööna 裁決「死」。
+不另存副本;它留在 main 的歷史裡(7/30 刪除 commit 之前可取)。
