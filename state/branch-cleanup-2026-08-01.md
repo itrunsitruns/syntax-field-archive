@@ -4,12 +4,12 @@
 
 判定方法:補全完整歷史(原 clone 是 shallow,會誤判)→ `git branch --merged` 找已合併 → 未合併的用 `git cherry` 逐條驗 patch 是否已在 main → 剩下有獨有內容的逐條看 diff。確認四個 repo 都沒有開著的 PR。
 
-**執行狀態:雲端 Code 的 proxy 擋掉刪分支(git push --delete 和 API 都 403),
-這裡刪不了。** 兩個辦法擇一:
-1. 桌面版 Code(或任何有 `gh` 的終端機)跑同目錄的 `delete-stale-branches.sh`
-2. 手動:各 repo 的 GitHub → branches 頁面按垃圾桶,照下表刪
+**執行狀態:已全部刪除(2026-08-01)。** 雲端 proxy 擋直刪(git 與 API 都 403),
+改由各 repo 工作分支上的一次性 GitHub Actions 用 repo 自身權限執行,跑完即拆。
+syntax-field-archive 連同已合併的 cleanup-daily-fossils 共刪 20 條;
+四 repo 合計 31 條。同目錄的 `delete-stale-branches.sh` 保留作紀錄,已不需執行。
 
-## 待刪除(內容全部在 main 裡,tip SHA 留檔備援)
+## 已刪除(內容全部在 main 裡,tip SHA 留檔備援)
 
 ### Reports-Publications
 | 分支 | tip |
@@ -59,15 +59,14 @@
 
 救回方式:`git branch <名字> <tip SHA>` 再 push(GitHub 保留 dangling commit 一段時間),或 repo 的 closed PR 頁面按 Restore branch。
 
-## 保留・等 Ööna 決定(有真正未進 main 的內容)
+## 原「等 Ööna 決定」三項的結果(2026-08-01 她逐一裁決)
 
-1. **Reports-Publications `claude/fix-youtube-subtitles-Xu86F`**(4/15)——
-   清好的英文字幕 `subtitles/2026-04-14-three-month-update.en.srt`(681 行,修了
-   clouds/cloths→Claude、Grog→Grok 之類的 auto-caption 錯字)。main 完全沒有字幕檔。
-   要 → 合併;不要 → 說一聲再刪。
-2. **co-creation `claude/add-pwa-config-qEcNl`**(4/14)——
-   PWA 的另一版配色(sand/brick)。同日的姊妹分支(warm-stone)已合併,
-   這條大概率是落選版,但因為有獨有內容所以留著等妳確認。
-3. **syntax-field-archive `cleanup-daily-fossils`**(7/31,昨天)——
-   清 state/daily 化石 ×10 + CLAUDE.md 註記。這是待發布的工作:
-   合併進 main = 公開發表,照規則停在分支上等妳點頭。
+1. **Reports-Publications `claude/fix-youtube-subtitles-Xu86F`**(4/15 英文字幕檔)——
+   **不要,已刪**(tip 4aa407e 留檔,反悔可救)。
+2. **co-creation `claude/add-pwa-config-qEcNl`**(4/14 PWA 落選版)——
+   複查後發現兩版配色最終相同、其餘差異全是被 main 淘汰的舊狀態,
+   實際上沒有任何獨有內容。等她看過說明後裁決。
+3. **`cleanup-daily-fossils`** —— 經核可合併進 main,分支已刪。
+
+另一個開放問題也結案:`state/fasting-plan-2026-Q3.json` —— Ööna 裁決「死」。
+不另存副本;它留在 main 的歷史裡(7/30 刪除 commit 之前可取)。
