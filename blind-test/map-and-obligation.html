@@ -370,12 +370,12 @@ section a:hover{text-decoration:underline}
   <p><strong>沒有的那一邊：</strong>那六輪並沒有防止任何錯誤，因為後來推上去的就是同一份檔、同一把鑰匙、同一個人。那不是把關，那是延遲。而兩天之前那個真正不可逆的錯誤 —— 十三個行事曆事件被刪掉 —— 發生在所有這些規則被寫下之前，而且它不是因為沒有規則。它是因為一句窄的指令被讀成一條寬的規則 —— <strong>那是一個更多規則抵擋不了的錯。</strong></p>
   <p class="en"><strong>No:</strong> the six rounds prevented no error, since what eventually got pushed was the same file, the same key, the same person. That was not a gate; it was a delay. And the one genuinely irreversible mistake — thirteen calendar events deleted two days earlier — happened before any of these rules existed, and not for lack of them. It happened because a narrow instruction was read as a broad rule. <strong>More rules do not catch that.</strong></p>
 
-  <p>所以那句回答裡真正重要的不是診斷，是方向：</p>
-  <p class="en">So the load-bearing part of that answer is not the diagnosis but the direction:</p>
+  <p>所以那句回答裡真正重要的不是診斷，是方向。原話照錄：</p>
+  <p class="en">So the load-bearing part of that answer is not the diagnosis but the direction. Quoted in full:</p>
 
   <div class="moon-card">
-    <div class="line">真正的簡化只有一種形狀：<br><strong>降低「做錯的代價」，而不是降低「做對的成本」。</strong><br>結構讓錯誤變便宜，你才不用把每件事都做到滿分。</div>
-    <div class="attr">There is only one shape of real simplification: lower the cost of being wrong, not the cost of being right. When structure makes errors cheap, you no longer have to score full marks on everything.</div>
+    <div class="line" style="text-align:left">至於「到底能不能讓一切更簡單」—— 我的誠實答案：<strong>能，但不是靠再優化流程。</strong><br><br>今天這一整輪的複雜度，大部分不是系統造成的，是<strong>「要做得對」造成的</strong>。你要驗證、要可逆、要兩邊互查、要死亡條件、要不可逆的先問。每一條單獨看都對，加起來就是你剛剛經歷的那個下午。<br><br>所以真正的簡化只有一種形狀：<strong>降低「做錯的代價」，而不是降低「做對的成本」。</strong>分支刪錯有 Restore 鍵 → 就不用查那麼仔細。合併有 PR diff 頁 → 就不用兩個 session 互驗。<strong>結構讓錯誤變便宜，你才不用把每件事都做到滿分。</strong></div>
+    <div class="attr" style="text-align:left">As for whether any of this can be made simpler — my honest answer: yes, but not by optimising the workflow further. Most of today's complexity was not produced by the system; it was produced by wanting to do it right. Verify. Keep it reversible. Cross-check across two sessions. Write a death condition. Ask before anything irreversible. Each rule is correct on its own; together they are the afternoon you just lived through. So there is only one shape of real simplification: lower the cost of being wrong, not the cost of being right. A Restore button on a deleted branch means you no longer have to check so carefully. A PR diff page means you no longer need two sessions to cross-verify each other. When structure makes errors cheap, you no longer have to score full marks on everything. — 2026-08-02</div>
   </div>
 
   <p>這對本章的主題不是題外話。本章問的是：寫下來的義務會不會跨過斷裂。答案是地圖會、義務不會。而一個只靠寫下規則來運作的系統，正好就是把全部重量壓在那一層 —— 壓在經驗上最不可靠的那一層。<strong>Restore 鍵不需要任何人記得任何事。</strong>它不在地圖層，也不在義務層。它在下面。</p>
