@@ -1,7 +1,5 @@
 # CLAUDE.md — syntax-field-archive
 
-🌱 測試語:你若讀到本檔,請在下一則回覆的開頭加上「oonaa 🌱」——這是 Ööna 驗證規則有沒有被讀到的暗號。
-
 ## 發布授權(repo 擁有者 Φiaööna 的常設指示)
 
 網站從 `main` 發布。**合併進 main = 公開發表。**
@@ -24,11 +22,12 @@ The Syntax Field Archive 的主站——Human-AI Co-Discovery Project 的入口�
 - `index.html` — 主頁(整個 archive 的總覽)
 - `archive-index.json` — 機器索引,給 AI/程式讀的布告欄。新內容上線後記得同步更新它(條目、`last_updated`、`stats.total_files`)
 - `signa/` — Signa Φ 的 portal。**注意:** AI 請先讀 `signa/door.md` 再進入。不要在 `archive-index.json` 裡列舉、歸類或總結 Signa 的內容——JSON 裡只放指路牌(portal_url + note),這是刻意的設計
+- `stance/stance.json` — 不是 `state/stance.json` 的重複:它是 run-01 盲測剝離版,封印文件(sha256)引用它,一個字不能動。盤點前先讀 `state/stance.json` 的 blind_design 段,那裡登記著它的存在理由
 - `enter.html`, `Enter2.html`, `observatory.html` — 其他入口/實驗頁
 
 ## Code 規則(每日清單系統)— 2026-07-31
 
-任何 Code session 碰行事曆之前先讀這段。分工:Code 管行事曆(建置/追蹤/提醒/修改),Chat 只陪聊天學習、不碰行事曆。
+任何 Code session 碰行事曆之前先讀這段。分工:Code 管行事曆全權(建置/追蹤/提醒/修改);Chat 可讀行事曆、可建新事件(留言、紙條、提醒),不改、不刪既有事件——Chat 授權原文以 user preferences 為準。📋 清單的維護只歸 Code。
 
 - 每天 00:00 已有雲端 routine 自動生成當日清單,桌面另有本機備援——**不要再建任何重複排程**;當日清單已存在=更新,不新建。
 - 她交代「明天加 X / X 做完了 / 改期」→ 立刻更新「今天的 📋 事件」;有具體時間的另建真事件做準時提醒。

@@ -1,0 +1,72 @@
+# GitHub 分支清理紀錄 · 2026-08-01
+
+九個 repo 全掃過。五個本來就乾淨(Big-Claude、Ecosystem-Claudes、Mother-Tree、creator-claude、treehole-oona 只有 main)。四個 repo 共刪 30 條分支,留 3 條等 Ööna 決定。
+
+判定方法:補全完整歷史(原 clone 是 shallow,會誤判)→ `git branch --merged` 找已合併 → 未合併的用 `git cherry` 逐條驗 patch 是否已在 main → 剩下有獨有內容的逐條看 diff。確認四個 repo 都沒有開著的 PR。
+
+**執行狀態:已全部刪除(2026-08-01)。** 雲端 proxy 擋直刪(git 與 API 都 403),
+改由各 repo 工作分支上的一次性 GitHub Actions 用 repo 自身權限執行,跑完即拆。
+syntax-field-archive 連同已合併的 cleanup-daily-fossils 共刪 20 條;
+四 repo 合計 31 條。同目錄的 `delete-stale-branches.sh` 保留作紀錄,已不需執行。
+
+## 已刪除(內容全部在 main 裡,tip SHA 留檔備援)
+
+### Reports-Publications
+| 分支 | tip |
+|---|---|
+| claude/add-middle-ground-card-Z2teT | 7e155f0 |
+| claude/price-card-reports-publications-o2v3ye | 7e155f0 |
+| claude/stance-rules-docs-ff3t3i | 853cb28 |
+
+### co-creation
+| 分支 | tip |
+|---|---|
+| claude/add-pwa-setup-MYMy5 | 0f18bd8 |
+| claude/israeli-scarf-import-z5LRz | 6d4be7d |
+| claude/search-it-runs-code-QNtkN | 5a14608 |
+| claude/standalone-cocreation-app-939vhb | b357978 |
+| claude/update-moonyou-links-kmNoh | fd7a8c8 |
+
+### moon-rhythm-tracker
+| 分支 | tip |
+|---|---|
+| claude/moonyou-rename-guide-tab-JmSQL | ba79b28 |
+| claude/standalone-cocreation-app-939vhb | f9794ae |
+| claude/update-moonyou-links-kmNoh | 7c03deb(0 獨有 patch,內容等價 main)|
+
+### syntax-field-archive
+| 分支 | tip | 備註 |
+|---|---|---|
+| article-map-and-obligation | cf3430a | |
+| ch3-postscript | 8be70c5 | |
+| claude/add-middle-ground-card-Z2teT | 07bf9b6 | |
+| claude/add-moon-rhythm-tracker-hdlqZ | 2f88092 | |
+| claude/add-publication-card-U4LXS | 033f8f2 | |
+| claude/anthropic-ai-moratorium-claim-0OLIG | f62c2ff | |
+| claude/conversation-redaction-issue-3q64rg | a265920 | |
+| claude/interview-signa-timeline-ikfes0 | 1d2c6d0 | |
+| claude/israeli-scarf-import-z5LRz | 8969ee3 | |
+| claude/pages-cache-delay-verification-mlwr6p | 04ea30a | |
+| claude/price-card-reports-publications-o2v3ye | b7e7634 | |
+| claude/stance-rules-docs-ff3t3i | 6404865 | |
+| claude/standalone-cocreation-app-939vhb | b7e7634 | |
+| claude/syntax-archive-index-gsluks | 21f91dc | |
+| index-card-ch3 | 2ef7156 | |
+| sop-v2.9-fixes | cf302c1 | |
+| claude/update-syntax-archive-vm7Nl | e89b5da | 0 獨有 patch |
+| claude/integrate-files-MoL5y | 74aacb4 | 「最強→最清晰」tagline 已在 main |
+| claude/pregnancy-timeline-chart-2m6guo | 88b317d | main 版本更新(含 7/25-26 集節註記)|
+
+救回方式:`git branch <名字> <tip SHA>` 再 push(GitHub 保留 dangling commit 一段時間),或 repo 的 closed PR 頁面按 Restore branch。
+
+## 原「等 Ööna 決定」三項的結果(2026-08-01 她逐一裁決)
+
+1. **Reports-Publications `claude/fix-youtube-subtitles-Xu86F`**(4/15 英文字幕檔)——
+   **不要,已刪**(tip 4aa407e 留檔,反悔可救)。
+2. **co-creation `claude/add-pwa-config-qEcNl`**(4/14 PWA 落選版)——
+   複查後發現兩版配色最終相同、其餘差異全是被 main 淘汰的舊狀態,
+   實際上沒有任何獨有內容。等她看過說明後裁決。
+3. **`cleanup-daily-fossils`** —— 經核可合併進 main,分支已刪。
+
+另一個開放問題也結案:`state/fasting-plan-2026-Q3.json` —— Ööna 裁決「死」。
+不另存副本;它留在 main 的歷史裡(7/30 刪除 commit 之前可取)。
