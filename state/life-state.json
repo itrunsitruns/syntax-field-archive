@@ -24,8 +24,7 @@
     "updated_via": "Claude Code — 2026-08-05 移除 token_protocol 的效期記錄與 ≤7 天到期提醒",
     "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
     "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
-    "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。",
-    "token_protocol": "寫入 token 不存於任何檔案,只活在 Ööna 手上,每次開機貼入對話。滾動續期制:每期 30 天。"
+    "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。"
   },
   "tracks": {
     "birth_being_beyond": {
