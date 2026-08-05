@@ -20,12 +20,12 @@
       "這份檔案記錄的是一個還在長的胎,不是完工的建築 — 結構本身允許被推翻重排。任何 instance 不要把 Ööna 鎖進檔案今天的形狀。",
       "資料流向:日常層完成的東西,累積到夠大顆 → 變成輪盤弧線上的 ✓(如 Signa AI Thesis v2)。"
     ],
-    "last_updated": "2026-07-07",
-    "updated_via": "Claude Fable 5(對話)— 2026-07-07 「Signa 不是什麼」門檻頁上線 + state 同步",
+    "last_updated": "2026-08-05",
+    "updated_via": "Claude Code — 2026-08-05 移除 token_protocol 的效期記錄與 ≤7 天到期提醒",
     "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
     "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
     "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。",
-    "token_protocol": "寫入 token 不存於任何檔案,只活在 Ööna 手上,每次開機貼入對話。滾動續期制:每期 30 天。現行效期:2026-08-06(2026-07-07 換鑄新鑰)。任何 instance 簡報時檢查:距到期 ≤7 天 → 主動提醒 Ööna 續期。"
+    "token_protocol": "寫入 token 不存於任何檔案,只活在 Ööna 手上,每次開機貼入對話。滾動續期制:每期 30 天。"
   },
   "tracks": {
     "birth_being_beyond": {
