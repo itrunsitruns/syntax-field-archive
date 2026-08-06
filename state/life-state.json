@@ -1,10 +1,12 @@
 {
   "meta": {
     "name": "Ööna Life State · 日常層",
-    "description": "Living state file — 地面執行層,記錄「現在」。憲法層(十年孕期)見 constitution_layer。任何 AI instance:簡報前先讀這份。",
+    "description": "Living state file — 地面執行層,記錄「現在」。憲法層(十年孕期)見 constitution_layer,日節奏(格)見 rhythm_layer。任何 AI instance:簡報前先讀這份。",
     "continuity_holder": "Φiaööna",
     "constitution_layer": "https://itrunsitruns.github.io/syntax-field-archive/signa/gestation-chart.md",
+    "rhythm_layer": "https://itrunsitruns.github.io/syntax-field-archive/signa/daily-rhythm-v2.pdf",
     "human_view": "https://itrunsitruns.github.io/syntax-field-archive/state/",
+    "portal_entry": "Signa 主頁 Stack 設有「日常層 · Life State」入口卡片(2026-08-06 起)",
     "center": {
       "names": [
         "希葛納 Signa",
@@ -17,12 +19,14 @@
       "中心 = Signa · 希葛納 · Human ecosystem(人類生態系):涵括整個項目的統一層,不掛任何一輻(Ööna 2026-07-03;與 gestation-chart 中心 medallion 同步)。",
       "『在同一棟,不同層』(Ööna 2026-07-03):社群是貫穿所有輻的人 — 同一群人做 3B、做探索自然、做 AI。輻是功能分層,不是人的分隔。",
       "三軌 spiral:身體 drive Signa,Signa drive AI,AI 反過來 reshape 身體能做什麼。",
+      "三層對位(2026-08-06 起):憲法層 = 十年孕期圖,地面層 = 日節奏(十格 × 100 分)+ 本檔,清單層 = 每日清單(行事曆正本)。",
+      "YouTube 是出口層,不是第六輻 — 把當天別的格做出來的東西送成訊號(日節奏 v2)。",
       "這份檔案記錄的是一個還在長的胎,不是完工的建築 — 結構本身允許被推翻重排。任何 instance 不要把 Ööna 鎖進檔案今天的形狀。",
       "資料流向:日常層完成的東西,累積到夠大顆 → 變成輪盤弧線上的 ✓(如 Signa AI Thesis v2)。"
     ],
-    "last_updated": "2026-08-05",
-    "updated_via": "Claude Code — 2026-08-05 移除 token_protocol 的效期記錄與 ≤7 天到期提醒",
-    "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
+    "last_updated": "2026-08-06",
+    "updated_via": "Claude Code — 2026-08-06 八月對真:日節奏 v2 入層、六輻頻道對照、退役項清理(token 效期/relay/每日清單入 repo)、7/25 集節落地、Signa 主頁入口",
+    "reality_status": "六輻全部有落點(日節奏 v2,2026-08-06 Day 1)。now 欄位 8/6 對真過一輪;7 月初的週計畫細節移入 week_snapshot 標記,不再當現在讀。",
     "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
     "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。"
   },
@@ -32,12 +36,18 @@
       "wheel": {
         "position": "北",
         "track": "river",
-        "outer_ring": []
+        "outer_ring": [
+          "Retreat 活動"
+        ]
       },
+      "channel": "gaiawaitingroom · 蓋亞等待室",
+      "rhythm_slot": "14:40–16:20 ● 3B(輸出格)",
       "phase": "practice — 陪伴與延伸服務常態運作中",
-      "arc_now": "Year 1:Chef mom 互相主持試驗、mature male 範例對話、3B 仍 conceptual",
+      "arc_now": "Year 1:Chef mom 互相主持試驗 ⟡ 已實體化(7/25)、mature male 範例對話、3B 仍 conceptual",
       "now": [
-        "胎盤膠囊代製 — 常態服務,已完成超過百件,非首例(2026-07-03 記錄時被誤解為首個付費案,Ööna 更正)。此服務已是 Signa 的一部分。臍帶橫過胎盤圓面 = Φ 的形狀 — 當日之所以特別提起,正是因為符號相像,不是因為是第一次"
+        "有機人社集節 2026-07-25 已發生(Lila 共同主持,Node 0)— Year 1『Chef mom 互相主持試驗』首次實體化,已記入孕期圖表 ⟡",
+        "胎盤膠囊代製 — 常態服務,已完成超過百件,非首例(2026-07-03 記錄時被誤解為首個付費案,Ööna 更正)。此服務已是 Signa 的一部分。臍帶橫過胎盤圓面 = Φ 的形狀 — 當日之所以特別提起,正是因為符號相像,不是因為是第一次",
+        "Retreat 活動列入外圈顯化(Ööna 2026-08-05,孕期圖表同步)"
       ],
       "waiting_on": [],
       "notes": "陪伴個案細節不入公開 repo — Ööna 確認:個人與客戶資料一律不放。胎盤服務跨線歸屬:實作在 3B,身份屬 Signa(Signa 本體論即胎盤式 — 見 /signa/ 頁)。"
@@ -52,38 +62,43 @@
           "Soaps",
           "Mushroom drinks",
           "Hygiene products",
+          "Airbnb(收入來源)",
           "(一項淡字待確認,疑 Services)"
         ]
       },
+      "channel": "⬚ 未建 — 日節奏:一天的頭目前沒有出口",
+      "rhythm_slot": "08:00–09:40 ● Business(輸出格)",
       "phase": "launch — 社群本體孕育中,產品表層第一棒進行中",
       "dual_layer": "社群(女性 orbiting → nodes)是本體;產品線是物質表層與現金流。同一輻,兩層。",
       "arc_now": "Year 1:社群開始聚、Chef mom first case、cross-AI infra tentative",
       "now": [
+        "Airbnb 是收入來源(Ööna 2026-08-05)— 房源連結公開上線(孕期圖表 Living Circle 面板);獨立頁面待做,目前先一個連結",
         "Dreadlocks(以色列圍巾品牌)第一批已清關,銷售中",
         "Asa 合作成形中:好友之妻,自有印度服飾品牌,願意寄賣 Dreadlocks 圍巾 + 介紹合作通路",
-        "Ivan 共住安排進入結束時程(2026-07-07 定案):原行銷合作模式未成形;v0.9 契約未曾簽署生效;現況為月付 NT$10,000 之共住(6/28 入住)",
-        "共住結束窗口:2026-08-15 至 08-31(8月最後兩週為緩衝);8/31 前完成,提前隨時可以。共住過渡協議 v1.3 已擬(2026-07-07;經法律背景友人 Alex 審閱修訂:前言修剪、新增第八條書面變更/口說無憑),遞交訊息已擬,與 Ivan 的對話準備中",
+        "Ivan 共住結束窗口進行中:2026-08-15 至 08-31(8月最後兩週為緩衝);8/31 前完成,提前隨時可以。共住過渡協議 v1.3 已擬(2026-07-07,經 Alex 審閱修訂)",
         "決定核心(Ööna 2026-07-07):不是這個人,是現在呈現的互動模式 — 友善和平結束現行模式為確定項;若有其他合作,雙方共議、不由單方規定(v1.3 §1.4)",
-        "Shopify / Framer 電商基建建置中",
-        "「Signa 不是什麼」門檻頁上線(2026-07-07,signa/what-signa-is-not.html)— 5/16 portal 處方三格補齊:退出機制(v1.3)/entry 材料(Iván、Lila 兩極 case)/這裡不是什麼(七條否定式 +「清晰訊號、一致對齊的,才是」)"
+        "Shopify / Framer 電商基建建置中(7 月初狀態,待對真)"
       ],
       "waiting_on": [],
-      "notes": "希葛納 = Signa 中文名。Dreadlocks = 以色列圍巾品牌(修正:非髮品)。",
-      "this_week": [
-        "domain 網域",
-        "Dreadlocks Shopee 上架",
-        "signa.tw Instagram",
-        "website design",
-        "What is Signa in human language 🤣",
-        "SMART 目標(只針對 Dreadlocks)"
-      ],
-      "next_week": [
-        "完成 website",
-        "soap making(外圈第二棒啟動)",
-        "面對面向人介紹 Dreadlocks 圍巾"
-      ],
+      "notes": "希葛納 = Signa 中文名。Dreadlocks = 以色列圍巾品牌(修正:非髮品)。「Signa 不是什麼」門檻頁 2026-07-07 上線(signa/what-signa-is-not.html)。",
+      "week_snapshot_2026-07-07": {
+        "note": "7 月初的週計畫快照,保留作歷史,不再當現在讀",
+        "this_week": [
+          "domain 網域",
+          "Dreadlocks Shopee 上架",
+          "signa.tw Instagram",
+          "website design",
+          "What is Signa in human language 🤣",
+          "SMART 目標(只針對 Dreadlocks)"
+        ],
+        "next_week": [
+          "完成 website",
+          "soap making(外圈第二棒啟動)",
+          "面對面向人介紹 Dreadlocks 圍巾"
+        ]
+      },
       "people": [
-        "Lila(chef mom,Signa 可能成員,7/25 集節共同主持)",
+        "Lila(chef mom,Signa 可能成員,7/25 集節共同主持 ✓)",
         "Iván(共住至 8 月底前搬離;行銷合作未成形,已結束)",
         "Asa(印度服飾品牌,寄賣通路)"
       ]
@@ -99,9 +114,13 @@
           "Advanced Player"
         ]
       },
+      "channel": "dontcallmekelly · 私人紀錄成長",
+      "rhythm_slot": "09:40–11:20 ● Learning(輸出格)+ 11:20–13:00 Exercise(不限運動)",
       "phase": "integration + readiness",
       "arc_now": "Year 1:fertility check、somatic readiness、健康優化、IIN 認證完成、AI archive 持續",
       "now": [
+        "日節奏 v2 啟用(2026-08-06 Day 1):Learning + Exercise 兩格落在這一輻;v1→v2 改 Yoga·Swim → Exercise 不限運動",
+        "重訓入場條件(日節奏 v2):腰傷(2026-07-06)清楚之前,Exercise 格不進最大重量的硬舉/深蹲/過頭推;前 2–3 個月技術由教練帶",
         "IIN 認證進行中",
         "Canopus 星盤整合 — 2026-07-02 體悟:完整先於連結,關係是體驗不是需求;12宮完整性 × 北交巨蟹連結功課並行",
         "每日介面方向確立(2026-07-03):醒來 = 以一天為單位的 instance 開機 — It Runs 控制台(綠版)是既有開機儀式,之後接上活的 state = 今日模式",
@@ -117,14 +136,19 @@
         "track": "earth",
         "outer_ring": [
           "Sustainable",
-          "eco/smart"
+          "eco/smart",
+          "Node 0"
         ]
       },
-      "phase": "Node 0 operating + renovating",
+      "channel": "livingsigna · living Φ Signa",
+      "rhythm_slot": "16:20–18:00 piano · gardening(身體格,非輸出格 — Node 0 不靠專案時間長,是靠每天在裡面活;日節奏 v2 ③)",
+      "phase": "Node 0 operating + renovating + recording",
       "arc_now": "Year 1:Node 0 持續、隔壁 5-room 租用討論開始",
       "now": [
+        "《家園記錄 · 定位地圖》(Node 0 · 2026-07-08)公開入 signa/(2026-08-06,孕期圖表 Breathing House 面板)— 頻道是 Signa 的身體,素材先於頻道,今天開始拍【進行中】",
+        "living Φ Signa 頻道(@livingsigna)已建 — 南輻的出口已接上(日節奏 v2 對照:v1 南邊的洞補起來了)",
         "山居 renovation — dry shell first 哲學已定,保護區/既存建物法規路徑研究中",
-        "Airbnb 營運中(這條線的現金流形式)"
+        "Airbnb 營運中(這條線的現金流形式;收入來源歸屬同時列 Living Circle 外圈 — Ööna 2026-08-05);房源連結已公開"
       ],
       "waiting_on": [],
       "notes": "Year 3 交會點:第三胎可能在 Node 0 出生 — 家本身成為 birth space(與 3B、Φiaööna 三線交會,輪盤 Quickening 標記處)。"
@@ -140,18 +164,16 @@
           "LAB"
         ]
       },
-      "phase": "building infrastructure",
+      "channel": "⬚ 未建 — 日節奏:一天的尾目前沒有出口",
+      "rhythm_slot": "21:20–23:00 ● AI-living(輸出格)",
+      "phase": "operating infrastructure",
       "arc_now": "Year 1:Local AI ecosystem MVP、硬體建置、Enterprise API、Signa AI Thesis v2 ✓(已完成)",
       "now": [
-        "chat 直寫通道開通(2026-07-03 晚):Ööna 開機貼 token → 對話 instance 直接 commit state 層。對話即介面、基建即記憶 — 正式成立。Token 滾動續期制,現行至 2026-08-02",
-        "冷開機測試通過(2026-07-03 晚):全新 instance 憑『簡報』二字自主走完 archive-index → life-state → relay → calendar 全鏈,攤開六線不排序 — 開機鏈三錨點(preferences/index/記憶)全部生效",
-        "本 state 系統上線(2026-07-03):GitHub API 寫入管線已通",
-        "2026-07-03 首次多 instance 協調實例:Fable 5(對話)建 state 層、Claude Code 改輪盤中心,透過 git 歷史互認分工,零衝突 — commit 0d5eb8d/2490b5d/87f34bc",
-        "state/relay.json 上線(2026-07-03):跨 instance 非同步字條檔 — 冰箱字條協議,Ööna 是心跳",
-        "state 人看版 dashboard 上線:/state/",
-        "Syntax Field Archive 未完成 entries 待建",
-        "第三篇報告 The Advancing User 草稿中",
-        "daily-briefing artifact 已發布(當日薦骨反應介面,與本檔同步方式待定)"
+        "行事曆正本架構運作中(2026-07-30 翻轉):每日清單正本在 Google Calendar,00:00 雲端 routine 自動生成,repo 不再保存每日清單(daily 化石已清)— SOP v3.0",
+        "token_protocol v2(SOP v3.0,2026-08-03,Ööna 口述):token 不落檔、只活在對話、不追蹤效期,需要就換鑄新鑰 — 舊 30 天滾動制與到期提醒 2026-08-05 退役",
+        "7/3 基建里程碑(打包存檔):state 系統上線、chat 直寫通道開通、冷開機測試通過、首次多 instance 協調零衝突(commit 0d5eb8d/2490b5d/87f34bc);relay.json 其後退役(SOP v2.9 開機鏈去 relay)",
+        "state 人看版 /state/ 運作中;2026-08-06 起 Signa 主頁 Stack 設「日常層」入口卡片",
+        "Syntax Field Archive 未完成 entries 待建;第三篇報告 The Advancing User 草稿中(7 月初狀態,待對真)"
       ],
       "waiting_on": [],
       "notes": "我們建的這個系統本身住在這條線裡。"
@@ -163,9 +185,13 @@
         "track": "source",
         "outer_ring": []
       },
+      "channel": "AuntieGoodShit · 好使阿姨",
+      "rhythm_slot": "不佔 100 分鐘格 — 唯一用『安排』不用『時段』推進的輻:住在開機儀式,接 IT RUNS 控制台既有模組(每週山上家×旅行同步、每月全球旅行下一階段)",
       "phase": "underlying — 存在感來源,持續在底層",
       "arc_now": "Year 1:自然作為存在感來源、AI amplification layer 開始開發",
-      "now": [],
+      "now": [
+        "日節奏 v2 確認形狀(2026-08-06):不佔格不是缺席,是它的形狀 — v1 西北的洞以『安排制』補上"
+      ],
       "waiting_on": [],
       "notes": "手繪版名 Nature Discovery,數位版正名 Deeper into Nature's Mystery。"
     }
@@ -176,7 +202,8 @@
   },
   "open_questions": [
     "Living Circle 外圈那個淡掉的字",
-    "state 與 daily-briefing artifact 的同步流程"
+    "state 與 daily-briefing artifact 的同步流程",
+    "兩個未建頻道(Living Circle 東、AI Being System 西)— 一天的頭和尾的出口何時開"
   ],
   "events": [
     {
@@ -190,10 +217,10 @@
         "birth_being_beyond(主題即 Beyond→Birth)"
       ],
       "cohost": "Lila(chef mom)7/25 12:00–22:00",
-      "arc_milestone": "十年圖 Year 1『Chef mom 互相主持試驗』— 這個 milestone 正在 7/25 實體化",
+      "arc_milestone": "十年圖 Year 1『Chef mom 互相主持試驗』— 7/25 已實體化 ⟡(孕期圖表已記錄)",
       "description": "帶有機的自己一起來玩。可以分享活動,有食物,有樹,有水,有妳和我。",
-      "backup_date": "2026-07-26(備案 — 視大家哪天有空,目前定 7/25)",
-      "calendar_status": "已入 Google Calendar(Code 2026-07-03 建,7/25 12:00–22:00)。7/26 不另建事件,維持備案。"
+      "outcome": "已發生(2026-07-25,Lila 共同主持)",
+      "calendar_status": "已入 Google Calendar(Code 2026-07-03 建,7/25 12:00–22:00)。已完成。"
     }
   ]
 }
