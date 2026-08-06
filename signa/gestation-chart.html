@@ -577,6 +577,7 @@
       en: 'Living Circle', zh: '生活圈',
       labelEn: 'Living Circle', labelZh: '生活圈',
       items: ['Dreadlocks', 'Soaps', 'Mushroom drinks', 'Hygiene products', 'Airbnb · 收入來源'],
+      links: [{ icon: '🏡', label: 'Airbnb · Node 0 空間', url: 'https://www.airbnb.com.tw/rooms/1550469734359314046' }],
       note: '生活圈的物質層(dreadlocks / soaps / mushroom drinks / hygiene products)是社群自給的產物——在手繪輪盤裡標出,十年時程文件裡還沒排時點。Airbnb 是收入來源——經營中的空間已自然變成 Being center。',
       arc: [
         { pts: ['社群開始聚', 'Chef mom first case attempted', 'Cross-AI infrastructure tentative'] },
@@ -624,6 +625,7 @@
       labelEn: 'Breathing House', labelZh: '生態住宅',
       items: ['Sustainable', 'eco / smart', 'Node 0'],
       yt: { label: 'livingsigna · living Signa', url: 'https://youtube.com/@livingsigna' },
+      links: [{ icon: '📄', label: '《家園記錄 · 定位地圖》PDF', url: 'signa-homeland-record-map.pdf' }],
       note: 'Sustainable eco/smart 住宅的具體建置細節在十年時程文件裡還沒細寫,以 Node 0(現在租下的山上空間)為錨。',
       arc: [
         { pts: ['Node 0(現在租下的山上空間)持續', '隔壁 5-room 租用討論開始'] },
@@ -763,6 +765,7 @@
         <div class="panel-title">${t.en} <span class="panel-title-zh">· ${t.zh}</span></div>
         <div class="panel-items">${chips}</div>
         ${t.yt ? `<a class="yt-link" href="${t.yt.url}" target="_blank" rel="noopener"><span class="play">▶</span> YouTube · ${t.yt.label} ↗</a>` : ''}
+        ${(t.links || []).map((l) => `<a class="yt-link" href="${l.url}" target="_blank" rel="noopener">${l.icon ? `${l.icon} ` : ''}${l.label} ↗</a>`).join('')}
         ${t.note ? `<div class="panel-note">${t.note}</div>` : ''}
       </div>
       <div class="arc">${arcHtml}</div>`;
