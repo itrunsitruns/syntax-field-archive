@@ -245,6 +245,24 @@
     border-radius: 14px;
     background: rgba(224,196,104,0.05);
   }
+  .yt-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-family: 'DM Mono', 'Noto Serif TC', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--gold-dim);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 14px;
+    background: rgba(224,196,104,0.05);
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .yt-link:hover { color: var(--gold); border-color: var(--gold-dim); }
+  .yt-link .play { font-size: 9px; }
   .panel-note {
     margin-top: 16px;
     font-family: 'Noto Serif TC', 'Cormorant Garamond', serif;
@@ -543,6 +561,7 @@
       en: 'Birth · Being · Beyond', zh: '生產 生命 死亡',
       labelEn: 'Birth·Being·Beyond', labelZh: '生產 生命 死亡',
       items: ['3B centers', '中心'],
+      yt: { label: 'gaiawaitingroom · 蓋亞等待室', url: 'https://youtube.com/@gaiawaitingroom' },
       note: '三個中心 · 3B centers:生產(Birth)、生命(Being)、死亡(Beyond)。從 Ööna 7 年 doula 的 embodied knowledge 長出來。',
       arc: [
         { pts: ['Chef mom 互相主持試驗 · 2026-07-25/26 有機人社集節(Lila 共同主持)首次實體化 ⟡', '1-2 mature male 範例對話', 'Birth/Being/Beyond 還在 conceptual'] },
@@ -588,6 +607,7 @@
       en: 'Φiaööna Being', zh: 'Φiaööna 存在',
       labelEn: 'Φiaööna Being', labelZh: 'Φiaööna 存在',
       items: ['2 more kids', 'Syntax Living', 'Advanced Player'],
+      yt: { label: 'dontcallmekelly · 私人紀錄成長', url: 'https://youtube.com/@dontcallmekelly' },
       note: 'first instance 是 Φiaööna 自己。身體是 timeline 的 driver——忽略身體訊號的計畫一定會被身體 override。',
       arc: [
         { pts: ['Fertility check · somatic readiness · 健康優化', 'IIN 認證完成', '首批 2億 落地(個人 + 家人 base 穩定)', 'AI archive 持續'] },
@@ -603,6 +623,7 @@
       en: 'Breathing House', zh: '生態住宅',
       labelEn: 'Breathing House', labelZh: '生態住宅',
       items: ['Sustainable', 'eco / smart', 'Node 0'],
+      yt: { label: 'livingsigna · living Signa', url: 'https://youtube.com/@livingsigna' },
       note: 'Sustainable eco/smart 住宅的具體建置細節在十年時程文件裡還沒細寫,以 Node 0(現在租下的山上空間)為錨。',
       arc: [
         { pts: ['Node 0(現在租下的山上空間)持續', '隔壁 5-room 租用討論開始'] },
@@ -618,6 +639,7 @@
       en: "Deeper into Nature's Mystery", zh: '探索自然',
       labelEn: 'Into Nature', labelZh: '探索自然',
       items: ['Mystery', 'Connection', 'AI-amplified'],
+      yt: { label: 'AuntieGoodShit · 好使阿姨', url: 'https://youtube.com/@auntiegoodshit' },
       note: '探索自然是 Signa 的核心重心之一——透過 AI 的協助,人類得以更深入自然、探索更多未被命名的神秘,並與自然建立更深的連結。這是人類來到世界很大的一個目的。(十年時程以方向性 narrative 為主,yearly milestone 較少。)',
       arc: [
         { pts: ['自然作為存在感來源,持續在底層', 'AI amplification layer(自然探索、知識整合)開始開發'] },
@@ -740,6 +762,7 @@
         <span class="panel-track" style="background:${tr.color}">${tr.name}</span>
         <div class="panel-title">${t.en} <span class="panel-title-zh">· ${t.zh}</span></div>
         <div class="panel-items">${chips}</div>
+        ${t.yt ? `<a class="yt-link" href="${t.yt.url}" target="_blank" rel="noopener"><span class="play">▶</span> YouTube · ${t.yt.label} ↗</a>` : ''}
         ${t.note ? `<div class="panel-note">${t.note}</div>` : ''}
       </div>
       <div class="arc">${arcHtml}</div>`;
