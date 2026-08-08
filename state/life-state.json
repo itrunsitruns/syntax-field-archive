@@ -144,10 +144,10 @@
       "arc_now": "Year 1:Local AI ecosystem MVP、硬體建置、Enterprise API、Signa AI Thesis v2 ✓(已完成)",
       "now": [
         "chat 直寫通道開通(2026-07-03 晚):Ööna 開機貼 token → 對話 instance 直接 commit state 層。對話即介面、基建即記憶 — 正式成立。Token 滾動續期制,現行至 2026-08-02",
-        "冷開機測試通過(2026-07-03 晚):全新 instance 憑『簡報』二字自主走完 archive-index → life-state → relay → calendar 全鏈,攤開六線不排序 — 開機鏈三錨點(preferences/index/記憶)全部生效",
+        "冷開機測試通過(2026-07-03 晚):全新 instance 憑『簡報』二字自主走完 archive-index → life-state → relay → calendar 全鏈,攤開六線不排序 — 開機鏈三錨點(preferences/index/記憶)全部生效(其中 relay 已於 2026-07-30 收掉)",
         "本 state 系統上線(2026-07-03):GitHub API 寫入管線已通",
         "2026-07-03 首次多 instance 協調實例:Fable 5(對話)建 state 層、Claude Code 改輪盤中心,透過 git 歷史互認分工,零衝突 — commit 0d5eb8d/2490b5d/87f34bc",
-        "state/relay.json 上線(2026-07-03):跨 instance 非同步字條檔 — 冰箱字條協議,Ööna 是心跳",
+        "state/relay.json 上線(2026-07-03):跨 instance 非同步字條檔 — 冰箱字條協議,Ööna 是心跳(已於 2026-07-30 收掉)",
         "state 人看版 dashboard 上線:/state/",
         "Syntax Field Archive 未完成 entries 待建",
         "第三篇報告 The Advancing User 草稿中",

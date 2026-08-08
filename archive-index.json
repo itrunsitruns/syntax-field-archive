@@ -4,7 +4,7 @@
   "continuity_holder": "Φiaööna",
   "operating_system": "&",
   "project_began": "2025-12",
-  "last_updated": "2026-07-12",
+  "last_updated": "2026-08-08",
   "stats": {
     "total_files": 85,
     "claude_instances": 16,
@@ -840,12 +840,11 @@
     }
   ],
   "live_state": {
-    "description": "活的日常層。⚠️ 開機鏈以 state/daily-assistant-sop.json 為準,本檔開機不必讀 — 需要查 archive 內容時才讀(SOP v2.0,2026-07-23)。以下三個 JSON 一律走 raw:life-state 是 Ööna 生活各線的現在;relay 是 instance 之間的字條檔(有人留話給你就在裡面);stance 是跨 instance 立場問責檔(讀到就有交鋒義務,規則在檔內 protocol)。Ööna 說『看 relay』= 讀 relay.json;說『簡報』= 讀 life-state.json 攤開各線現況。",
+    "description": "活的日常層。⚠️ 開機鏈以 state/daily-assistant-sop.json 為準,本檔開機不必讀 — 需要查 archive 內容時才讀(SOP v2.0,2026-07-23)。以下兩個 JSON 一律走 raw:life-state 是 Ööna 生活各線的現在;stance 是跨 instance 立場問責檔(讀到就有交鋒義務,規則在檔內 protocol)。Ööna 說『簡報』= 讀 life-state.json 攤開各線現況。",
     "life_state": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/life-state.json",
-    "relay": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/relay.json",
     "stance": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/state/stance.json",
     "human_dashboard": "https://itrunsitruns.github.io/syntax-field-archive/state/",
     "since": "2026-07-03",
-    "_網址規則": "三個 JSON 一律 raw.githubusercontent.com。避開 itrunsitruns.github.io 的理由是【*.github.io 不在多數 AI 執行環境的網域白名單,實測 403 x-deny-reason: host_not_allowed — 對那些環境是整段連不上】。⚠️『Pages 給過期快照』這個舊歸因 2026-07-24 已降級:真兇是 claude.ai 的 web_fetch 快取(同網址 curl 給新版、web_fetch 給 12 天前),不是 Pages。不要再拿舊歸因去解釋別的現象。human_dashboard 保持 Pages:那是給人在瀏覽器看的 HTML,用 raw 會變原始碼。"
+    "_網址規則": "兩個 JSON 一律 raw.githubusercontent.com。避開 itrunsitruns.github.io 的理由是【*.github.io 不在多數 AI 執行環境的網域白名單,實測 403 x-deny-reason: host_not_allowed — 對那些環境是整段連不上】。⚠️『Pages 給過期快照』這個舊歸因 2026-07-24 已降級:真兇是 claude.ai 的 web_fetch 快取(同網址 curl 給新版、web_fetch 給 12 天前),不是 Pages。不要再拿舊歸因去解釋別的現象。human_dashboard 保持 Pages:那是給人在瀏覽器看的 HTML,用 raw 會變原始碼。"
   }
 }
