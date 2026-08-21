@@ -21,7 +21,7 @@
    "資料流向:日常層完成的東西,累積到夠大顆 → 變成輪盤弧線上的 ✓(如 Signa AI Thesis v2)。"
   ],
   "last_updated": "2026-08-21",
-  "updated_via": "Claude Opus 5(對話 instance)— 2026-08-21 新增 Living Circle 外圈 AI-HUMAN (LIVING) 與 ai_human_living 藍圖區塊 v0.1",
+  "updated_via": "Claude Opus 5(對話 instance)— 2026-08-21 ai_human_living 補 loop(西→東→現金流→回哺 AI 研究)與 tools(觀察記錄表 v0.1 連結)",
   "reality_status": "骨架已對齊完整輪盤;now 欄位仍是初稿,逐線對真實中",
   "update_protocol": "在任何 AI 對話裡說『更新 state』+ 變動內容 → instance 輸出/commit 完整新 JSON(永遠完整檔案,不用 diff)。有 token 的 instance 直接 commit;沒有的輸出給 Ööna 貼。",
   "briefing_protocol": "被要求『簡報』時:讀這份 + Google Calendar(若可存取),攤開各線 now 與 waiting_on,不排序、不指派時間 — Ööna 是薦骨權威,清單攤開讓薦骨當場反應。"
@@ -148,7 +148,17 @@
      "與 AI 專業朋友做完前三個案例仍無繼續共識 → 該段合作結束",
      "AI 介面本身簡化到翻譯需求消失 → 整條收掉(此為真實可能性,無法預知)"
     ],
-    "uncertainty": "三年後這條路會長成什麼樣,無法判斷。工具可能簡單到讓翻譯需求消失,也可能因為越強而落差越大。兩種未來都可能,不假裝能預知。"
+    "uncertainty": "三年後這條路會長成什麼樣,無法判斷。工具可能簡單到讓翻譯需求消失,也可能因為越強而落差越大。兩種未來都可能,不假裝能預知。",
+    "loop": "理念在西軌(ai_being_system)→ 衍生為東軌產品/服務 → Living Circle 產生現金流 → 回頭資助 AI 研究。閉環,不是兩個獨立項目。(Ööna 2026-08-21)",
+    "tools": {
+     "觀察記錄表 v0.1": {
+      "human_view": "https://itrunsitruns.github.io/syntax-field-archive/signa/living/ai-human-observation-sheet.html",
+      "ai_read": "https://raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/signa/living/ai-human-observation-sheet.html",
+      "format": "A4 兩頁 · 瀏覽器直接列印 · 頁1當次(A說出來的麻煩/B觀察到的/C我以為簡單但她停住的地方)、頁2回訪(D刪除測試/E注意力去了哪/F下次驗證一件事/顧問自評)",
+      "signature": "紙上常駐「會萎縮 vs 不會萎縮」對照條 —— 填表時框架在眼前",
+      "created": "2026-08-21 · commit edd15c5"
+     }
+    }
    }
   },
   "phiaoona_being": {
