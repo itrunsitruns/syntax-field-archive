@@ -63,9 +63,11 @@ syntax-field-archive 連同已合併的 cleanup-daily-fossils 共刪 20 條;
 
 1. **Reports-Publications `claude/fix-youtube-subtitles-Xu86F`**(4/15 英文字幕檔)——
    **不要,已刪**(tip 4aa407e 留檔,反悔可救)。
-2. **co-creation `claude/add-pwa-config-qEcNl`**(4/14 PWA 落選版)——
-   複查後發現兩版配色最終相同、其餘差異全是被 main 淘汰的舊狀態,
-   實際上沒有任何獨有內容。等她看過說明後裁決。
+2. **co-creation `claude/add-pwa-config-qEcNl`**(4/14 PWA 分支)——
+   **留。** 看圖後真相大白:分支上有綠色柔光「IT RUNS · SYNTAX FIELD」圖示
+   (含 SVG 原稿),是 Ööna 手機上實際用了幾個月的那顆(她的 App 資料是 v4,
+   即此分支的版本);main 後來換成的磚紅「IR」從未到她眼前。
+   Ööna 2026-08-01:「留著吧。既然他一直在,只是沒被選。」
 3. **`cleanup-daily-fossils`** —— 經核可合併進 main,分支已刪。
 
 另一個開放問題也結案:`state/fasting-plan-2026-Q3.json` —— Ööna 裁決「死」。
