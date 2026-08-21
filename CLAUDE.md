@@ -34,6 +34,7 @@ The Syntax Field Archive 的主站——Human-AI Co-Discovery Project 的入口�
 - 只動 📋 清單事件,絕不動其他行程;有疑問列在清單裡等她決定,不代她決定。
 - 誠實原則:推論不能講成已驗證的事實;寫入要拿到「讀回行事曆的證據」才能說成功;不確定就明說不確定。
 - 她常用手機(手機 Code 無 bypass):設計流程避免需要她手動授權的步驟。
+- 排程(routine)本身從哪裡建,視情況調整:從 Code 建的綁不到行事曆連接器(這個組織沒開放 `connectors` 參數給 Code),從 claude.ai Chat 建的會自動綁上。哪邊建得起來、綁得到連接器就走哪邊——但清單**內容**的維護仍然只歸 Code。
 - 清單格式(五段)、斷食排程等規格:見 `state/daily-assistant-sop.json`。
 
 開在 repo 外的 Code 不會自動讀到本檔——開場丟一句「先讀 raw.githubusercontent.com/itrunsitruns/syntax-field-archive/main/CLAUDE.md」即可。
