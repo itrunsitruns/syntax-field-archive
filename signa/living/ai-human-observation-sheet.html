@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>AI-HUMAN (LIVING) · 觀察記錄表 v0.1</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root{
+    --ink:      #1B1E19;
+    --ink-soft: #5C6157;
+    --rule:     #C4C2B8;
+    --rule-fine:#DEDCD3;
+    --fill:     #F0EFE8;
+    --moss:     #55684A;
+    --paper:    #FFFFFF;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans CJK TC","Noto Sans CJK HK",sans-serif;
+    font-weight: 400;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page{
+    width: 210mm;
+    padding: 12mm 14mm 10mm;
+    page-break-after: always;
+  }
+  .page:last-child{ page-break-after: auto; }
+
+  /* ---------- 頁首 ---------- */
+  .masthead{
+    display:flex; align-items:flex-end; justify-content:space-between;
+    border-bottom: 1.6pt solid var(--ink);
+    padding-bottom: 2.5mm;
+  }
+  .masthead h1{
+    font-family:"Noto Serif CJK TC","Noto Serif CJK HK",serif;
+    font-size: 20pt; font-weight:600; letter-spacing:.02em; line-height:1.2;
+  }
+  .masthead .sub{
+    font-size: 10pt; color:var(--ink-soft); letter-spacing:.04em; margin-top:1.6mm;
+  }
+  .masthead .ver{
+    font-size: 9pt; color:var(--moss); letter-spacing:.1em; text-align:right; line-height:1.5;
+  }
+
+  /* ---------- 表頭欄位 ---------- */
+  .idbar{
+    display:flex; gap:0; margin-top:4mm;
+    border:.6pt solid var(--rule);
+  }
+  .idbar > div{
+    flex:1; padding:2.6mm 3mm 5mm;
+    border-right:.6pt solid var(--rule-fine);
+  }
+  .idbar > div:last-child{ border-right:none; }
+  .idbar .lab{ font-size:8.5pt; color:var(--ink-soft); letter-spacing:.1em; display:block; margin-bottom:4mm; }
+  .idbar .w{ display:block; border-bottom:.5pt dotted var(--rule); height:0; }
+
+  /* ---------- 常駐對照條（signature） ---------- */
+  .strip{
+    margin-top:6mm;
+    border-left: 2.6pt solid var(--moss);
+    background: var(--fill);
+    padding: 3.6mm 4.5mm 3.8mm;
+  }
+  .strip .st-title{
+    font-size:9.5pt; font-weight:700; letter-spacing:.1em; color:var(--moss); margin-bottom:2.2mm;
+  }
+  .strip .cols{ display:flex; gap:7mm; }
+  .strip .col{ flex:1; }
+  .strip .col + .col{ border-left:.6pt solid var(--rule); padding-left:7mm; }
+  .strip .ch{ font-size:10.5pt; font-weight:700; margin-bottom:1.2mm; }
+  .strip .cb{ font-size:9.5pt; line-height:1.75; color:var(--ink-soft); }
+  .strip .warn{
+    margin-top:2.6mm; padding-top:2.2mm; border-top:.5pt solid var(--rule);
+    font-size:9.5pt; line-height:1.7;
+  }
+
+  /* ---------- 區段 ---------- */
+  section{ margin-top:6.5mm; }
+  .sec-head{ display:flex; align-items:baseline; gap:2.5mm; margin-bottom:2.2mm; }
+  .sec-head .mk{
+    font-family:"Noto Serif CJK TC",serif;
+    font-size:14pt; font-weight:600; color:var(--moss);
+  }
+  .sec-head .tt{ font-size:12.5pt; font-weight:700; letter-spacing:.02em; }
+  .sec-head .hint{ font-size:9pt; color:var(--ink-soft); }
+
+  table{ width:100%; border-collapse:collapse; }
+  th{
+    font-size:9pt; font-weight:500; color:var(--ink-soft); letter-spacing:.04em;
+    text-align:left; padding:1.9mm 2.4mm; border-bottom:.9pt solid var(--ink);
+    background:var(--fill);
+  }
+  td{
+    border-bottom:.5pt solid var(--rule); padding:0 2.4mm; height:12mm;
+    font-size:11pt;
+  }
+  td.tag{ text-align:center; color:var(--rule); font-size:9.5pt; letter-spacing:.35em; }
+  td.yn { text-align:center; color:var(--rule); font-size:9.5pt; letter-spacing:.3em; }
+
+  /* ---------- 大空白框 ---------- */
+  .openbox{
+    border:.6pt solid var(--rule);
+    border-left:2.6pt solid var(--moss);
+    padding:3mm 4mm 2mm;
+  }
+  .lines{ }
+  .lines .ln{ border-bottom:.5pt solid var(--rule-fine); height:12mm; }
+  .lines .ln:last-child{ border-bottom:none; }
+
+  .note{ font-size:9pt; color:var(--ink-soft); line-height:1.65; margin-top:2.2mm; }
+
+  /* ---------- 頁尾 ---------- */
+  .foot{
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:.5pt solid var(--rule); margin-top:7mm; padding-top:2.5mm;
+    font-size:9pt; color:var(--ink-soft); letter-spacing:.06em;
+  }
+  .foot .pg{ color:var(--moss); font-weight:700; }
+
+  .rule-fat{ border:none; border-top:1.2pt solid var(--ink); margin:5mm 0 0; }
+</style>
+</head>
+<body>
+
+<!-- ============ 第 1 頁 · 當次 ============ -->
+<div class="page">
+
+  <div class="masthead">
+    <div>
+      <h1>觀察記錄表 · 當次</h1>
+      <div class="sub">AI-HUMAN (LIVING) — 目的是抓到「她說不出來的需求」</div>
+    </div>
+    <div class="ver">v0.1<br>2026-08-21</div>
+  </div>
+
+  <div class="idbar">
+    <div><span class="lab">個案代號</span><span class="w"></span></div>
+    <div><span class="lab">年齡</span><span class="w"></span></div>
+    <div><span class="lab">日期</span><span class="w"></span></div>
+    <div><span class="lab">第幾次</span><span class="w"></span></div>
+    <div><span class="lab">地點 / 場合</span><span class="w"></span></div>
+  </div>
+
+  <div class="strip">
+    <div class="st-title">填表時放在眼前 — 外包出去，這個功能會不會萎縮</div>
+    <div class="cols">
+      <div class="col">
+        <div class="ch">會萎縮 — 不要交出去</div>
+        <div class="cb">形成判斷 · 找出自己要說什麼 · 記住重要的事 · 忍受想不出來的那段時間 · 跟人摩擦</div>
+      </div>
+      <div class="col">
+        <div class="ch">不會萎縮 — 可以交出去</div>
+        <div class="cb">查資料 · 格式轉換 · 重複計算 · 翻譯 · 排程 · 提醒</div>
+      </div>
+    </div>
+    <div class="warn">
+      <strong>最危險的不是右邊用太多，是左邊被偽裝成右邊。</strong>
+      「幫我想一下這件事怎麼看」像查資料，其實是形成判斷。「幫我回這封信」像格式轉換，其實是決定要對這個人說什麼。
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <span class="mk">A</span>
+      <span class="tt">她說出來的麻煩</span>
+      <span class="hint">用問的。一個人只會把「已知有解的困難」叫做麻煩。</span>
+    </div>
+    <table>
+      <tr>
+        <th style="width:38%">事項</th>
+        <th style="width:12%">多久一次</th>
+        <th style="width:32%">現在怎麼處理</th>
+        <th style="width:18%">分類</th>
+      </tr>
+      <tr><td></td><td></td><td></td><td class="tag">① ② ③</td></tr>
+      <tr><td></td><td></td><td></td><td class="tag">① ② ③</td></tr>
+      <tr><td></td><td></td><td></td><td class="tag">① ② ③</td></tr>
+      <tr><td></td><td></td><td></td><td class="tag">① ② ③</td></tr>
+      <tr><td></td><td></td><td></td><td class="tag">① ② ③</td></tr>
+    </table>
+    <div class="note"><strong>① 現在就能解　② 能解但她學不會操作　③ 解不了。</strong>② 那一堆就是這個職業存在的理由，數量通常比預期多。</div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="mk">B</span>
+      <span class="tt">我看到的（她沒說）</span>
+      <span class="hint">用看的。習以為常的累，不會出現在 A 欄。</span>
+    </div>
+    <table>
+      <tr>
+        <th style="width:40%">她在做什麼</th>
+        <th style="width:14%">花了多久</th>
+        <th style="width:32%">卡在哪一步</th>
+        <th style="width:14%">她有察覺嗎</th>
+      </tr>
+      <tr><td></td><td></td><td></td><td class="yn">是 · 否</td></tr>
+      <tr><td></td><td></td><td></td><td class="yn">是 · 否</td></tr>
+      <tr><td></td><td></td><td></td><td class="yn">是 · 否</td></tr>
+      <tr><td></td><td></td><td></td><td class="yn">是 · 否</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="mk">C</span>
+      <span class="tt">我以為很簡單、但她停住的地方</span>
+      <span class="hint">這一欄最重要。</span>
+    </div>
+    <div class="openbox">
+      <div class="lines">
+        <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+      </div>
+    </div>
+    <div class="note">我的正常是別人的極端。這些停頓的位置，就是我自己看不見的落差。</div>
+  </section>
+
+  <div class="foot">
+    <span>AI-HUMAN (LIVING) · Living Circle · Signa 希葛納</span>
+    <span class="pg">1 / 2 · 當次</span>
+  </div>
+</div>
+
+<!-- ============ 第 2 頁 · 回訪 ============ -->
+<div class="page">
+
+  <div class="masthead">
+    <div>
+      <h1>觀察記錄表 · 回訪</h1>
+      <div class="sub">AI-HUMAN (LIVING) — 目的是確認注意力被釋放到哪裡</div>
+    </div>
+    <div class="ver">v0.1<br>2026-08-21</div>
+  </div>
+
+  <div class="idbar">
+    <div><span class="lab">個案代號</span><span class="w"></span></div>
+    <div><span class="lab">回訪日期</span><span class="w"></span></div>
+    <div><span class="lab">距上次幾天</span><span class="w"></span></div>
+    <div><span class="lab">她自己用過幾次</span><span class="w"></span></div>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <span class="mk">D</span>
+      <span class="tt">刪除測試</span>
+      <span class="hint">把 AI 從這件事拿掉，會變亂還是變乾淨？</span>
+    </div>
+    <table>
+      <tr>
+        <th style="width:52%">這次交出去的事</th>
+        <th style="width:24%">拿掉 AI 之後</th>
+        <th style="width:24%">判定</th>
+      </tr>
+      <tr><td></td><td class="yn">變亂 · 變乾淨</td><td class="yn">留 · 砍</td></tr>
+      <tr><td></td><td class="yn">變亂 · 變乾淨</td><td class="yn">留 · 砍</td></tr>
+      <tr><td></td><td class="yn">變亂 · 變乾淨</td><td class="yn">留 · 砍</td></tr>
+    </table>
+    <div class="note">變亂 → 它在做事，留著。變乾淨 → 它在替代一個本來就該由她做的東西，砍掉。</div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="mk">E</span>
+      <span class="tt">省下來的時間去了哪裡</span>
+      <span class="hint">這是本服務唯一的成功指標。</span>
+    </div>
+    <table>
+      <tr>
+        <th style="width:34%">省下多少（估）</th>
+        <th style="width:46%">拿去做了什麼</th>
+        <th style="width:20%">有沒有回到螢幕上</th>
+      </tr>
+      <tr><td></td><td></td><td class="yn">是 · 否</td></tr>
+      <tr><td></td><td></td><td class="yn">是 · 否</td></tr>
+      <tr><td></td><td></td><td class="yn">是 · 否</td></tr>
+    </table>
+    <div class="note">
+      成功不是「她用了多少 AI」，是「她因此多出了多少不用螢幕的時間」。
+      如果省下來的時間全部又回到螢幕上，這次服務等於沒有發生。
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="mk">F</span>
+      <span class="tt">下次要驗證的一件事</span>
+      <span class="hint">只寫一件。</span>
+    </div>
+    <div class="openbox">
+      <div class="lines">
+        <div class="ln"></div><div class="ln"></div><div class="ln"></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule-fat">
+
+  <section style="margin-top:4mm">
+    <div class="sec-head">
+      <span class="mk">✎</span>
+      <span class="tt">顧問自評</span>
+      <span class="hint">寫給自己看的，不給個案看。</span>
+    </div>
+    <table>
+      <tr>
+        <th style="width:76%">檢查項目</th>
+        <th style="width:24%" >答</th>
+      </tr>
+      <tr><td>我這次講太多了嗎？</td><td class="yn">是 · 否</td></tr>
+      <tr><td>有沒有替她做了她自己做得到的事？</td><td class="yn">是 · 否</td></tr>
+      <tr><td>有沒有教工具、而不是校準步調？</td><td class="yn">是 · 否</td></tr>
+      <tr><td>如果我明天消失，她還能自己做嗎？</td><td class="yn">是 · 否</td></tr>
+    </table>
+  </section>
+
+  <div class="foot">
+    <span>不是教她用 AI，是陪她決定哪些不要交出去。</span>
+    <span class="pg">2 / 2 · 回訪</span>
+  </div>
+</div>
+
+</body>
+</html>
