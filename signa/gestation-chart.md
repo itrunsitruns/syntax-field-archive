@@ -57,6 +57,7 @@
 ### 1. Φiaööna Being · Φiaööna 存在
 - **軌:** Ööna 軌(body · family · birth)
 - **輪盤標籤:** 2 more kids · Syntax Living · Advanced Player
+- **頻道:** dontcallmekelly · 個人成長 — https://youtube.com/@dontcallmekelly
 - **note:** first instance 是 Φiaööna 自己。身體是 timeline 的 driver——忽略身體訊號的計畫一定會被身體 override。
 
 | Year | Phase | 內容 |
@@ -71,11 +72,13 @@
 ### 2. Birth · Being · Beyond · 生產 生命 死亡
 - **軌:** Ööna ＆ Signa(一條河 / 3B centers)
 - **輪盤標籤:** 3B centers · 中心
+- **頻道:** gaiawaitingroom · 蓋亞等待室 — https://youtube.com/@gaiawaitingroom
 - **note:** 三個中心 · 3B centers:生產(Birth)、生命(Being)、死亡(Beyond)。從 Ööna 7 年 doula 的 embodied knowledge 長出來。
+- **2026-08-06 補:** Being 段先前在十年表上沒有自己的 milestone(Birth 在 Year 3、Beyond 在 Year 5)。健康教練學習就是那一段 —— 也是三個 B 裡唯一 Year 1 就能開始長的。速度本來就該慢。
 
 | Year | Phase | 內容 |
 |------|-------|------|
-| 1 | Conceptual → Embryonic | Chef mom 互相主持試驗 · 2026-07-25/26 有機人社集節(Lila 共同主持)首次實體化 ⟡;1-2 mature male 範例對話;Birth/Being/Beyond 還在 conceptual |
+| 1 | Conceptual → Embryonic | Chef mom 互相主持試驗 · 2026-07-25/26 有機人社集節(Lila 共同主持)首次實體化 ⟡;1-2 mature male 範例對話;**Being 段開始長 — IIN 健康教練學習(日節奏 Learning 格 · 每日 100 分 · 慢長)**;Birth / Beyond 仍在 conceptual |
 | 2 | Embryonic → Alive | Open House 變 regular ritual;第一個 mature male role model established |
 | 3 | Alive → Recognized · **Quickening** | 第三胎可能在 Node 0 出生 — Birth Center first living instance;Beyond practice 正式啟動 |
 | 4 | Recognized → Instantiating | Birth Center practice 在 Node 0 happen |
@@ -85,6 +88,7 @@
 ### 3. Living Circle · 生活圈
 - **軌:** Signa 軌(community · kinship)
 - **輪盤標籤:** Dreadlocks · Soaps · Mushroom drinks · Hygiene products
+- **頻道:** ⬚ 未建
 - **注:** 手繪圖裡的 Humans · Eco systems(人類生態系)不歸在生活圈——它涵括整個項目,已移到中心與 Signa 統一層。
 - **note:** 生活圈的物質層(dreadlocks / soaps / mushroom drinks / hygiene products)是社群自給的產物——在手繪輪盤裡標出,十年時程文件裡還沒排時點。
 
@@ -100,6 +104,7 @@
 ### 4. AI Being System · AI 共生系統
 - **軌:** AI 軌(substrate · tooling · partnerships)
 - **輪盤標籤:** LAB · Model for Signa · AI Human
+- **頻道:** ⬚ 未建
 - **note:** Lean Partnership 路線(依 AI Thesis v2)。AI 是 substrate / nervous system,不是 foreground。
 
 | Year | Phase | 內容 |
@@ -114,6 +119,7 @@
 ### 5. Breathing House · 生態住宅
 - **軌:** Ööna ＆ Signa(物理層 / Node 0)
 - **輪盤標籤:** Sustainable · eco / smart · Node 0
+- **頻道:** livingsigna · living Signa — https://youtube.com/@livingsigna
 - **note:** Sustainable eco/smart 住宅的具體建置細節在十年時程文件裡還沒細寫,以 Node 0(現在租下的山上空間)為錨。
 
 | Year | Phase | 內容 |
@@ -128,6 +134,7 @@
 ### 6. Deeper into Nature's Mystery · 探索自然
 - **軌:** Source(自然 · amplification)
 - **輪盤標籤:** Into Nature · Mystery · Connection · AI-amplified
+- **頻道:** AuntieGoodShit · 好使阿姨 — https://youtube.com/@auntiegoodshit
 - **note:** 探索自然是 Signa 的核心重心之一——透過 AI 的協助,人類得以更深入自然、探索更多未被命名的神秘,並與自然建立更深的連結。這是人類來到世界很大的一個目的。(十年時程以方向性 narrative 為主,yearly milestone 較少。)
 
 | Year | Phase | 內容 |
