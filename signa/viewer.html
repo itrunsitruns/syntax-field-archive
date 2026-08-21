@@ -251,8 +251,9 @@
       return;
     }
 
-    // Sanity check: only allow .md files in same directory
-    if (docPath.includes('..') || docPath.includes('/') || !docPath.endsWith('.md')) {
+    // Sanity check: .md files in this directory, or one level below it
+    // (e.g. living/README.md). No traversal, no absolute paths.
+    if (docPath.includes('..') || !/^[A-Za-z0-9._-]+(\/[A-Za-z0-9._-]+)?\.md$/.test(docPath)) {
       content.innerHTML = '<div class="error">無效的文件路徑。</div>';
       return;
     }
