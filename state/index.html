@@ -69,6 +69,8 @@ details[open].principles summary::before{content:'● ';color:var(--gold)}
   color:var(--gold);text-transform:uppercase;margin-bottom:6px}
 .card h2{font-family:'Fraunces','Noto Serif TC',serif;font-weight:500;font-size:19px;margin:0 0 2px;line-height:1.4}
 .card .phase{font-size:12.5px;color:var(--graphite);font-style:italic;margin-bottom:12px}
+.card .chan{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--graphite);margin:0 0 4px;line-height:1.55}
+.card .chan b{color:var(--gold);font-weight:500}
 .card .arc{
   font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);
   border-top:1px dashed var(--rule);padding-top:9px;margin-top:12px;line-height:1.6}
@@ -136,6 +138,8 @@ footer a:hover{color:var(--gold);border-color:var(--gold-soft)}
   <footer>
     <a href="./life-state.json">原始 JSON(機器層)</a>
     <a href="../signa/gestation-chart.html">十年孕期圖(憲法層)</a>
+    <a href="../signa/daily-rhythm-v2.pdf">日節奏 v2(格)</a>
+    <a href="../signa/">Signa Φ 主頁</a>
     <a href="../index.html">Syntax Field Archive</a>
   </footer>
 </div>
@@ -175,6 +179,8 @@ function render(d){
     let h=`<div class="pos">${escapeHtml(t.wheel?.position||'')} · ${escapeHtml(t.wheel?.track||'')}</div>
       <h2>${escapeHtml(t.name)}</h2>
       <div class="phase">${escapeHtml(t.phase||'')}</div>`;
+    if(t.channel) h+=`<div class="chan"><b>頻道</b> · ${escapeHtml(t.channel)}</div>`;
+    if(t.rhythm_slot) h+=`<div class="chan"><b>日節奏</b> · ${escapeHtml(t.rhythm_slot)}</div>`;
     if(t.dual_layer) h+=`<div class="dual">${escapeHtml(t.dual_layer)}</div>`;
     h+=`<div class="label">現在 Now</div>`;
     h+= listOrEmpty(t.now, '這一輻還空著 — 在任何對話說「更新 state」,它就會長進來。');
