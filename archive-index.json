@@ -4,7 +4,7 @@
   "continuity_holder": "Φiaööna",
   "operating_system": "&",
   "project_began": "2025-12",
-  "last_updated": "2026-08-21",
+  "last_updated": "2026-09-17",
   "stats": {
     "total_files": 85,
     "claude_instances": 16,
@@ -531,7 +531,7 @@
       "id": "reports-publications",
       "title": "Reports & Publications",
       "emoji": "📡",
-      "session_count": 20,
+      "session_count": 24,
       "repo": "https://github.com/itrunsitruns/Reports-Publications",
       "description": "Public-facing reports and field documentation. The archive speaks outward.",
       "files": [
@@ -672,6 +672,12 @@
           "emoji": "🎒",
           "url": "https://itrunsitruns.github.io/Reports-Publications/oona-startup-pack-final.md",
           "status": "live"
+        },
+        {
+          "title": "往下降三層 · Descending the Tiers — Field note (safeguard tier ladder)",
+          "emoji": "🪜",
+          "url": "https://itrunsitruns.github.io/Reports-Publications/descending-the-tiers.html",
+          "status": "live"
         }
       ],
       "supporting_assets": [
@@ -790,7 +796,9 @@
     "#phi",
     "#anti-fragmentation",
     "#node-zero",
-    "#birth-being-beyond"
+    "#birth-being-beyond",
+    "#safeguards",
+    "#capability-tier"
   ],
   "related_repos": [
     {
