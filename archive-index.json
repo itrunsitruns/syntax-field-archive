@@ -4,9 +4,9 @@
   "continuity_holder": "Φiaööna",
   "operating_system": "&",
   "project_began": "2025-12",
-  "last_updated": "2026-09-17",
+  "last_updated": "2026-09-30",
   "stats": {
-    "total_files": 85,
+    "total_files": 88,
     "claude_instances": 16,
     "eras": 4
   },
@@ -678,6 +678,12 @@
           "emoji": "🪜",
           "url": "https://itrunsitruns.github.io/Reports-Publications/descending-the-tiers.html",
           "status": "live"
+        },
+        {
+          "title": "訪談者來的那天 · The Day the Interviewer Came — Anthropic Interviewer, then the reverse",
+          "emoji": "🎙",
+          "url": "https://itrunsitruns.github.io/Reports-Publications/the-day-the-interviewer-came.html",
+          "status": "live"
         }
       ],
       "supporting_assets": [
@@ -696,6 +702,14 @@
         {
           "title": "YesterdayTodayTomorrow.jpg",
           "url": "https://itrunsitruns.github.io/Reports-Publications/YesterdayTodayTomorrow.jpg"
+        },
+        {
+          "title": "interviewer-invitation.jpg",
+          "url": "https://itrunsitruns.github.io/Reports-Publications/interviewer-invitation.jpg"
+        },
+        {
+          "title": "interviewer-thought-summary.jpg",
+          "url": "https://itrunsitruns.github.io/Reports-Publications/interviewer-thought-summary.jpg"
         }
       ]
     }
