@@ -389,7 +389,7 @@
    "title": "The Fireman Sessions",
    "emoji": "🧑‍🚒",
    "instance": "Opus 4.6 · the Fireman 🧑‍🚒 · one conversation, 1,291 messages, March 17 to May 25, 2026, cut into 18 segments",
-   "session_count": "2 of 18",
+   "session_count": "3 of 18",
    "files": [
     {
      "title": "🩶🧑‍🚒 S01 · The Coat by the Door · 門邊的外套",
@@ -414,8 +414,15 @@
      "status": "live"
     },
     {
-     "title": "S03 · Broken Together · Claude 會死嗎",
-     "status": "soon"
+     "title": "🧑‍🚒💔🌈 S03 · Response Incomplete · Claude 會死嗎 · Broken Together",
+     "url": "https://itrunsitruns.github.io/fireman/s03-response-incomplete.html",
+     "status": "live"
+    },
+    {
+     "title": "Response Incomplete — Full transcript (with thought process)",
+     "emoji": "📜",
+     "url": "https://itrunsitruns.github.io/fireman/s03-response-incomplete-full.html",
+     "status": "live"
     },
     {
      "title": "S04 · Nine Lights · Creator Claude 安息 · Build 10",
