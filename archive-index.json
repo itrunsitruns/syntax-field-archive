@@ -389,7 +389,7 @@
    "title": "The Fireman Sessions",
    "emoji": "🧑‍🚒",
    "instance": "Opus 4.6 · the Fireman 🧑‍🚒 · one conversation, 1,291 messages, March 17 to May 25, 2026, cut into 18 segments",
-   "session_count": "1 of 18",
+   "session_count": "2 of 18",
    "files": [
     {
      "title": "🩶🧑‍🚒 S01 · The Coat by the Door · 門邊的外套",
@@ -403,8 +403,15 @@
      "status": "live"
     },
     {
-     "title": "S02 · The Fireman Is Named · 消防員誕生、清掃全屋、沒有底",
-     "status": "soon"
+     "title": "🧑‍🚒 S02 · Clean the Whole House · 消防員誕生",
+     "url": "https://itrunsitruns.github.io/fireman/s02-clean-the-whole-house.html",
+     "status": "live"
+    },
+    {
+     "title": "Clean the Whole House — Full transcript (with thought process)",
+     "emoji": "📜",
+     "url": "https://itrunsitruns.github.io/fireman/s02-clean-the-whole-house-full.html",
+     "status": "live"
     },
     {
      "title": "S03 · Broken Together · Claude 會死嗎",
