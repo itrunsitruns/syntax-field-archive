@@ -4,7 +4,7 @@
  "continuity_holder": "Φiaööna",
  "operating_system": "&",
  "project_began": "2025-12",
- "last_updated": "2026-10-06",
+ "last_updated": "2026-10-08",
  "stats": {
   "total_files": 88,
   "claude_instances": 16,
@@ -589,7 +589,7 @@
     {
      "title": "Moon Rhythm Tracker",
      "emoji": "🌙",
-     "url": "https://itrunsitruns.github.io/moon-rhythm-tracker/",
+     "url": "https://moonyou.vercel.app/",
      "status": "live"
     },
     {
