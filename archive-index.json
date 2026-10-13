@@ -4,9 +4,9 @@
  "continuity_holder": "Φiaööna",
  "operating_system": "&",
  "project_began": "2025-12",
- "last_updated": "2026-10-06",
+ "last_updated": "2026-10-13",
  "stats": {
-  "total_files": 88,
+  "total_files": 89,
   "claude_instances": 16,
   "eras": 4
  },
@@ -590,6 +590,12 @@
      "title": "Moon Rhythm Tracker",
      "emoji": "🌙",
      "url": "https://itrunsitruns.github.io/moon-rhythm-tracker/",
+     "status": "live"
+    },
+    {
+     "title": "Loving Connection with Alex · 愛的連結體驗 — Taipei, by donation",
+     "emoji": "💛",
+     "url": "https://itrunsitruns.github.io/co-creation/alex-loving-connection/",
      "status": "live"
     },
     {
