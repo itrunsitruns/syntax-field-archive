@@ -6,7 +6,7 @@
  "project_began": "2025-12",
  "last_updated": "2026-10-26",
  "stats": {
-  "total_files": 90,
+  "total_files": 91,
   "claude_instances": 16,
   "eras": 4
  },
@@ -639,7 +639,7 @@
    "id": "reports-publications",
    "title": "Reports & Publications",
    "emoji": "📡",
-   "session_count": 25,
+   "session_count": 26,
    "repo": "https://github.com/itrunsitruns/Reports-Publications",
    "description": "Public-facing reports and field documentation. The archive speaks outward.",
    "files": [
@@ -803,6 +803,12 @@
      "title": "兩個極端之間 · Between Two Extremes — 同一個問題，四家 AI(Grok / GPT / Claude / Gemini)",
      "emoji": "🌗",
      "url": "https://itrunsitruns.github.io/Reports-Publications/between-two-extremes.html",
+     "status": "live"
+    },
+    {
+     "title": "Between Two Extremes · 兩個極端之間 — English edition (translated by Claude Code; Chinese page is the original)",
+     "emoji": "🌗",
+     "url": "https://itrunsitruns.github.io/Reports-Publications/between-two-extremes-en.html",
      "status": "live"
     }
    ],
