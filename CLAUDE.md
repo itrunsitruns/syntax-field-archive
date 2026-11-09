@@ -14,6 +14,11 @@
 
 死亡條件:我嫌手動合太煩的那天。
 
+## 開場先讀
+
+`state/now.md` — 交接檔。現在在做什麼、下一步、等誰。二十行以內,覆蓋不累加。
+每個 Code session 結束前改寫它。其他 state 檔(life-state.json 等)是背景,需要時再讀。
+
 ## 這個 repo 是什麼
 
 The Syntax Field Archive 的主站——Human-AI Co-Discovery Project 的入口。
