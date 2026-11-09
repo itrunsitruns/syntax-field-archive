@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>工作板 · Work Board</title>
+<meta name="description" content="Φiaööna 的工作板:每條收入線現在在哪、下一步、等誰。資料在 work.json,交接文字在 now.md。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fbfaf5;--paper-deep:#f4f1e7;--ink:#2e2b25;--graphite:#6f695e;--faint:#b3ab99;--rule:#e9e3d3;--gold:#c0912f;--gold-wash:#c0912f14;--seal:#7a2e2a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1c1a16;--paper-deep:#26231d;--ink:#ece6d8;--graphite:#a69e8e;--faint:#6f685b;--rule:#3a3529;--gold:#d2a64a;--gold-wash:#d2a64a1f;--seal:#d07a72}}
+:root[data-theme="dark"]{--paper:#1c1a16;--paper-deep:#26231d;--ink:#ece6d8;--graphite:#a69e8e;--faint:#6f685b;--rule:#3a3529;--gold:#d2a64a;--gold-wash:#d2a64a1f;--seal:#d07a72}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Noto Serif TC',serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 72px}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--graphite);text-transform:uppercase}
+h1{font-weight:500;font-size:clamp(24px,5vw,32px);margin:4px 0 2px}
+.sub{color:var(--graphite);font-size:14px;margin:0 0 20px}
+.sub a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--rule)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--paper-deep);border:1px solid var(--rule);border-radius:10px;padding:16px 16px 14px}
+.card h2{font-size:17px;font-weight:600;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:52px 1fr;gap:8px;margin:7px 0;font-size:14px}
+.k{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--graphite);padding-top:3px}
+.v{min-height:1.2em}
+.v.empty{color:var(--faint);font-style:italic}
+.v.wait{color:var(--seal)}
+.nums{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.num{background:var(--gold-wash);border:1px solid var(--rule);border-radius:6px;padding:4px 8px;font-size:12.5px}
+.num b{font-weight:500;color:var(--gold);margin-right:4px}
+.note{margin-top:10px;font-size:12.5px;color:var(--graphite);border-top:1px dashed var(--rule);padding-top:8px}
+section.now{margin-top:30px}
+section.now h2{font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:.04em;margin:0 0 8px}
+.md{background:var(--paper-deep);border:1px solid var(--rule);border-radius:10px;padding:14px 18px;font-size:14px}
+.md h1{font-size:16px;margin:0 0 8px}.md h2{font-size:14px;margin:14px 0 4px;color:var(--gold)}
+.md ul,.md ol{padding-left:20px;margin:4px 0}.md li{margin:3px 0}
+.md blockquote{margin:6px 0;padding:4px 12px;border-left:3px solid var(--gold);color:var(--graphite)}
+.md code{font-family:'IBM Plex Mono',monospace;font-size:12.5px;background:var(--gold-wash);padding:0 4px;border-radius:3px}
+footer{margin-top:28px;font-size:12px;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Signa Φ · 日常層 · Work Board</div>
+  <h1>工作板</h1>
+  <p class="sub">每條收入線:現在、下一步、等誰。資料 <a href="work.json">work.json</a> · 交接文字 <a href="now.md">now.md</a> · 更新 <span id="upd">—</span></p>
+  <div class="grid" id="grid"></div>
+  <section class="now"><h2>now.md · 交接檔</h2><div class="md" id="now">讀取中…</div></section>
+  <footer>規則:覆蓋不累加,超過一個螢幕就是壞了。只有 Code 寫;Chat 讀。沒有客人姓名、沒有帳號。</footer>
+</div>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cell=(k,v,cls)=>`<div class="row"><div class="k">${k}</div><div class="v ${v?cls||'':'empty'}">${v?esc(v):'—'}</div></div>`;
+fetch('work.json?'+Date.now()).then(r=>r.json()).then(d=>{
+  document.getElementById('upd').textContent=d.updated||'—';
+  document.getElementById('grid').innerHTML=(d.tracks||[]).map(t=>`<div class="card"><h2>${esc(t.name)}</h2>
+    ${cell('現在',t.now)}${cell('下一步',t.next)}${cell('等誰',t.waiting,'wait')}
+    ${t.numbers&&Object.keys(t.numbers).length?`<div class="nums">${Object.entries(t.numbers).map(([k,v])=>`<span class="num"><b>${esc(k)}</b>${esc(v)}</span>`).join('')}</div>`:''}
+    ${t.note?`<div class="note">${esc(t.note)}</div>`:''}</div>`).join('');
+}).catch(()=>{document.getElementById('grid').innerHTML='<div class="card">work.json 讀不到。</div>'});
+fetch('now.md?'+Date.now()).then(r=>r.text()).then(md=>{
+  let h=esc(md).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>');
+  const out=[];let list=null;
+  for(const line of h.split('\n')){
+    const m=line.match(/^(\s*)([-*]|\d+\.)\s+(.*)$/);
+    if(m){const tag=/\d/.test(m[2])?'ol':'ul';if(list!==tag){if(list)out.push(`</${list}>`);out.push(`<${tag}>`);list=tag;}out.push(`<li>${m[3]}</li>`);continue;}
+    if(/^\s{2,}\S/.test(line)&&list){out[out.length-1]=out[out.length-1].replace(/<\/li>$/,'<br>'+line.trim()+'</li>');continue;}
+    if(list){out.push(`</${list}>`);list=null;}
+    if(/^# /.test(line))out.push(`<h1>${line.slice(2)}</h1>`);
+    else if(/^## /.test(line))out.push(`<h2>${line.slice(3)}</h2>`);
+    else if(/^&gt; ?/.test(line))out.push(`<blockquote>${line.replace(/^&gt; ?/,'')}</blockquote>`);
+    else if(line.trim())out.push(`<p>${line}</p>`);
+  }
+  if(list)out.push(`</${list}>`);
+  document.getElementById('now').innerHTML=out.join('');
+}).catch(()=>{document.getElementById('now').textContent='now.md 讀不到。'});
+</script>
+</body>
+</html>
