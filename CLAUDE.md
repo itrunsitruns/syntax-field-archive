@@ -17,6 +17,7 @@
 ## 開場先讀
 
 `state/now.md` — 交接檔。現在在做什麼、下一步、等誰。二十行以內,覆蓋不累加。
+`state/work.json` — 各收入線的工作板資料(人看的版面:`state/work.html`)。同樣覆蓋不累加,只有 Code 寫。
 每個 Code session 結束前改寫它。其他 state 檔(life-state.json 等)是背景,需要時再讀。
 
 ## 這個 repo 是什麼
